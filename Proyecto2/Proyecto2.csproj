@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F8ADD97-E416-4D97-8EED-0E416C13C4F0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proyecto2</RootNamespace>
+    <AssemblyName>Proyecto2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACTIVITATS.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ACTIVITATS_DEMANADES.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD\ORM.cs" />
+    <Compile Include="BD\ORM_ACTIVITATS.cs" />
+    <Compile Include="BD\ORM_ACTIVITATS_DEMANADES.cs" />
+    <Compile Include="BD\ORM_CATEGORIES.cs" />
+    <Compile Include="BD\ORM_CATEGORIES_EDAT.cs" />
+    <Compile Include="BD\ORM_COMPETICIO.cs" />
+    <Compile Include="BD\ORM_DIES_SETMANA.cs" />
+    <Compile Include="BD\ORM_ENTITATS.cs" />
+    <Compile Include="BD\ORM_EQUIPS.cs" />
+    <Compile Include="BD\ORM_ESPAIS.cs" />
+    <Compile Include="BD\ORM_ESPORTS.cs" />
+    <Compile Include="BD\ORM_HORARIS_ACTIVITAT.cs" />
+    <Compile Include="BD\ORM_HORARIS_ACT_DEMANA.cs" />
+    <Compile Include="BD\ORM_HORARIS_INSTALACIONS.cs" />
+    <Compile Include="BD\ORM_INSTALACIONS.cs" />
+    <Compile Include="BD\ORM_SEXES.cs" />
+    <Compile Include="BD\ORM_TELEFONS.cs" />
+    <Compile Include="BD\ORM_TIPUS_ACTIVITAT.cs" />
+    <Compile Include="BD\ORM_USUARIS.cs" />
+    <Compile Include="CATEGORIES.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CATEGORIES_EDAT.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMPETICIO.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DIES_SETMANA.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENTITATS.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EQUIPS.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESPAIS.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESPORTS.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEquipos.Designer.cs">
+      <DependentUpon>FormEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInstalacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInstalacion.Designer.cs">
+      <DependentUpon>FormInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HORARIS_ACTIVITAT.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HORARIS_ACT_DEMANA.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HORARIS_INSTALACIONS.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INSTALACIONS.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelEntiespais.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEntiespais.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelEntiespais.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelEntiespais.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEntiespais.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormTelefonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTelefonos.Designer.cs">
+      <DependentUpon>FormTelefonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEXES.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TELEFONS.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPUS_ACTIVITAT.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIS.cs">
+      <DependentUpon>ModelEntiespais.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormEquipos.resx">
+      <DependentUpon>FormEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInstalacion.resx">
+      <DependentUpon>FormInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FormTelefonos.resx">
+      <DependentUpon>FormTelefonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="ModelEntiespais.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelEntiespais.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelEntiespais.edmx.diagram">
+      <DependentUpon>ModelEntiespais.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\ACTIVITATS.datasource" />
+    <None Include="Properties\DataSources\ACTIVITATS_DEMANADES.datasource" />
+    <None Include="Properties\DataSources\CATEGORIES.datasource" />
+    <None Include="Properties\DataSources\CATEGORIES_EDAT.datasource" />
+    <None Include="Properties\DataSources\COMPETICIO.datasource" />
+    <None Include="Properties\DataSources\DIES_SETMANA.datasource" />
+    <None Include="Properties\DataSources\ENTITATS.datasource" />
+    <None Include="Properties\DataSources\EQUIPS.datasource" />
+    <None Include="Properties\DataSources\ESPAIS.datasource" />
+    <None Include="Properties\DataSources\ESPORTS.datasource" />
+    <None Include="Properties\DataSources\HORARIS_ACTIVITAT.datasource" />
+    <None Include="Properties\DataSources\HORARIS_ACT_DEMANA.datasource" />
+    <None Include="Properties\DataSources\HORARIS_INSTALACIONS.datasource" />
+    <None Include="Properties\DataSources\INSTALACIONS.datasource" />
+    <None Include="Properties\DataSources\SEXES.datasource" />
+    <None Include="Properties\DataSources\TELEFONS.datasource" />
+    <None Include="Properties\DataSources\TIPUS_ACTIVITAT.datasource" />
+    <None Include="Properties\DataSources\USUARIS.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
+    <None Include="Resources\maximizar.png" />
+    <None Include="Resources\cruz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelEntiespais.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelEntiespais.edmx</DependentUpon>
+      <LastGenOutput>ModelEntiespais.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelEntiespais.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelEntiespais.edmx</DependentUpon>
+      <LastGenOutput>ModelEntiespais.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
