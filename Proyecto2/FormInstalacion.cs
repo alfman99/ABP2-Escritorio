@@ -47,14 +47,32 @@ namespace Proyecto2
                 {
                     comboBoxGestionExterna.SelectedIndex = 1;
                 }
+                buttonAñadirInstalacion.Enabled = false;
+                
 
-            }else
+            }
+            else
             {
                 textBoxNombreEspacio.Enabled = false;
                 textBoxPrecioEspacio.Enabled = false;
                 comboBoxExteriorEspacio.Enabled = false;
                 buttonAñadirEspacio.Enabled = false;
                 buttonEliminarEspacio.Enabled = false;
+
+                comboBoxLunesIni.Enabled = false;
+                comboBoxLunesFin.Enabled = false;
+                comboBoxMartesIni.Enabled = false;
+                comboBoxMartesFin.Enabled = false;
+                comboBoxMiercolesIni.Enabled = false;
+                comboBoxMiercolesFin.Enabled = false;
+                comboBoxJuevesIni.Enabled = false;
+                comboBoxJuevesFin.Enabled = false;
+                comboBoxViernesIni.Enabled = false;
+                comboBoxViernesFin.Enabled = false;
+                comboBoxSabadoFin.Enabled = false;
+                comboBoxSabadoIni.Enabled = false;
+                comboBoxDomingoIni.Enabled = false;
+                comboBoxDomingoFin.Enabled = false;
             }
         }
 
@@ -96,8 +114,9 @@ namespace Proyecto2
 
             BD.ORM_INSTALACION.InsertINSTALACION(textBoxNombreInstalacion.Text,externo,textBoxDireccionInstalacion.Text);
 
+            MessageBox.Show("Se ha añadido la instalacion satisfactoriamente. \n Recuerda agregar los horarios y los espacios de esta entidad.", "CORRECTO", MessageBoxButtons.OK);
 
-            //BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS();
+            this.Close(); 
         }
 
         private void buttonEliminarEspacio_Click(object sender, EventArgs e)
@@ -109,6 +128,19 @@ namespace Proyecto2
 
             dataGridViewEspaciosInstalacion.DataSource = null;
             dataGridViewEspaciosInstalacion.DataSource = instalacionDelForm.ESPAIS.ToList();
+        }
+
+        private void buttonGuardarModificacion_Click(object sender, EventArgs e)
+        {
+            INSTALACIONS _instalacion = (INSTALACIONS)dataGridViewEspaciosInstalacion.CurrentRow.DataBoundItem;
+
+            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxLunesIni.Text), TimeSpan.Parse(comboBoxLunesFin.Text), _instalacion.id,0);
+            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxMartesIni.Text), TimeSpan.Parse(comboBoxMartesFin.Text), _instalacion.id, 1);
+            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxMiercolesIni.Text), TimeSpan.Parse(comboBoxMiercolesFin.Text), _instalacion.id, 2);
+            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxJuevesIni.Text), TimeSpan.Parse(comboBoxJuevesFin.Text), _instalacion.id, 3);
+            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxViernesIni.Text), TimeSpan.Parse(comboBoxViernesFin.Text), _instalacion.id, 4);
+            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxSabadoIni.Text), TimeSpan.Parse(comboBoxSabadoFin.Text), _instalacion.id, 5);
+            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxDomingoIni.Text), TimeSpan.Parse(comboBoxDomingoFin.Text), _instalacion.id, 6);
         }
     }
 }

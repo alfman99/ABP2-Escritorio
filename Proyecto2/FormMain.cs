@@ -184,6 +184,7 @@ namespace Proyecto2
         {
             FormInstalacion I = new FormInstalacion(null);
             I.ShowDialog();
+            
         }
 
         private void bindingSourceListaEntidades_CurrentChanged(object sender, EventArgs e)
@@ -478,6 +479,12 @@ namespace Proyecto2
         private void textBoxDiasActividad_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void FormMain_Activated(object sender, EventArgs e)
+        {
+            dataGridViewInstalaciones.DataSource = null;
+            dataGridViewInstalaciones.DataSource = BD.ORM_INSTALACION.SelectAllINSTALACION(ref mensaje);
         }
     }
 }
