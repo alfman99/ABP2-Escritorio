@@ -79,6 +79,7 @@
             // 
             // comboBoxDeporteEquipo
             // 
+            this.comboBoxDeporteEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDeporteEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDeporteEquipo.FormattingEnabled = true;
             this.comboBoxDeporteEquipo.Location = new System.Drawing.Point(163, 67);
@@ -88,6 +89,7 @@
             // 
             // comboBoxCompeticionEquipo
             // 
+            this.comboBoxCompeticionEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCompeticionEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCompeticionEquipo.FormattingEnabled = true;
             this.comboBoxCompeticionEquipo.Location = new System.Drawing.Point(163, 94);
@@ -107,6 +109,7 @@
             // 
             // comboBoxCategoriaPorEdad
             // 
+            this.comboBoxCategoriaPorEdad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategoriaPorEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCategoriaPorEdad.FormattingEnabled = true;
             this.comboBoxCategoriaPorEdad.Location = new System.Drawing.Point(163, 121);
@@ -126,6 +129,7 @@
             // 
             // comboBoxCategoria
             // 
+            this.comboBoxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCategoria.FormattingEnabled = true;
             this.comboBoxCategoria.Location = new System.Drawing.Point(163, 148);
@@ -145,6 +149,7 @@
             // 
             // comboBoxSexoEquipo
             // 
+            this.comboBoxSexoEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSexoEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSexoEquipo.FormattingEnabled = true;
             this.comboBoxSexoEquipo.Location = new System.Drawing.Point(163, 175);

@@ -39,6 +39,22 @@ namespace Proyecto2
                 textBoxNombreInstalacion.Text = instalacionDelForm.nom;
                 textBoxDireccionInstalacion.Text = instalacionDelForm.adreca;
                 bindingSourceEspaciosInstalacion.DataSource = instalacionDelForm.ESPAIS;
+                bool i = instalacionDelForm.gestioExterna;
+                if (i== true)
+                {
+                    comboBoxGestionExterna.SelectedIndex = 0;
+                }else
+                {
+                    comboBoxGestionExterna.SelectedIndex = 1;
+                }
+
+            }else
+            {
+                textBoxNombreEspacio.Enabled = false;
+                textBoxPrecioEspacio.Enabled = false;
+                comboBoxExteriorEspacio.Enabled = false;
+                buttonAñadirEspacio.Enabled = false;
+                buttonEliminarEspacio.Enabled = false;
             }
         }
 
@@ -51,6 +67,48 @@ namespace Proyecto2
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void buttonAñadirEspacio_Click(object sender, EventArgs e)
+        {
+            int id = instalacionDelForm.id;
+            bool exterior;
+
+            if(comboBoxExteriorEspacio.SelectedIndex == 1){exterior = true;}
+            else { exterior = false; }
+
+            BD.ORM_ESPAIS.InsertESPAI(textBoxNombreEspacio.Text, double.Parse(textBoxPrecioEspacio.Text),exterior,id);
+
+            MessageBox.Show("Se ha añadido el espacio satisfactoriamente", "ATENCION", MessageBoxButtons.OK);
+
+            dataGridViewEspaciosInstalacion.DataSource = null;
+            dataGridViewEspaciosInstalacion.DataSource = instalacionDelForm.ESPAIS.ToList();
+        }
+
+        private void buttonAñadirInstalacion_Click(object sender, EventArgs e)
+        {
+            bool externo;
+
+            if(comboBoxGestionExterna.SelectedIndex == 0)
+            {
+                externo = true;
+            }else { externo = false; }
+
+            BD.ORM_INSTALACION.InsertINSTALACION(textBoxNombreInstalacion.Text,externo,textBoxDireccionInstalacion.Text);
+
+
+            //BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS();
+        }
+
+        private void buttonEliminarEspacio_Click(object sender, EventArgs e)
+        {
+            ESPAIS _espais = (ESPAIS)dataGridViewEspaciosInstalacion.CurrentRow.DataBoundItem;
+
+            BD.ORM_ESPAIS.DeleteESPAI(_espais);
+            MessageBox.Show("Se ha eliminado el espacio satisfactoriamente", "ATENCION", MessageBoxButtons.OK);
+
+            dataGridViewEspaciosInstalacion.DataSource = null;
+            dataGridViewEspaciosInstalacion.DataSource = instalacionDelForm.ESPAIS.ToList();
         }
     }
 }
