@@ -73,6 +73,8 @@ namespace Proyecto2
                 comboBoxSabadoIni.Enabled = false;
                 comboBoxDomingoIni.Enabled = false;
                 comboBoxDomingoFin.Enabled = false;
+
+                buttonGuardarModificacion.Enabled = false;
             }
         }
 
@@ -95,9 +97,31 @@ namespace Proyecto2
             if(comboBoxExteriorEspacio.SelectedIndex == 1){exterior = true;}
             else { exterior = false; }
 
-            BD.ORM_ESPAIS.InsertESPAI(textBoxNombreEspacio.Text, double.Parse(textBoxPrecioEspacio.Text),exterior,id);
+            if (textBoxNombreInstalacion.Text == "")
+            {
+                MessageBox.Show("Has de introducir un nombre de instalación");
+                textBoxNombreInstalacion.Focus();
+            }else
+            {
+                if (textBoxDireccionInstalacion.Text == "")
+                {
+                    MessageBox.Show("Has de introducir una direccion de la instalación");
+                    textBoxDireccionInstalacion.Focus();
+                }
+                else
+                {
+                    if (comboBoxGestionExterna.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Has de especificar el tipo de gestión");
+                        comboBoxGestionExterna.Focus();
+                    }else
+                    {
+                        BD.ORM_ESPAIS.InsertESPAI(textBoxNombreEspacio.Text, double.Parse(textBoxPrecioEspacio.Text), exterior, id);
 
-            MessageBox.Show("Se ha añadido el espacio satisfactoriamente", "ATENCION", MessageBoxButtons.OK);
+                        MessageBox.Show("Se ha añadido el espacio satisfactoriamente", "ATENCION", MessageBoxButtons.OK);
+                    }
+                }
+            }
 
             dataGridViewEspaciosInstalacion.DataSource = null;
             dataGridViewEspaciosInstalacion.DataSource = instalacionDelForm.ESPAIS.ToList();
@@ -123,8 +147,17 @@ namespace Proyecto2
         {
             ESPAIS _espais = (ESPAIS)dataGridViewEspaciosInstalacion.CurrentRow.DataBoundItem;
 
-            BD.ORM_ESPAIS.DeleteESPAI(_espais);
-            MessageBox.Show("Se ha eliminado el espacio satisfactoriamente", "ATENCION", MessageBoxButtons.OK);
+            DialogResult dialogResult = MessageBox.Show("Está seguro que quiere borrar " + _espais.nom + " ?", "Atención!", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                BD.ORM_ESPAIS.DeleteESPAI(_espais);
+                MessageBox.Show("Se ha eliminado el espacio satisfactoriamente", "ATENCION", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("Operacion cancelada");
+            }
 
             dataGridViewEspaciosInstalacion.DataSource = null;
             dataGridViewEspaciosInstalacion.DataSource = instalacionDelForm.ESPAIS.ToList();
@@ -132,15 +165,29 @@ namespace Proyecto2
 
         private void buttonGuardarModificacion_Click(object sender, EventArgs e)
         {
-            INSTALACIONS _instalacion = (INSTALACIONS)dataGridViewEspaciosInstalacion.CurrentRow.DataBoundItem;
+            bool externo;
 
-            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxLunesIni.Text), TimeSpan.Parse(comboBoxLunesFin.Text), _instalacion.id,0);
-            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxMartesIni.Text), TimeSpan.Parse(comboBoxMartesFin.Text), _instalacion.id, 1);
-            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxMiercolesIni.Text), TimeSpan.Parse(comboBoxMiercolesFin.Text), _instalacion.id, 2);
-            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxJuevesIni.Text), TimeSpan.Parse(comboBoxJuevesFin.Text), _instalacion.id, 3);
-            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxViernesIni.Text), TimeSpan.Parse(comboBoxViernesFin.Text), _instalacion.id, 4);
-            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxSabadoIni.Text), TimeSpan.Parse(comboBoxSabadoFin.Text), _instalacion.id, 5);
-            BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxDomingoIni.Text), TimeSpan.Parse(comboBoxDomingoFin.Text), _instalacion.id, 6);
+            if (comboBoxGestionExterna.SelectedIndex == 0)
+            {
+                externo = true;
+            }
+            else { externo = false; }
+
+            BD.ORM_INSTALACION.UpdateINSTALACION(instalacionDelForm.id, textBoxNombreInstalacion.Text, externo, textBoxDireccionInstalacion.Text);
+            if(comboBoxMiercolesFin.SelectedIndex == -1)
+            {
+                MessageBox.Show("Has de añadir el horario","ATENCION",MessageBoxButtons.OK);
+            }else
+            {
+                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxLunesIni.Text), TimeSpan.Parse(comboBoxLunesFin.Text), instalacionDelForm.id, 0);
+                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxMartesIni.Text), TimeSpan.Parse(comboBoxMartesFin.Text), instalacionDelForm.id, 1);
+                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxMiercolesIni.Text), TimeSpan.Parse(comboBoxMiercolesFin.Text), instalacionDelForm.id, 2);
+                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxJuevesIni.Text), TimeSpan.Parse(comboBoxJuevesFin.Text), instalacionDelForm.id, 3);
+                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxViernesIni.Text), TimeSpan.Parse(comboBoxViernesFin.Text), instalacionDelForm.id, 4);
+                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxSabadoIni.Text), TimeSpan.Parse(comboBoxSabadoFin.Text), instalacionDelForm.id, 5);
+                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxDomingoIni.Text), TimeSpan.Parse(comboBoxDomingoFin.Text), instalacionDelForm.id, 6);
+
+            }
         }
     }
 }
