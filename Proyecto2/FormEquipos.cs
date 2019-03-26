@@ -51,6 +51,8 @@ namespace Proyecto2
                 comboBoxDeporteEquipo.DataSource = esportsList.ToList();
                 comboBoxDeporteEquipo.DisplayMember = "nom";
 
+                comboBoxDeporteEquipo.SelectedIndex = -1;
+
                 comboBoxCompeticionEquipo.DataSource = competicioList.ToList();
                 comboBoxCompeticionEquipo.DisplayMember = "nom";
 
