@@ -28,6 +28,7 @@ namespace Proyecto2
 
         //variables a necesitar
         private int idEntidad = 0;
+        private int idActDem = 0;
         String mensaje = "";
 
         private void radioButtonHome_CheckedChanged(object sender, EventArgs e)
@@ -184,7 +185,7 @@ namespace Proyecto2
         {
             FormInstalacion I = new FormInstalacion(null);
             I.ShowDialog();
-            
+
         }
 
         private void bindingSourceListaEntidades_CurrentChanged(object sender, EventArgs e)
@@ -422,58 +423,74 @@ namespace Proyecto2
         {
             bool asignada;
 
-            if (comboBoxAsignadaActividad.SelectedItem.ToString() == "Yes")
+            try
             {
-                asignada = true;
+                if (comboBoxAsignadaActividad.SelectedItem.ToString() == "Yes")
+                {
+                    asignada = true;
+                }
+                else
+                {
+                    asignada = false;
+                }
+
+                mensaje = BD.ORM_ACTIVITATS_DEMANADES.InsertACTIVITATS_DEMANADES(textBoxNombreActividad.Text,
+                     System.TimeSpan.Parse(textBoxDuracionActividad.Text),
+                     ((EQUIPS)comboBoxEquipoActividad.SelectedItem).id,
+                     ((ESPAIS)comboBoxEspacioActividad.SelectedItem).id,
+                     ((TIPUS_ACTIVITAT)comboBoxTiposActividad.SelectedItem).id, int.Parse(textBoxDiasActividad.Text),
+                     asignada);
+
+                if (!mensaje.Equals(""))
+                {
+                    MessageBox.Show(mensaje);
+                }
+                else
+                {
+                    refrescarActivitatsDemanades();
+                    textBoxNombreActividad.Text = "";
+                    textBoxDuracionActividad.Text = "";
+                    comboBoxEquipoActividad.SelectedIndex = 0;
+                    comboBoxEspacioActividad.SelectedIndex = 0;
+                    comboBoxTiposActividad.SelectedIndex = 0;
+                    textBoxDiasActividad.Text = "";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                asignada = false;
+                MessageBox.Show("Tienes que completar los datos para poder agregar una nueva actividad");
             }
 
-            mensaje = BD.ORM_ACTIVITATS_DEMANADES.InsertACTIVITATS_DEMANADES(textBoxNombreActividad.Text,
-                 System.TimeSpan.Parse(textBoxDuracionActividad.Text),
-                 ((EQUIPS)comboBoxEquipoActividad.SelectedItem).id,
-                 ((ESPAIS)comboBoxEspacioActividad.SelectedItem).id,
-                 ((TIPUS_ACTIVITAT)comboBoxTiposActividad.SelectedItem).id, int.Parse(textBoxDiasActividad.Text),
-                 asignada);
-
-            if (!mensaje.Equals(""))
-            {
-                MessageBox.Show(mensaje);
-            }
-            else
-            {
-                refrescarActivitatsDemanades();
-                textBoxNombreActividad.Text = "";
-                textBoxDuracionActividad.Text = "";
-                comboBoxEquipoActividad.SelectedIndex = 0;
-                comboBoxEspacioActividad.SelectedIndex = 0;
-                comboBoxTiposActividad.SelectedIndex = 0;
-                textBoxDiasActividad.Text = "";
-            }
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            ACTIVITATS_DEMANADES _activitatDemanada = (ACTIVITATS_DEMANADES)dataGridView1.SelectedRows[0].DataBoundItem;
-
-            DialogResult m = MessageBox.Show("Estas seguro? ", "ATENCION!", MessageBoxButtons.YesNo);
-            if (m == DialogResult.Yes)
+            try
             {
-                mensaje = "";
-                mensaje = BD.ORM_ACTIVITATS_DEMANADES.DeleteACTIVITAT(_activitatDemanada);
+                ACTIVITATS_DEMANADES _activitatDemanada = (ACTIVITATS_DEMANADES)dataGridView1.SelectedRows[0].DataBoundItem;
 
-                if (mensaje.Equals(""))
+                DialogResult m = MessageBox.Show("Estas seguro? ", "ATENCION!", MessageBoxButtons.YesNo);
+                if (m == DialogResult.Yes)
                 {
-                    MessageBox.Show("Se ha eliminado satisfactoriamente");
-                    refrescarActivitatsDemanades();
-                }
-                else
-                {
-                    MessageBox.Show(mensaje);
+                    mensaje = "";
+                    mensaje = BD.ORM_ACTIVITATS_DEMANADES.DeleteACTIVITAT(_activitatDemanada);
+
+                    if (mensaje.Equals(""))
+                    {
+                        MessageBox.Show("Se ha eliminado satisfactoriamente");
+                        refrescarActivitatsDemanades();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Tienes que seleccionar alguna actividad para poder eliminarla");
+            }
+
         }
 
         private void textBoxDiasActividad_KeyPress(object sender, KeyPressEventArgs e)
@@ -485,6 +502,80 @@ namespace Proyecto2
         {
             dataGridViewInstalaciones.DataSource = null;
             dataGridViewInstalaciones.DataSource = BD.ORM_INSTALACION.SelectAllINSTALACION(ref mensaje);
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ACTIVITATS_DEMANADES _activitat = (ACTIVITATS_DEMANADES)dataGridView1.SelectedRows[0].DataBoundItem;
+
+                textBoxNombreActividad.Text = _activitat.nom;
+                comboBoxTiposActividad.SelectedItem = _activitat.TIPUS_ACTIVITAT;
+                comboBoxEspacioActividad.SelectedItem = _activitat.ESPAIS;
+                comboBoxEquipoActividad.SelectedItem = _activitat.ACTIVITATS;
+                textBoxDuracionActividad.Text = _activitat.durada.ToString();
+                textBoxDiasActividad.Text = _activitat.num_dies.ToString();
+                if (_activitat.assignada.Equals(true))
+                {
+                    comboBoxAsignadaActividad.SelectedItem = "Si";
+                }
+                else
+                {
+                    comboBoxAsignadaActividad.SelectedItem = "No";
+                }
+
+                idActDem = _activitat.id;
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            ACTIVITATS_DEMANADES _actDemanades = (ACTIVITATS_DEMANADES)dataGridView1.CurrentRow.DataBoundItem;
+
+            try
+            {
+                String nombre = textBoxNombreActividad.Text;
+                TimeSpan duracion = TimeSpan.Parse(textBoxDuracionActividad.Text);
+                int idEquipo = ((EQUIPS)comboBoxEquipoActividad.SelectedItem).id;
+                int idEspacio = ((ESPAIS)comboBoxEspacioActividad.SelectedItem).id;
+                int idTipoAct = ((TIPUS_ACTIVITAT)comboBoxTiposActividad.SelectedItem).id;
+                int diasAct = int.Parse(textBoxDiasActividad.Text);
+
+                bool asignada;
+
+                if (comboBoxAsignadaActividad.SelectedItem.Equals("Si"))
+                {
+                    asignada = true;
+                }
+                else
+                {
+                    asignada = false;
+                }
+
+
+                mensaje = "";
+                mensaje = BD.ORM_ACTIVITATS_DEMANADES.UpdateACTIVITATS_DEMANADES(idActDem, nombre, duracion, idEquipo, idEspacio, idTipoAct, diasAct, asignada);
+
+                if (!mensaje.Equals(""))
+                {
+                    MessageBox.Show(mensaje);
+                }
+                else
+                {
+                    refrescarActivitatsDemanades();
+                    idActDem = 0;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
