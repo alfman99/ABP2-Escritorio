@@ -16,8 +16,6 @@ namespace Proyecto2
         public FormMain()
         {
             InitializeComponent();
-            buttonMin.Visible = false;
-            buttonMax.Visible = true;
         }
 
         //esto es para poder mover la ventana
@@ -95,19 +93,17 @@ namespace Proyecto2
 
         private void buttonMax_Click(object sender, EventArgs e)
         {
-
-            buttonMax.Visible = false;
-            buttonMin.Visible = true;
-            this.WindowState = FormWindowState.Maximized;
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+                buttonMax.Image = Proyecto2.Properties.Resources.normal2;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+                buttonMax.Image = Proyecto2.Properties.Resources.maximizar;
+            }
         } //Hacer grande la pantalla con sus botones
-
-        private void buttonMin_Click(object sender, EventArgs e)
-        {
-
-            buttonMin.Visible = false;
-            buttonMax.Visible = true;
-            this.WindowState = FormWindowState.Normal;
-        }//Hacer pequeña la pantalla con sus botones
 
         private void buttonMinimizar_Click(object sender, EventArgs e)
         {
@@ -557,7 +553,6 @@ namespace Proyecto2
                 {
                     asignada = false;
                 }
-
 
                 mensaje = "";
                 mensaje = BD.ORM_ACTIVITATS_DEMANADES.UpdateACTIVITATS_DEMANADES(idActDem, nombre, duracion, idEquipo, idEspacio, idTipoAct, diasAct, asignada);

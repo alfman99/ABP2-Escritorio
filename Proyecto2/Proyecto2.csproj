@@ -285,6 +285,7 @@
       <DependentUpon>ModelEntiespais.edmx</DependentUpon>
       <LastGenOutput>ModelEntiespais.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\normal2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
