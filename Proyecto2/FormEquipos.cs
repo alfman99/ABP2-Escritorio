@@ -45,25 +45,30 @@ namespace Proyecto2
 
             if (mensaje.Equals(""))
             {
+                textBoxNombreEquipo.Text = "";
+
                 comboBoxEquipos.DataSource = equiposForm;
                 comboBoxEquipos.DisplayMember = "nom";
 
                 comboBoxDeporteEquipo.DataSource = esportsList.ToList();
                 comboBoxDeporteEquipo.DisplayMember = "nom";
-
                 comboBoxDeporteEquipo.SelectedIndex = -1;
 
                 comboBoxCompeticionEquipo.DataSource = competicioList.ToList();
                 comboBoxCompeticionEquipo.DisplayMember = "nom";
+                comboBoxCompeticionEquipo.SelectedIndex = -1;
 
                 comboBoxCategoriaPorEdad.DataSource = categEdatList.ToList();
                 comboBoxCategoriaPorEdad.DisplayMember = "nom";
+                comboBoxCategoriaPorEdad.SelectedIndex = -1;
 
                 comboBoxCategoria.DataSource = categList.ToList();
                 comboBoxCategoria.DisplayMember = "nom";
+                comboBoxCategoria.SelectedIndex = -1;
 
                 comboBoxSexoEquipo.DataSource = sexesList.ToList();
                 comboBoxSexoEquipo.DisplayMember = "nom";
+                comboBoxSexoEquipo.SelectedIndex = -1;
             }
             else
             {
@@ -75,6 +80,7 @@ namespace Proyecto2
         {
             EQUIPS equipoSeleccionado = (EQUIPS) comboBoxEquipos.SelectedItem;
 
+            textBoxNombreEquipo.Text = "";
             textBoxNombreEquipo.Text = equipoSeleccionado.nom;
             comboBoxDeporteEquipo.DataSource = esportsList;
             comboBoxDeporteEquipo.DisplayMember = "nom";
