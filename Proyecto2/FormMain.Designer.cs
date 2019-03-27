@@ -61,7 +61,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBoxContraseñaEntidad = new System.Windows.Forms.TextBox();
             this.labelContraseña = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonEditarEquipos = new System.Windows.Forms.Button();
             this.buttonEliminarTel = new System.Windows.Forms.Button();
             this.buttonAñadirTel = new System.Windows.Forms.Button();
             this.dataGridViewTelefonos = new System.Windows.Forms.DataGridView();
@@ -69,7 +69,7 @@
             this.textBoxDireccionEntidad = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxCorreoEntidad = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.labeltelefonos = new System.Windows.Forms.Label();
             this.comboBoxTemporadaEntidad = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxNombreEntidad = new System.Windows.Forms.TextBox();
@@ -522,7 +522,7 @@
             this.panel5.BackColor = System.Drawing.Color.PaleGreen;
             this.panel5.Controls.Add(this.textBoxContraseñaEntidad);
             this.panel5.Controls.Add(this.labelContraseña);
-            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.buttonEditarEquipos);
             this.panel5.Controls.Add(this.buttonEliminarTel);
             this.panel5.Controls.Add(this.buttonAñadirTel);
             this.panel5.Controls.Add(this.dataGridViewTelefonos);
@@ -530,7 +530,7 @@
             this.panel5.Controls.Add(this.textBoxDireccionEntidad);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.textBoxCorreoEntidad);
-            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.labeltelefonos);
             this.panel5.Controls.Add(this.comboBoxTemporadaEntidad);
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.textBoxNombreEntidad);
@@ -564,18 +564,18 @@
             this.labelContraseña.TabIndex = 25;
             this.labelContraseña.Text = "Contraseña";
             // 
-            // button2
+            // buttonEditarEquipos
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonEditarEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(149, 397);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 30);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Editar Equipos";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonEditarEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditarEquipos.Location = new System.Drawing.Point(149, 397);
+            this.buttonEditarEquipos.Name = "buttonEditarEquipos";
+            this.buttonEditarEquipos.Size = new System.Drawing.Size(129, 30);
+            this.buttonEditarEquipos.TabIndex = 24;
+            this.buttonEditarEquipos.Text = "Editar Equipos";
+            this.buttonEditarEquipos.UseVisualStyleBackColor = true;
+            this.buttonEditarEquipos.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonEliminarTel
             // 
@@ -644,15 +644,15 @@
             this.textBoxCorreoEntidad.Size = new System.Drawing.Size(168, 20);
             this.textBoxCorreoEntidad.TabIndex = 15;
             // 
-            // label12
+            // labeltelefonos
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(13, 255);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(71, 17);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Telefonos";
+            this.labeltelefonos.AutoSize = true;
+            this.labeltelefonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeltelefonos.Location = new System.Drawing.Point(13, 255);
+            this.labeltelefonos.Name = "labeltelefonos";
+            this.labeltelefonos.Size = new System.Drawing.Size(71, 17);
+            this.labeltelefonos.TabIndex = 5;
+            this.labeltelefonos.Text = "Telefonos";
             // 
             // comboBoxTemporadaEntidad
             // 
@@ -1088,6 +1088,9 @@
             // 
             // panel7
             // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.PaleGreen;
             this.panel7.Controls.Add(this.dataGridViewInstalaciones);
             this.panel7.Controls.Add(this.buttonEliminarInstalacion);
@@ -1744,7 +1747,7 @@
         private System.Windows.Forms.TextBox textBoxDireccionEntidad;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxCorreoEntidad;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labeltelefonos;
         private System.Windows.Forms.ComboBox comboBoxTemporadaEntidad;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBoxNombreEntidad;
@@ -1756,7 +1759,7 @@
         private System.Windows.Forms.Button buttonEliminarEntidad;
         private System.Windows.Forms.Label labelNombreEntidad;
         private System.Windows.Forms.Button buttonEditarEntidad;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonEditarEquipos;
         private System.Windows.Forms.Button buttonAñadirInstalacion;
         private System.Windows.Forms.DataGridView dataGridViewInstalaciones;
         private System.Windows.Forms.Button buttonEliminarInstalacion;

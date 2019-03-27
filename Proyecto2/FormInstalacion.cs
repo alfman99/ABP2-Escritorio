@@ -39,6 +39,7 @@ namespace Proyecto2
                 textBoxNombreInstalacion.Text = instalacionDelForm.nom;
                 textBoxDireccionInstalacion.Text = instalacionDelForm.adreca;
                 bindingSourceEspaciosInstalacion.DataSource = instalacionDelForm.ESPAIS;
+
                 bool i = instalacionDelForm.gestioExterna;
                 if (i== true)
                 {
@@ -47,6 +48,11 @@ namespace Proyecto2
                 {
                     comboBoxGestionExterna.SelectedIndex = 1;
                 }
+
+                // TODO: dd
+                //ArrayList horas = new ArrayList(instalacionDelForm.HORARIS_INSTALACIONS.ToList());
+
+
                 buttonAñadirInstalacion.Enabled = false;
                 
 
@@ -187,6 +193,8 @@ namespace Proyecto2
                 BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxSabadoIni.Text), TimeSpan.Parse(comboBoxSabadoFin.Text), instalacionDelForm.id, 5);
                 BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxDomingoIni.Text), TimeSpan.Parse(comboBoxDomingoFin.Text), instalacionDelForm.id, 6);
 
+                MessageBox.Show("Datos guardados satisfactoriamente.", "CORRECTO", MessageBoxButtons.OK);
+                this.Close();
             }
         }
     }

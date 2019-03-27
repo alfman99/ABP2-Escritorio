@@ -34,31 +34,35 @@ namespace Proyecto2
             tabControl1.SelectedTab = tabPage1;
             dataGridViewTelefonos.Hide();
 
-
+            labeltelefonos.Hide();
             buttonAñadirTel.Hide();
             buttonEliminarTel.Hide();
             buttonGuardarEntidad.Enabled = false;
+            buttonEditarEquipos.Enabled = false;
         }
 
         private void radioButtonEntidades_CheckedChanged(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage2;
             dataGridViewTelefonos.Hide();
+
+            labeltelefonos.Hide();
             buttonAñadirTel.Hide();
             buttonEliminarTel.Hide();
             buttonGuardarEntidad.Enabled = false;
+            buttonEditarEquipos.Enabled = false;
         }
 
         private void radioButtonActividades_CheckedChanged(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage3;
 
+            labeltelefonos.Hide();
             dataGridViewTelefonos.Hide();
             buttonAñadirTel.Hide();
             buttonEliminarTel.Hide();
             buttonGuardarEntidad.Enabled = false;
-
-
+            buttonEditarEquipos.Enabled = false;
 
             /*
             if (WindowState == FormWindowState.Maximized)
@@ -72,18 +76,24 @@ namespace Proyecto2
         {
             tabControl1.SelectedTab = tabPage4;
             dataGridViewTelefonos.Hide();
+
+            labeltelefonos.Hide();
             buttonAñadirTel.Hide();
             buttonEliminarTel.Hide();
             buttonGuardarEntidad.Enabled = false;
+            buttonEditarEquipos.Enabled = false;
         }
 
         private void radioButtonCalendario_CheckedChanged(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage5;
             dataGridViewTelefonos.Hide();
+
+            labeltelefonos.Hide();
             buttonAñadirTel.Hide();
             buttonEliminarTel.Hide();
             buttonGuardarEntidad.Enabled = false;
+            buttonEditarEquipos.Enabled = false;
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -152,10 +162,13 @@ namespace Proyecto2
                 //deshabilitamos los botones no necesarios y habilitamos el guardar
                 buttonAñadirEntidad.Enabled = false;
                 buttonEliminarEntidad.Enabled = false;
+                buttonEditarEquipos.Enabled = true;
                 buttonGuardarEntidad.Enabled = true;
 
                 //editamos
                 ENTITATS _entidad = (ENTITATS)dataGridViewListaEntidad.CurrentRow.DataBoundItem;
+
+                labeltelefonos.Show();
 
                 dataGridViewTelefonos.Show();
                 bindingSourceListaTelefonos.DataSource = _entidad.TELEFONS.ToList();
@@ -338,6 +351,7 @@ namespace Proyecto2
                 buttonAñadirEntidad.Enabled = true;
                 buttonEliminarEntidad.Enabled = true;
                 buttonGuardarEntidad.Enabled = false;
+                buttonEditarEquipos.Enabled = false;
 
             }
             else
