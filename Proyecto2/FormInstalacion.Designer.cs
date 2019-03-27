@@ -61,6 +61,10 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewEspaciosInstalacion = new System.Windows.Forms.DataGridView();
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exteriorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bindingSourceEspaciosInstalacion = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -78,16 +82,12 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxGestionExterna = new System.Windows.Forms.ComboBox();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exteriorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.bindingSourceEspaciosInstalacion = new System.Windows.Forms.BindingSource(this.components);
             this.label25 = new System.Windows.Forms.Label();
             this.comboBoxLunesFin = new System.Windows.Forms.ComboBox();
             this.comboBoxLunesIni = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEspaciosInstalacion)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaciosInstalacion)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxDireccionInstalacion
@@ -988,6 +988,36 @@
             this.dataGridViewEspaciosInstalacion.Size = new System.Drawing.Size(279, 150);
             this.dataGridViewEspaciosInstalacion.TabIndex = 50;
             // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // preuDataGridViewTextBoxColumn
+            // 
+            this.preuDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.preuDataGridViewTextBoxColumn.DataPropertyName = "preu";
+            this.preuDataGridViewTextBoxColumn.HeaderText = "preu";
+            this.preuDataGridViewTextBoxColumn.Name = "preuDataGridViewTextBoxColumn";
+            this.preuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.preuDataGridViewTextBoxColumn.Width = 53;
+            // 
+            // exteriorDataGridViewCheckBoxColumn
+            // 
+            this.exteriorDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.exteriorDataGridViewCheckBoxColumn.DataPropertyName = "exterior";
+            this.exteriorDataGridViewCheckBoxColumn.HeaderText = "exterior";
+            this.exteriorDataGridViewCheckBoxColumn.Name = "exteriorDataGridViewCheckBoxColumn";
+            this.exteriorDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.exteriorDataGridViewCheckBoxColumn.Width = 47;
+            // 
+            // bindingSourceEspaciosInstalacion
+            // 
+            this.bindingSourceEspaciosInstalacion.DataSource = typeof(Proyecto2.ESPAIS);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1048,7 +1078,7 @@
             // 
             this.buttonAñadirEspacio.Location = new System.Drawing.Point(368, 318);
             this.buttonAñadirEspacio.Name = "buttonAñadirEspacio";
-            this.buttonAñadirEspacio.Size = new System.Drawing.Size(95, 23);
+            this.buttonAñadirEspacio.Size = new System.Drawing.Size(113, 23);
             this.buttonAñadirEspacio.TabIndex = 58;
             this.buttonAñadirEspacio.Text = "Añadir Espacio";
             this.buttonAñadirEspacio.UseVisualStyleBackColor = true;
@@ -1056,9 +1086,9 @@
             // 
             // buttonEliminarEspacio
             // 
-            this.buttonEliminarEspacio.Location = new System.Drawing.Point(549, 319);
+            this.buttonEliminarEspacio.Location = new System.Drawing.Point(534, 319);
             this.buttonEliminarEspacio.Name = "buttonEliminarEspacio";
-            this.buttonEliminarEspacio.Size = new System.Drawing.Size(98, 23);
+            this.buttonEliminarEspacio.Size = new System.Drawing.Size(113, 23);
             this.buttonEliminarEspacio.TabIndex = 59;
             this.buttonEliminarEspacio.Text = "Eliminar Espacio";
             this.buttonEliminarEspacio.UseVisualStyleBackColor = true;
@@ -1162,36 +1192,6 @@
             this.comboBoxGestionExterna.Name = "comboBoxGestionExterna";
             this.comboBoxGestionExterna.Size = new System.Drawing.Size(142, 21);
             this.comboBoxGestionExterna.TabIndex = 66;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // preuDataGridViewTextBoxColumn
-            // 
-            this.preuDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.preuDataGridViewTextBoxColumn.DataPropertyName = "preu";
-            this.preuDataGridViewTextBoxColumn.HeaderText = "preu";
-            this.preuDataGridViewTextBoxColumn.Name = "preuDataGridViewTextBoxColumn";
-            this.preuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.preuDataGridViewTextBoxColumn.Width = 53;
-            // 
-            // exteriorDataGridViewCheckBoxColumn
-            // 
-            this.exteriorDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.exteriorDataGridViewCheckBoxColumn.DataPropertyName = "exterior";
-            this.exteriorDataGridViewCheckBoxColumn.HeaderText = "exterior";
-            this.exteriorDataGridViewCheckBoxColumn.Name = "exteriorDataGridViewCheckBoxColumn";
-            this.exteriorDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.exteriorDataGridViewCheckBoxColumn.Width = 47;
-            // 
-            // bindingSourceEspaciosInstalacion
-            // 
-            this.bindingSourceEspaciosInstalacion.DataSource = typeof(Proyecto2.ESPAIS);
             // 
             // label25
             // 
@@ -1380,9 +1380,9 @@
             this.Text = "Instalacion";
             this.Load += new System.EventHandler(this.FormInstalacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEspaciosInstalacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaciosInstalacion)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaciosInstalacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

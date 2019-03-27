@@ -41,10 +41,11 @@ namespace Proyecto2
                 bindingSourceEspaciosInstalacion.DataSource = instalacionDelForm.ESPAIS;
 
                 bool i = instalacionDelForm.gestioExterna;
-                if (i== true)
+                if (i == true)
                 {
                     comboBoxGestionExterna.SelectedIndex = 0;
-                }else
+                }
+                else
                 {
                     comboBoxGestionExterna.SelectedIndex = 1;
                 }
@@ -54,7 +55,7 @@ namespace Proyecto2
 
 
                 buttonAñadirInstalacion.Enabled = false;
-                
+
 
             }
             else
@@ -100,30 +101,31 @@ namespace Proyecto2
             int id = instalacionDelForm.id;
             bool exterior;
 
-            if(comboBoxExteriorEspacio.SelectedIndex == 1){exterior = true;}
+            if (comboBoxExteriorEspacio.SelectedIndex == 1) { exterior = true; }
             else { exterior = false; }
 
-            if (textBoxNombreInstalacion.Text == "")
+            if (textBoxNombreEspacio.Text == "")
             {
-                MessageBox.Show("Has de introducir un nombre de instalación");
-                textBoxNombreInstalacion.Focus();
-            }else
+                MessageBox.Show("Has de introducir un nombre del espacio");
+                textBoxNombreEspacio.Focus();
+            }
+            else
             {
-                if (textBoxDireccionInstalacion.Text == "")
+                if (textBoxPrecioEspacio.Text == "")
                 {
-                    MessageBox.Show("Has de introducir una direccion de la instalación");
-                    textBoxDireccionInstalacion.Focus();
+                    MessageBox.Show("Has de introducir el precio del espacio");
+                    textBoxPrecioEspacio.Focus();
                 }
                 else
                 {
-                    if (comboBoxGestionExterna.SelectedIndex == -1)
+                    if (comboBoxExteriorEspacio.SelectedIndex == -1)
                     {
-                        MessageBox.Show("Has de especificar el tipo de gestión");
-                        comboBoxGestionExterna.Focus();
-                    }else
+                        MessageBox.Show("Has de introducir si el espacio es interior o exterior");
+                        comboBoxExteriorEspacio.Focus();
+                    }
+                    else
                     {
-                        BD.ORM_ESPAIS.InsertESPAI(textBoxNombreEspacio.Text, double.Parse(textBoxPrecioEspacio.Text), exterior, id);
-
+                        BD.ORM_ESPAIS.InsertESPAI(textBoxNombreEspacio.Text, double.Parse(textBoxPrecioEspacio.Text), exterior, instalacionDelForm.id);
                         MessageBox.Show("Se ha añadido el espacio satisfactoriamente", "ATENCION", MessageBoxButtons.OK);
                     }
                 }
@@ -137,16 +139,17 @@ namespace Proyecto2
         {
             bool externo;
 
-            if(comboBoxGestionExterna.SelectedIndex == 0)
+            if (comboBoxGestionExterna.SelectedIndex == 0)
             {
                 externo = true;
-            }else { externo = false; }
+            }
+            else { externo = false; }
 
-            BD.ORM_INSTALACION.InsertINSTALACION(textBoxNombreInstalacion.Text,externo,textBoxDireccionInstalacion.Text);
+            BD.ORM_INSTALACION.InsertINSTALACION(textBoxNombreInstalacion.Text, externo, textBoxDireccionInstalacion.Text);
 
             MessageBox.Show("Se ha añadido la instalacion satisfactoriamente. \n Recuerda agregar los horarios y los espacios de esta entidad.", "CORRECTO", MessageBoxButtons.OK);
 
-            this.Close(); 
+            this.Close();
         }
 
         private void buttonEliminarEspacio_Click(object sender, EventArgs e)
@@ -180,10 +183,11 @@ namespace Proyecto2
             else { externo = false; }
 
             BD.ORM_INSTALACION.UpdateINSTALACION(instalacionDelForm.id, textBoxNombreInstalacion.Text, externo, textBoxDireccionInstalacion.Text);
-            if(comboBoxMiercolesFin.SelectedIndex == -1)
+            if (comboBoxMiercolesFin.SelectedIndex == -1)
             {
-                MessageBox.Show("Has de añadir el horario","ATENCION",MessageBoxButtons.OK);
-            }else
+                MessageBox.Show("Has de añadir el horario", "ATENCION", MessageBoxButtons.OK);
+            }
+            else
             {
                 BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxLunesIni.Text), TimeSpan.Parse(comboBoxLunesFin.Text), instalacionDelForm.id, 0);
                 BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxMartesIni.Text), TimeSpan.Parse(comboBoxMartesFin.Text), instalacionDelForm.id, 1);
