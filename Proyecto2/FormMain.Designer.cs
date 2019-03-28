@@ -126,6 +126,7 @@
             this.radioButtonEntidades = new System.Windows.Forms.RadioButton();
             this.radioButtonHome = new System.Windows.Forms.RadioButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idequipDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -178,6 +179,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInstalaciones)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEquips)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipusActivitat)).BeginInit();
@@ -205,6 +207,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.tabPage1.Controls.Add(this.groupBoxCalendario);
             this.tabPage1.Controls.Add(this.groupBoxPeticiones);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -213,12 +216,12 @@
             this.tabPage1.Size = new System.Drawing.Size(916, 561);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBoxCalendario
             // 
             this.groupBoxCalendario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxCalendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
             this.groupBoxCalendario.Controls.Add(this.textBox3);
             this.groupBoxCalendario.Controls.Add(this.comboBox4);
             this.groupBoxCalendario.Controls.Add(this.comboBox3);
@@ -421,6 +424,7 @@
             this.groupBoxPeticiones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxPeticiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
             this.groupBoxPeticiones.Controls.Add(this.dataGridViewPeticiones);
             this.groupBoxPeticiones.Location = new System.Drawing.Point(9, 48);
             this.groupBoxPeticiones.Name = "groupBoxPeticiones";
@@ -453,7 +457,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.OliveDrab;
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Controls.Add(this.panel5);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -468,12 +472,12 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.dataGridViewListaEntidad);
-            this.panel4.Location = new System.Drawing.Point(9, 59);
+            this.panel4.Location = new System.Drawing.Point(9, 48);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(589, 479);
+            this.panel4.Size = new System.Drawing.Size(589, 490);
             this.panel4.TabIndex = 8;
             // 
             // label10
@@ -498,6 +502,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewListaEntidad.AutoGenerateColumns = false;
+            this.dataGridViewListaEntidad.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dataGridViewListaEntidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListaEntidad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -512,7 +517,7 @@
             this.dataGridViewListaEntidad.Name = "dataGridViewListaEntidad";
             this.dataGridViewListaEntidad.ReadOnly = true;
             this.dataGridViewListaEntidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewListaEntidad.Size = new System.Drawing.Size(551, 407);
+            this.dataGridViewListaEntidad.Size = new System.Drawing.Size(551, 418);
             this.dataGridViewListaEntidad.TabIndex = 1;
             this.dataGridViewListaEntidad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaEntidad_CellClick);
             // 
@@ -520,7 +525,7 @@
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
             this.panel5.Controls.Add(this.textBoxContraseñaEntidad);
             this.panel5.Controls.Add(this.labelContraseña);
             this.panel5.Controls.Add(this.buttonEditarEquipos);
@@ -543,9 +548,9 @@
             this.panel5.Controls.Add(this.buttonEliminarEntidad);
             this.panel5.Controls.Add(this.labelNombreEntidad);
             this.panel5.Controls.Add(this.buttonEditarEntidad);
-            this.panel5.Location = new System.Drawing.Point(604, 59);
+            this.panel5.Location = new System.Drawing.Point(604, 48);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(292, 479);
+            this.panel5.Size = new System.Drawing.Size(292, 490);
             this.panel5.TabIndex = 7;
             // 
             // textBoxContraseñaEntidad
@@ -570,7 +575,7 @@
             this.buttonEditarEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEditarEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditarEquipos.Location = new System.Drawing.Point(149, 397);
+            this.buttonEditarEquipos.Location = new System.Drawing.Point(149, 408);
             this.buttonEditarEquipos.Name = "buttonEditarEquipos";
             this.buttonEditarEquipos.Size = new System.Drawing.Size(129, 30);
             this.buttonEditarEquipos.TabIndex = 24;
@@ -603,6 +608,7 @@
             this.dataGridViewTelefonos.AllowUserToAddRows = false;
             this.dataGridViewTelefonos.AllowUserToDeleteRows = false;
             this.dataGridViewTelefonos.AutoGenerateColumns = false;
+            this.dataGridViewTelefonos.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dataGridViewTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTelefonos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.raoDataGridViewTextBoxColumn,
@@ -702,7 +708,7 @@
             this.buttonAñadirEntidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAñadirEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAñadirEntidad.Location = new System.Drawing.Point(100, 433);
+            this.buttonAñadirEntidad.Location = new System.Drawing.Point(100, 444);
             this.buttonAñadirEntidad.Name = "buttonAñadirEntidad";
             this.buttonAñadirEntidad.Size = new System.Drawing.Size(86, 30);
             this.buttonAñadirEntidad.TabIndex = 10;
@@ -725,7 +731,7 @@
             this.buttonGuardarEntidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonGuardarEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardarEntidad.Location = new System.Drawing.Point(14, 433);
+            this.buttonGuardarEntidad.Location = new System.Drawing.Point(14, 444);
             this.buttonGuardarEntidad.Name = "buttonGuardarEntidad";
             this.buttonGuardarEntidad.Size = new System.Drawing.Size(84, 30);
             this.buttonGuardarEntidad.TabIndex = 9;
@@ -748,7 +754,7 @@
             this.buttonEliminarEntidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEliminarEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminarEntidad.Location = new System.Drawing.Point(188, 433);
+            this.buttonEliminarEntidad.Location = new System.Drawing.Point(188, 444);
             this.buttonEliminarEntidad.Name = "buttonEliminarEntidad";
             this.buttonEliminarEntidad.Size = new System.Drawing.Size(90, 30);
             this.buttonEliminarEntidad.TabIndex = 8;
@@ -771,7 +777,7 @@
             this.buttonEditarEntidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEditarEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditarEntidad.Location = new System.Drawing.Point(13, 397);
+            this.buttonEditarEntidad.Location = new System.Drawing.Point(13, 408);
             this.buttonEditarEntidad.Name = "buttonEditarEntidad";
             this.buttonEditarEntidad.Size = new System.Drawing.Size(134, 30);
             this.buttonEditarEntidad.TabIndex = 7;
@@ -781,7 +787,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.OliveDrab;
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Controls.Add(this.panel2);
             this.tabPage3.Controls.Add(this.button1);
@@ -797,12 +803,12 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(9, 59);
+            this.panel3.Location = new System.Drawing.Point(9, 48);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(589, 479);
+            this.panel3.Size = new System.Drawing.Size(589, 490);
             this.panel3.TabIndex = 6;
             // 
             // dataGridView1
@@ -813,6 +819,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn1,
@@ -827,7 +834,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(16, 68);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(555, 396);
+            this.dataGridView1.Size = new System.Drawing.Size(555, 407);
             this.dataGridView1.TabIndex = 1;
             // 
             // label1
@@ -847,7 +854,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
             this.panel2.Controls.Add(this.comboBoxAsignadaActividad);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBoxDiasActividad);
@@ -867,9 +874,9 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.buttonEditar);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(604, 59);
+            this.panel2.Location = new System.Drawing.Point(604, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(292, 479);
+            this.panel2.Size = new System.Drawing.Size(292, 490);
             this.panel2.TabIndex = 5;
             // 
             // comboBoxAsignadaActividad
@@ -982,7 +989,7 @@
             this.buttonAñadir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAñadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAñadir.Location = new System.Drawing.Point(16, 398);
+            this.buttonAñadir.Location = new System.Drawing.Point(16, 409);
             this.buttonAñadir.Name = "buttonAñadir";
             this.buttonAñadir.Size = new System.Drawing.Size(84, 30);
             this.buttonAñadir.TabIndex = 10;
@@ -1005,7 +1012,7 @@
             this.buttonGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardar.Location = new System.Drawing.Point(14, 434);
+            this.buttonGuardar.Location = new System.Drawing.Point(14, 445);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(264, 30);
             this.buttonGuardar.TabIndex = 9;
@@ -1029,7 +1036,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEliminar.BackColor = System.Drawing.Color.Red;
             this.buttonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminar.Location = new System.Drawing.Point(193, 398);
+            this.buttonEliminar.Location = new System.Drawing.Point(193, 409);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(86, 30);
             this.buttonEliminar.TabIndex = 8;
@@ -1052,7 +1059,7 @@
             this.buttonEditar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(106, 398);
+            this.buttonEditar.Location = new System.Drawing.Point(106, 409);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(80, 30);
             this.buttonEditar.TabIndex = 7;
@@ -1081,7 +1088,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.OliveDrab;
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.tabPage4.Controls.Add(this.panel7);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -1095,13 +1102,13 @@
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
             this.panel7.Controls.Add(this.dataGridViewInstalaciones);
             this.panel7.Controls.Add(this.buttonEliminarInstalacion);
             this.panel7.Controls.Add(this.buttonAñadirInstalacion);
-            this.panel7.Location = new System.Drawing.Point(9, 59);
+            this.panel7.Location = new System.Drawing.Point(9, 48);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(899, 494);
+            this.panel7.Size = new System.Drawing.Size(899, 505);
             this.panel7.TabIndex = 7;
             // 
             // dataGridViewInstalaciones
@@ -1112,6 +1119,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewInstalaciones.AutoGenerateColumns = false;
+            this.dataGridViewInstalaciones.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dataGridViewInstalaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewInstalaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn2,
@@ -1123,7 +1131,7 @@
             this.dataGridViewInstalaciones.Name = "dataGridViewInstalaciones";
             this.dataGridViewInstalaciones.ReadOnly = true;
             this.dataGridViewInstalaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(869, 413);
+            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(869, 424);
             this.dataGridViewInstalaciones.TabIndex = 2;
             this.dataGridViewInstalaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInstalaciones_CellDoubleClick);
             // 
@@ -1131,7 +1139,7 @@
             // 
             this.buttonEliminarInstalacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEliminarInstalacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminarInstalacion.Location = new System.Drawing.Point(722, 441);
+            this.buttonEliminarInstalacion.Location = new System.Drawing.Point(722, 452);
             this.buttonEliminarInstalacion.Name = "buttonEliminarInstalacion";
             this.buttonEliminarInstalacion.Size = new System.Drawing.Size(161, 39);
             this.buttonEliminarInstalacion.TabIndex = 6;
@@ -1142,7 +1150,7 @@
             // 
             this.buttonAñadirInstalacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAñadirInstalacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAñadirInstalacion.Location = new System.Drawing.Point(564, 441);
+            this.buttonAñadirInstalacion.Location = new System.Drawing.Point(564, 452);
             this.buttonAñadirInstalacion.Name = "buttonAñadirInstalacion";
             this.buttonAñadirInstalacion.Size = new System.Drawing.Size(152, 39);
             this.buttonAñadirInstalacion.TabIndex = 5;
@@ -1164,15 +1172,16 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.radioButtonCalendario);
             this.panel1.Controls.Add(this.radioButtonInstalaciones);
             this.panel1.Controls.Add(this.radioButtonActividades);
             this.panel1.Controls.Add(this.radioButtonEntidades);
             this.panel1.Controls.Add(this.radioButtonHome);
-            this.panel1.Location = new System.Drawing.Point(-3, 11);
+            this.panel1.Location = new System.Drawing.Point(-3, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(932, 65);
             this.panel1.TabIndex = 1;
@@ -1182,7 +1191,7 @@
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.OliveDrab;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(143)))), ((int)(((byte)(67)))));
             this.panel6.Controls.Add(this.buttonMinimizar);
             this.panel6.Controls.Add(this.buttonMax);
             this.panel6.Controls.Add(this.label17);
@@ -1228,7 +1237,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(10, 8);
+            this.label17.Location = new System.Drawing.Point(5, 8);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(102, 17);
             this.label17.TabIndex = 13;
@@ -1241,7 +1250,7 @@
             this.labelHora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHora.ForeColor = System.Drawing.Color.White;
-            this.labelHora.Location = new System.Drawing.Point(570, 8);
+            this.labelHora.Location = new System.Drawing.Point(574, 8);
             this.labelHora.Name = "labelHora";
             this.labelHora.Size = new System.Drawing.Size(46, 16);
             this.labelHora.TabIndex = 12;
@@ -1270,7 +1279,7 @@
             this.labelFecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFecha.ForeColor = System.Drawing.Color.White;
-            this.labelFecha.Location = new System.Drawing.Point(499, 8);
+            this.labelFecha.Location = new System.Drawing.Point(503, 8);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(46, 16);
             this.labelFecha.TabIndex = 11;
@@ -1285,7 +1294,7 @@
             this.radioButtonCalendario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.radioButtonCalendario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButtonCalendario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonCalendario.Location = new System.Drawing.Point(395, 29);
+            this.radioButtonCalendario.Location = new System.Drawing.Point(431, 29);
             this.radioButtonCalendario.Name = "radioButtonCalendario";
             this.radioButtonCalendario.Size = new System.Drawing.Size(95, 30);
             this.radioButtonCalendario.TabIndex = 6;
@@ -1302,7 +1311,7 @@
             this.radioButtonInstalaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.radioButtonInstalaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButtonInstalaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonInstalaciones.Location = new System.Drawing.Point(276, 29);
+            this.radioButtonInstalaciones.Location = new System.Drawing.Point(311, 29);
             this.radioButtonInstalaciones.Name = "radioButtonInstalaciones";
             this.radioButtonInstalaciones.Size = new System.Drawing.Size(113, 30);
             this.radioButtonInstalaciones.TabIndex = 4;
@@ -1319,7 +1328,7 @@
             this.radioButtonActividades.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.radioButtonActividades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButtonActividades.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonActividades.Location = new System.Drawing.Point(170, 29);
+            this.radioButtonActividades.Location = new System.Drawing.Point(204, 29);
             this.radioButtonActividades.Name = "radioButtonActividades";
             this.radioButtonActividades.Size = new System.Drawing.Size(100, 30);
             this.radioButtonActividades.TabIndex = 2;
@@ -1336,7 +1345,7 @@
             this.radioButtonEntidades.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.radioButtonEntidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButtonEntidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonEntidades.Location = new System.Drawing.Point(73, 29);
+            this.radioButtonEntidades.Location = new System.Drawing.Point(106, 29);
             this.radioButtonEntidades.Name = "radioButtonEntidades";
             this.radioButtonEntidades.Size = new System.Drawing.Size(91, 30);
             this.radioButtonEntidades.TabIndex = 1;
@@ -1354,7 +1363,7 @@
             this.radioButtonHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.radioButtonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButtonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonHome.Location = new System.Drawing.Point(5, 29);
+            this.radioButtonHome.Location = new System.Drawing.Point(37, 29);
             this.radioButtonHome.Name = "radioButtonHome";
             this.radioButtonHome.Size = new System.Drawing.Size(62, 30);
             this.radioButtonHome.TabIndex = 0;
@@ -1367,6 +1376,17 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Proyecto2.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // idDataGridViewTextBoxColumn3
             // 
@@ -1682,6 +1702,7 @@
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEquips)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipusActivitat)).EndInit();
@@ -1826,6 +1847,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn idtipusactivitatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numdiesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn assignadaDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
