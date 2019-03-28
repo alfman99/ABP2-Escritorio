@@ -14,12 +14,14 @@ namespace Proyecto2
 {
     public partial class FormInstalacion : Form
     {
-        private INSTALACIONS instalacionDelForm;
+        private INSTALACIONS instalacionModif = null;
+
+        private String mensaje = "";
 
         public FormInstalacion(INSTALACIONS instalacion)
         {
             InitializeComponent();
-            instalacionDelForm = instalacion;
+            instalacionModif = instalacion;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -34,53 +36,24 @@ namespace Proyecto2
 
         private void FormInstalacion_Load(object sender, EventArgs e)
         {
-            if (!(instalacionDelForm == null))
+            if (instalacionModif != null)
             {
-                textBoxNombreInstalacion.Text = instalacionDelForm.nom;
-                textBoxDireccionInstalacion.Text = instalacionDelForm.adreca;
-                bindingSourceEspaciosInstalacion.DataSource = instalacionDelForm.ESPAIS;
-
-                bool i = instalacionDelForm.gestioExterna;
-                if (i == true)
+                textBoxNombreInstalacion.Text = instalacionModif.nom;
+                textBoxDireccionInstalacion.Text = instalacionModif.adreca;
+                if (instalacionModif.gestioExterna == true)
                 {
-                    comboBoxGestionExterna.SelectedIndex = 0;
+                    comboBoxGestionExterna.SelectedItem = "Si";
                 }
                 else
                 {
-                    comboBoxGestionExterna.SelectedIndex = 1;
+                    comboBoxGestionExterna.SelectedItem = "No";
                 }
 
-                // TODO: dd
-                //ArrayList horas = new ArrayList(instalacionDelForm.HORARIS_INSTALACIONS.ToList());
-
-
+                bindingSourceEspaciosInstalacion.DataSource = instalacionModif.ESPAIS.ToList();
                 buttonAñadirInstalacion.Enabled = false;
-
-
             }
             else
             {
-                textBoxNombreEspacio.Enabled = false;
-                textBoxPrecioEspacio.Enabled = false;
-                comboBoxExteriorEspacio.Enabled = false;
-                buttonAñadirEspacio.Enabled = false;
-                buttonEliminarEspacio.Enabled = false;
-
-                comboBoxLunesIni.Enabled = false;
-                comboBoxLunesFin.Enabled = false;
-                comboBoxMartesIni.Enabled = false;
-                comboBoxMartesFin.Enabled = false;
-                comboBoxMiercolesIni.Enabled = false;
-                comboBoxMiercolesFin.Enabled = false;
-                comboBoxJuevesIni.Enabled = false;
-                comboBoxJuevesFin.Enabled = false;
-                comboBoxViernesIni.Enabled = false;
-                comboBoxViernesFin.Enabled = false;
-                comboBoxSabadoFin.Enabled = false;
-                comboBoxSabadoIni.Enabled = false;
-                comboBoxDomingoIni.Enabled = false;
-                comboBoxDomingoFin.Enabled = false;
-
                 buttonGuardarModificacion.Enabled = false;
             }
         }
@@ -90,115 +63,118 @@ namespace Proyecto2
             this.Close();
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void dataGridViewEspaciosInstalacion_SelectionChanged(object sender, EventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            ESPAIS _espai = (ESPAIS)dataGridViewEspaciosInstalacion.Rows[0].DataBoundItem;
+
+            textBoxNombreEspacio.Text = _espai.nom;
+            textBoxPrecioEspacio.Text = _espai.preu.ToString();
+
+            if (_espai.exterior == true)
+            {
+                comboBoxExteriorEspacio.SelectedItem = "Si";
+            }
+            else
+            {
+                comboBoxExteriorEspacio.SelectedItem = "No";
+            }
         }
 
         private void buttonAñadirEspacio_Click(object sender, EventArgs e)
         {
-            int id = instalacionDelForm.id;
+
             bool exterior;
 
-            if (comboBoxExteriorEspacio.SelectedIndex == 1) { exterior = true; }
-            else { exterior = false; }
-
-            if (textBoxNombreEspacio.Text == "")
+            if (!textBoxNombreEspacio.Text.Equals(""))
             {
-                MessageBox.Show("Has de introducir un nombre del espacio");
-                textBoxNombreEspacio.Focus();
-            }
-            else
-            {
-                if (textBoxPrecioEspacio.Text == "")
+                if (!textBoxPrecioEspacio.Text.Equals(""))
                 {
-                    MessageBox.Show("Has de introducir el precio del espacio");
-                    textBoxPrecioEspacio.Focus();
-                }
-                else
-                {
-                    if (comboBoxExteriorEspacio.SelectedIndex == -1)
+                    if (comboBoxExteriorEspacio.SelectedIndex != -1)
                     {
-                        MessageBox.Show("Has de introducir si el espacio es interior o exterior");
-                        comboBoxExteriorEspacio.Focus();
+                        if (comboBoxExteriorEspacio.SelectedItem.Equals("Si"))
+                        {
+                            exterior = true;
+                        }
+                        else
+                        {
+                            exterior = false;
+                        }
+
+                        BD.ORM_ESPAIS.InsertESPAI(textBoxNombreEspacio.Text, Double.Parse(textBoxPrecioEspacio.Text), exterior, instalacionModif.id);
+                        refresGridEspais();
                     }
                     else
                     {
-                        BD.ORM_ESPAIS.InsertESPAI(textBoxNombreEspacio.Text, double.Parse(textBoxPrecioEspacio.Text), exterior, instalacionDelForm.id);
-                        MessageBox.Show("Se ha añadido el espacio satisfactoriamente", "ATENCION", MessageBoxButtons.OK);
+                        MessageBox.Show("Tienes que seleccionar si es exterior o no");
                     }
                 }
+                else
+                {
+                    MessageBox.Show("El precio no puede estar vacio");
+                }
             }
-
-            dataGridViewEspaciosInstalacion.DataSource = null;
-            dataGridViewEspaciosInstalacion.DataSource = instalacionDelForm.ESPAIS.ToList();
-        }
-
-        private void buttonAñadirInstalacion_Click(object sender, EventArgs e)
-        {
-            bool externo;
-
-            if (comboBoxGestionExterna.SelectedIndex == 0)
+            else
             {
-                externo = true;
+                MessageBox.Show("El nombre no puede estar vacio");
             }
-            else { externo = false; }
-
-            BD.ORM_INSTALACION.InsertINSTALACION(textBoxNombreInstalacion.Text, externo, textBoxDireccionInstalacion.Text);
-
-            MessageBox.Show("Se ha añadido la instalacion satisfactoriamente. \n Recuerda agregar los horarios y los espacios de esta entidad.", "CORRECTO", MessageBoxButtons.OK);
-
-            this.Close();
         }
 
         private void buttonEliminarEspacio_Click(object sender, EventArgs e)
         {
-            ESPAIS _espais = (ESPAIS)dataGridViewEspaciosInstalacion.CurrentRow.DataBoundItem;
+            ESPAIS _espai = (ESPAIS)dataGridViewEspaciosInstalacion.Rows[0].DataBoundItem;
 
-            DialogResult dialogResult = MessageBox.Show("Está seguro que quiere borrar " + _espais.nom + " ?", "Atención!", MessageBoxButtons.YesNo);
-
-            if (dialogResult == DialogResult.Yes)
+            if (MessageBox.Show("Está seguro de que quiere borrar ese espacio?", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
-                BD.ORM_ESPAIS.DeleteESPAI(_espais);
-                MessageBox.Show("Se ha eliminado el espacio satisfactoriamente", "ATENCION", MessageBoxButtons.OK);
+                BD.ORM_ESPAIS.DeleteESPAI(_espai);
+                refresGridEspais();
             }
-            else
-            {
-                MessageBox.Show("Operacion cancelada");
-            }
-
-            dataGridViewEspaciosInstalacion.DataSource = null;
-            dataGridViewEspaciosInstalacion.DataSource = instalacionDelForm.ESPAIS.ToList();
         }
 
-        private void buttonGuardarModificacion_Click(object sender, EventArgs e)
+        private void refresGridEspais()
         {
-            bool externo;
+            bindingSourceEspaciosInstalacion.DataSource = instalacionModif.ESPAIS.ToList();
 
-            if (comboBoxGestionExterna.SelectedIndex == 0)
+            if (!mensaje.Equals(""))
             {
-                externo = true;
+                MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else { externo = false; }
+        }
 
-            BD.ORM_INSTALACION.UpdateINSTALACION(instalacionDelForm.id, textBoxNombreInstalacion.Text, externo, textBoxDireccionInstalacion.Text);
-            if (comboBoxMiercolesFin.SelectedIndex == -1)
+        private void buttonAñadirInstalacion_Click(object sender, EventArgs e)
+        {
+            bool gestExtern;
+
+            if (!textBoxNombreInstalacion.Text.Equals(""))
             {
-                MessageBox.Show("Has de añadir el horario", "ATENCION", MessageBoxButtons.OK);
+                if (!textBoxDireccionInstalacion.Text.Equals(""))
+                {
+                    if (comboBoxGestionExterna.SelectedIndex != -1)
+                    {
+                        if (comboBoxGestionExterna.SelectedItem.Equals("Si"))
+                        {
+                            gestExtern = true;
+                        }
+                        else
+                        {
+                            gestExtern = false;
+                        }
+
+                        //AQUI TE HAS QUEDAO
+                        Console.WriteLine("ok");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecciona si es de gestion externa o no");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona una direccion de instalacion");
+                }
             }
             else
             {
-                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxLunesIni.Text), TimeSpan.Parse(comboBoxLunesFin.Text), instalacionDelForm.id, 0);
-                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxMartesIni.Text), TimeSpan.Parse(comboBoxMartesFin.Text), instalacionDelForm.id, 1);
-                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxMiercolesIni.Text), TimeSpan.Parse(comboBoxMiercolesFin.Text), instalacionDelForm.id, 2);
-                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxJuevesIni.Text), TimeSpan.Parse(comboBoxJuevesFin.Text), instalacionDelForm.id, 3);
-                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxViernesIni.Text), TimeSpan.Parse(comboBoxViernesFin.Text), instalacionDelForm.id, 4);
-                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxSabadoIni.Text), TimeSpan.Parse(comboBoxSabadoFin.Text), instalacionDelForm.id, 5);
-                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxDomingoIni.Text), TimeSpan.Parse(comboBoxDomingoFin.Text), instalacionDelForm.id, 6);
-
-                MessageBox.Show("Datos guardados satisfactoriamente.", "CORRECTO", MessageBoxButtons.OK);
-                this.Close();
+                MessageBox.Show("Selecciona el nombre de la instalacion");
             }
         }
     }

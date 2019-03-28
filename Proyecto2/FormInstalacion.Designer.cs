@@ -81,12 +81,14 @@
             this.label25 = new System.Windows.Forms.Label();
             this.comboBoxLunesFin = new System.Windows.Forms.ComboBox();
             this.comboBoxLunesIni = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exteriorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bindingSourceEspaciosInstalacion = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEspaciosInstalacion)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaciosInstalacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,7 +130,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(155, 469);
+            this.label30.Location = new System.Drawing.Point(156, 304);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(37, 15);
             this.label30.TabIndex = 37;
@@ -139,6 +141,7 @@
             this.comboBoxDomingoFin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDomingoFin.FormattingEnabled = true;
             this.comboBoxDomingoFin.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -187,7 +190,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxDomingoFin.Location = new System.Drawing.Point(216, 468);
+            this.comboBoxDomingoFin.Location = new System.Drawing.Point(217, 303);
             this.comboBoxDomingoFin.Name = "comboBoxDomingoFin";
             this.comboBoxDomingoFin.Size = new System.Drawing.Size(84, 21);
             this.comboBoxDomingoFin.TabIndex = 36;
@@ -197,6 +200,7 @@
             this.comboBoxDomingoIni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDomingoIni.FormattingEnabled = true;
             this.comboBoxDomingoIni.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -245,7 +249,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxDomingoIni.Location = new System.Drawing.Point(41, 468);
+            this.comboBoxDomingoIni.Location = new System.Drawing.Point(42, 303);
             this.comboBoxDomingoIni.Name = "comboBoxDomingoIni";
             this.comboBoxDomingoIni.Size = new System.Drawing.Size(84, 21);
             this.comboBoxDomingoIni.TabIndex = 35;
@@ -254,7 +258,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(38, 448);
+            this.label31.Location = new System.Drawing.Point(39, 283);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(58, 15);
             this.label31.TabIndex = 34;
@@ -264,7 +268,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(155, 425);
+            this.label28.Location = new System.Drawing.Point(156, 260);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(37, 15);
             this.label28.TabIndex = 33;
@@ -275,6 +279,7 @@
             this.comboBoxSabadoFin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSabadoFin.FormattingEnabled = true;
             this.comboBoxSabadoFin.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -323,7 +328,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxSabadoFin.Location = new System.Drawing.Point(216, 424);
+            this.comboBoxSabadoFin.Location = new System.Drawing.Point(217, 259);
             this.comboBoxSabadoFin.Name = "comboBoxSabadoFin";
             this.comboBoxSabadoFin.Size = new System.Drawing.Size(84, 21);
             this.comboBoxSabadoFin.TabIndex = 32;
@@ -333,6 +338,7 @@
             this.comboBoxSabadoIni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSabadoIni.FormattingEnabled = true;
             this.comboBoxSabadoIni.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -381,7 +387,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxSabadoIni.Location = new System.Drawing.Point(41, 424);
+            this.comboBoxSabadoIni.Location = new System.Drawing.Point(42, 259);
             this.comboBoxSabadoIni.Name = "comboBoxSabadoIni";
             this.comboBoxSabadoIni.Size = new System.Drawing.Size(84, 21);
             this.comboBoxSabadoIni.TabIndex = 31;
@@ -390,7 +396,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(38, 404);
+            this.label29.Location = new System.Drawing.Point(39, 239);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(50, 15);
             this.label29.TabIndex = 30;
@@ -400,7 +406,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(155, 380);
+            this.label26.Location = new System.Drawing.Point(156, 215);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(37, 15);
             this.label26.TabIndex = 29;
@@ -411,6 +417,7 @@
             this.comboBoxViernesFin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxViernesFin.FormattingEnabled = true;
             this.comboBoxViernesFin.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -459,7 +466,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxViernesFin.Location = new System.Drawing.Point(216, 379);
+            this.comboBoxViernesFin.Location = new System.Drawing.Point(217, 214);
             this.comboBoxViernesFin.Name = "comboBoxViernesFin";
             this.comboBoxViernesFin.Size = new System.Drawing.Size(84, 21);
             this.comboBoxViernesFin.TabIndex = 28;
@@ -469,6 +476,7 @@
             this.comboBoxViernesIni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxViernesIni.FormattingEnabled = true;
             this.comboBoxViernesIni.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -517,7 +525,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxViernesIni.Location = new System.Drawing.Point(41, 379);
+            this.comboBoxViernesIni.Location = new System.Drawing.Point(42, 214);
             this.comboBoxViernesIni.Name = "comboBoxViernesIni";
             this.comboBoxViernesIni.Size = new System.Drawing.Size(84, 21);
             this.comboBoxViernesIni.TabIndex = 27;
@@ -526,7 +534,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(38, 359);
+            this.label27.Location = new System.Drawing.Point(39, 194);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(48, 15);
             this.label27.TabIndex = 26;
@@ -536,7 +544,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(155, 337);
+            this.label23.Location = new System.Drawing.Point(156, 172);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(37, 15);
             this.label23.TabIndex = 25;
@@ -547,6 +555,7 @@
             this.comboBoxJuevesFin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxJuevesFin.FormattingEnabled = true;
             this.comboBoxJuevesFin.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -595,7 +604,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxJuevesFin.Location = new System.Drawing.Point(216, 336);
+            this.comboBoxJuevesFin.Location = new System.Drawing.Point(217, 171);
             this.comboBoxJuevesFin.Name = "comboBoxJuevesFin";
             this.comboBoxJuevesFin.Size = new System.Drawing.Size(84, 21);
             this.comboBoxJuevesFin.TabIndex = 24;
@@ -605,6 +614,7 @@
             this.comboBoxJuevesIni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxJuevesIni.FormattingEnabled = true;
             this.comboBoxJuevesIni.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -653,7 +663,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxJuevesIni.Location = new System.Drawing.Point(41, 336);
+            this.comboBoxJuevesIni.Location = new System.Drawing.Point(42, 171);
             this.comboBoxJuevesIni.Name = "comboBoxJuevesIni";
             this.comboBoxJuevesIni.Size = new System.Drawing.Size(84, 21);
             this.comboBoxJuevesIni.TabIndex = 23;
@@ -662,7 +672,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(38, 316);
+            this.label24.Location = new System.Drawing.Point(39, 151);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(45, 15);
             this.label24.TabIndex = 22;
@@ -672,7 +682,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(155, 293);
+            this.label21.Location = new System.Drawing.Point(156, 128);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(37, 15);
             this.label21.TabIndex = 21;
@@ -683,6 +693,7 @@
             this.comboBoxMiercolesFin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMiercolesFin.FormattingEnabled = true;
             this.comboBoxMiercolesFin.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -731,7 +742,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxMiercolesFin.Location = new System.Drawing.Point(216, 292);
+            this.comboBoxMiercolesFin.Location = new System.Drawing.Point(217, 127);
             this.comboBoxMiercolesFin.Name = "comboBoxMiercolesFin";
             this.comboBoxMiercolesFin.Size = new System.Drawing.Size(84, 21);
             this.comboBoxMiercolesFin.TabIndex = 20;
@@ -741,6 +752,7 @@
             this.comboBoxMiercolesIni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMiercolesIni.FormattingEnabled = true;
             this.comboBoxMiercolesIni.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -789,7 +801,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxMiercolesIni.Location = new System.Drawing.Point(41, 292);
+            this.comboBoxMiercolesIni.Location = new System.Drawing.Point(42, 127);
             this.comboBoxMiercolesIni.Name = "comboBoxMiercolesIni";
             this.comboBoxMiercolesIni.Size = new System.Drawing.Size(84, 21);
             this.comboBoxMiercolesIni.TabIndex = 19;
@@ -798,7 +810,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(38, 272);
+            this.label22.Location = new System.Drawing.Point(39, 107);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(61, 15);
             this.label22.TabIndex = 18;
@@ -808,7 +820,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(155, 248);
+            this.label19.Location = new System.Drawing.Point(156, 83);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(37, 15);
             this.label19.TabIndex = 17;
@@ -819,6 +831,7 @@
             this.comboBoxMartesFin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMartesFin.FormattingEnabled = true;
             this.comboBoxMartesFin.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -867,7 +880,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxMartesFin.Location = new System.Drawing.Point(216, 247);
+            this.comboBoxMartesFin.Location = new System.Drawing.Point(217, 82);
             this.comboBoxMartesFin.Name = "comboBoxMartesFin";
             this.comboBoxMartesFin.Size = new System.Drawing.Size(84, 21);
             this.comboBoxMartesFin.TabIndex = 16;
@@ -877,6 +890,7 @@
             this.comboBoxMartesIni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMartesIni.FormattingEnabled = true;
             this.comboBoxMartesIni.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -925,7 +939,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxMartesIni.Location = new System.Drawing.Point(41, 247);
+            this.comboBoxMartesIni.Location = new System.Drawing.Point(42, 82);
             this.comboBoxMartesIni.Name = "comboBoxMartesIni";
             this.comboBoxMartesIni.Size = new System.Drawing.Size(84, 21);
             this.comboBoxMartesIni.TabIndex = 15;
@@ -934,7 +948,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(38, 227);
+            this.label20.Location = new System.Drawing.Point(39, 62);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(45, 15);
             this.label20.TabIndex = 14;
@@ -944,7 +958,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(38, 183);
+            this.label18.Location = new System.Drawing.Point(39, 18);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(41, 15);
             this.label18.TabIndex = 4;
@@ -954,7 +968,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(85, 172);
+            this.label17.Location = new System.Drawing.Point(86, 7);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(161, 17);
             this.label17.TabIndex = 3;
@@ -987,6 +1001,7 @@
             this.dataGridViewEspaciosInstalacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEspaciosInstalacion.Size = new System.Drawing.Size(279, 150);
             this.dataGridViewEspaciosInstalacion.TabIndex = 50;
+            this.dataGridViewEspaciosInstalacion.SelectionChanged += new System.EventHandler(this.dataGridViewEspaciosInstalacion_SelectionChanged);
             // 
             // label2
             // 
@@ -1092,7 +1107,6 @@
             this.buttonGuardarModificacion.TabIndex = 62;
             this.buttonGuardarModificacion.Text = "Guardar Modificacion";
             this.buttonGuardarModificacion.UseVisualStyleBackColor = true;
-            this.buttonGuardarModificacion.Click += new System.EventHandler(this.buttonGuardarModificacion_Click);
             // 
             // buttonCancelar
             // 
@@ -1113,7 +1127,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(674, 25);
             this.panel1.TabIndex = 64;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // labelFormInstalacionTitulo
             // 
@@ -1167,7 +1180,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(155, 204);
+            this.label25.Location = new System.Drawing.Point(156, 39);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(37, 15);
             this.label25.TabIndex = 13;
@@ -1178,6 +1191,7 @@
             this.comboBoxLunesFin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLunesFin.FormattingEnabled = true;
             this.comboBoxLunesFin.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -1226,7 +1240,7 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxLunesFin.Location = new System.Drawing.Point(216, 203);
+            this.comboBoxLunesFin.Location = new System.Drawing.Point(217, 38);
             this.comboBoxLunesFin.Name = "comboBoxLunesFin";
             this.comboBoxLunesFin.Size = new System.Drawing.Size(84, 21);
             this.comboBoxLunesFin.TabIndex = 12;
@@ -1236,6 +1250,7 @@
             this.comboBoxLunesIni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLunesIni.FormattingEnabled = true;
             this.comboBoxLunesIni.Items.AddRange(new object[] {
+            "CERRADO",
             "00:00",
             "00:30",
             "01:00",
@@ -1284,10 +1299,47 @@
             "22:30",
             "23:00",
             "23:30"});
-            this.comboBoxLunesIni.Location = new System.Drawing.Point(41, 203);
+            this.comboBoxLunesIni.Location = new System.Drawing.Point(42, 38);
             this.comboBoxLunesIni.Name = "comboBoxLunesIni";
             this.comboBoxLunesIni.Size = new System.Drawing.Size(84, 21);
             this.comboBoxLunesIni.TabIndex = 11;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.comboBoxViernesIni);
+            this.panel2.Controls.Add(this.comboBoxViernesFin);
+            this.panel2.Controls.Add(this.label27);
+            this.panel2.Controls.Add(this.label26);
+            this.panel2.Controls.Add(this.label23);
+            this.panel2.Controls.Add(this.label29);
+            this.panel2.Controls.Add(this.comboBoxJuevesFin);
+            this.panel2.Controls.Add(this.comboBoxSabadoIni);
+            this.panel2.Controls.Add(this.comboBoxJuevesIni);
+            this.panel2.Controls.Add(this.comboBoxSabadoFin);
+            this.panel2.Controls.Add(this.label24);
+            this.panel2.Controls.Add(this.label28);
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.label31);
+            this.panel2.Controls.Add(this.comboBoxMiercolesFin);
+            this.panel2.Controls.Add(this.comboBoxDomingoIni);
+            this.panel2.Controls.Add(this.comboBoxMiercolesIni);
+            this.panel2.Controls.Add(this.comboBoxDomingoFin);
+            this.panel2.Controls.Add(this.label22);
+            this.panel2.Controls.Add(this.label30);
+            this.panel2.Controls.Add(this.label19);
+            this.panel2.Controls.Add(this.comboBoxMartesFin);
+            this.panel2.Controls.Add(this.label18);
+            this.panel2.Controls.Add(this.comboBoxMartesIni);
+            this.panel2.Controls.Add(this.comboBoxLunesIni);
+            this.panel2.Controls.Add(this.label20);
+            this.panel2.Controls.Add(this.comboBoxLunesFin);
+            this.panel2.Controls.Add(this.label25);
+            this.panel2.Location = new System.Drawing.Point(9, 163);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(331, 343);
+            this.panel2.TabIndex = 67;
             // 
             // nomDataGridViewTextBoxColumn
             // 
@@ -1324,6 +1376,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 518);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.comboBoxGestionExterna);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
@@ -1345,35 +1398,6 @@
             this.Controls.Add(this.textBoxNombreInstalacion);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.label33);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.comboBoxLunesIni);
-            this.Controls.Add(this.comboBoxLunesFin);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.comboBoxMartesIni);
-            this.Controls.Add(this.comboBoxMartesFin);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label30);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.comboBoxDomingoFin);
-            this.Controls.Add(this.comboBoxMiercolesIni);
-            this.Controls.Add(this.comboBoxDomingoIni);
-            this.Controls.Add(this.comboBoxMiercolesFin);
-            this.Controls.Add(this.label31);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label28);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.comboBoxSabadoFin);
-            this.Controls.Add(this.comboBoxJuevesIni);
-            this.Controls.Add(this.comboBoxSabadoIni);
-            this.Controls.Add(this.comboBoxJuevesFin);
-            this.Controls.Add(this.label29);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.label27);
-            this.Controls.Add(this.comboBoxViernesFin);
-            this.Controls.Add(this.comboBoxViernesIni);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormInstalacion";
@@ -1383,6 +1407,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEspaciosInstalacion)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaciosInstalacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1446,5 +1472,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox comboBoxLunesFin;
         private System.Windows.Forms.ComboBox comboBoxLunesIni;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -601,5 +601,39 @@ namespace Proyecto2
         {
 
         }
+
+        private void comboBoxHorariosEspais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            TimeSpan inici = TimeSpan.Parse("00:00:00");
+            TimeSpan final = TimeSpan.Parse("00:00:00");
+
+            List<HORARIS_INSTALACIONS> _horaris_instalacions = BD.ORM_HORARIS_INSTALACIONS.SelectAllHORARIS_INSTALACIONS(ref mensaje);
+
+            ESPAIS _espai = (ESPAIS)comboBoxHorariosEspais.SelectedItem;
+
+
+
+            foreach (var item in _horaris_instalacions)
+            {
+                if(item.id_instalacio.Equals(_espai.INSTALACIONS.id))
+                {
+                    inici = item.hora_inici;
+                    final = item.hora_fi;
+                }
+            }
+
+            Console.WriteLine(inici);
+            Console.WriteLine(final);
+        }
+
+        private void buttonMofificarInstalacion_Click(object sender, EventArgs e)
+        {
+            INSTALACIONS instalacionClick = (INSTALACIONS)dataGridViewInstalaciones.SelectedRows[0].DataBoundItem;
+
+            FormInstalacion formInstalacion = new FormInstalacion(instalacionClick);
+
+            formInstalacion.ShowDialog();
+        }
     }
 }
