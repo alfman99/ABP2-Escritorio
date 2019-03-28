@@ -340,6 +340,7 @@ namespace Proyecto2
                 textBoxContraseñaEntidad.Clear();
 
                 //hide todo lo del telefono de la entidad
+                labeltelefonos.Hide();
                 dataGridViewTelefonos.Hide();
                 buttonAñadirTel.Hide();
                 buttonEliminarTel.Hide();
@@ -348,6 +349,7 @@ namespace Proyecto2
                 MessageBox.Show("Datos guardados correctamente.", "CORRECTO", MessageBoxButtons.OK);
 
                 //habilitamos botones
+                
                 buttonAñadirEntidad.Enabled = true;
                 buttonEliminarEntidad.Enabled = true;
                 buttonGuardarEntidad.Enabled = false;
@@ -591,6 +593,11 @@ namespace Proyecto2
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
         {
 
         }

@@ -61,10 +61,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewEspaciosInstalacion = new System.Windows.Forms.DataGridView();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exteriorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.bindingSourceEspaciosInstalacion = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -85,9 +81,13 @@
             this.label25 = new System.Windows.Forms.Label();
             this.comboBoxLunesFin = new System.Windows.Forms.ComboBox();
             this.comboBoxLunesIni = new System.Windows.Forms.ComboBox();
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exteriorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bindingSourceEspaciosInstalacion = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEspaciosInstalacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaciosInstalacion)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaciosInstalacion)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxDireccionInstalacion
@@ -988,36 +988,6 @@
             this.dataGridViewEspaciosInstalacion.Size = new System.Drawing.Size(279, 150);
             this.dataGridViewEspaciosInstalacion.TabIndex = 50;
             // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // preuDataGridViewTextBoxColumn
-            // 
-            this.preuDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.preuDataGridViewTextBoxColumn.DataPropertyName = "preu";
-            this.preuDataGridViewTextBoxColumn.HeaderText = "preu";
-            this.preuDataGridViewTextBoxColumn.Name = "preuDataGridViewTextBoxColumn";
-            this.preuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.preuDataGridViewTextBoxColumn.Width = 53;
-            // 
-            // exteriorDataGridViewCheckBoxColumn
-            // 
-            this.exteriorDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.exteriorDataGridViewCheckBoxColumn.DataPropertyName = "exterior";
-            this.exteriorDataGridViewCheckBoxColumn.HeaderText = "exterior";
-            this.exteriorDataGridViewCheckBoxColumn.Name = "exteriorDataGridViewCheckBoxColumn";
-            this.exteriorDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.exteriorDataGridViewCheckBoxColumn.Width = 47;
-            // 
-            // bindingSourceEspaciosInstalacion
-            // 
-            this.bindingSourceEspaciosInstalacion.DataSource = typeof(Proyecto2.ESPAIS);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1319,6 +1289,36 @@
             this.comboBoxLunesIni.Size = new System.Drawing.Size(84, 21);
             this.comboBoxLunesIni.TabIndex = 11;
             // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // preuDataGridViewTextBoxColumn
+            // 
+            this.preuDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.preuDataGridViewTextBoxColumn.DataPropertyName = "preu";
+            this.preuDataGridViewTextBoxColumn.HeaderText = "preu";
+            this.preuDataGridViewTextBoxColumn.Name = "preuDataGridViewTextBoxColumn";
+            this.preuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.preuDataGridViewTextBoxColumn.Width = 53;
+            // 
+            // exteriorDataGridViewCheckBoxColumn
+            // 
+            this.exteriorDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.exteriorDataGridViewCheckBoxColumn.DataPropertyName = "exterior";
+            this.exteriorDataGridViewCheckBoxColumn.HeaderText = "exterior";
+            this.exteriorDataGridViewCheckBoxColumn.Name = "exteriorDataGridViewCheckBoxColumn";
+            this.exteriorDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.exteriorDataGridViewCheckBoxColumn.Width = 47;
+            // 
+            // bindingSourceEspaciosInstalacion
+            // 
+            this.bindingSourceEspaciosInstalacion.DataSource = typeof(Proyecto2.ESPAIS);
+            // 
             // FormInstalacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1374,15 +1374,16 @@
             this.Controls.Add(this.label27);
             this.Controls.Add(this.comboBoxViernesFin);
             this.Controls.Add(this.comboBoxViernesIni);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormInstalacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Instalacion";
             this.Load += new System.EventHandler(this.FormInstalacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEspaciosInstalacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaciosInstalacion)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaciosInstalacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

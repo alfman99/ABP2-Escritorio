@@ -488,6 +488,7 @@
             this.label10.Size = new System.Drawing.Size(297, 39);
             this.label10.TabIndex = 0;
             this.label10.Text = "Lista de Entidades";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // dataGridViewListaEntidad
             // 
@@ -808,6 +809,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1097,7 +1101,7 @@
             this.panel7.Controls.Add(this.buttonAñadirInstalacion);
             this.panel7.Location = new System.Drawing.Point(9, 59);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(899, 479);
+            this.panel7.Size = new System.Drawing.Size(899, 494);
             this.panel7.TabIndex = 7;
             // 
             // dataGridViewInstalaciones
@@ -1119,7 +1123,7 @@
             this.dataGridViewInstalaciones.Name = "dataGridViewInstalaciones";
             this.dataGridViewInstalaciones.ReadOnly = true;
             this.dataGridViewInstalaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(869, 398);
+            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(869, 413);
             this.dataGridViewInstalaciones.TabIndex = 2;
             this.dataGridViewInstalaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInstalaciones_CellDoubleClick);
             // 
@@ -1127,7 +1131,7 @@
             // 
             this.buttonEliminarInstalacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEliminarInstalacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminarInstalacion.Location = new System.Drawing.Point(722, 426);
+            this.buttonEliminarInstalacion.Location = new System.Drawing.Point(722, 441);
             this.buttonEliminarInstalacion.Name = "buttonEliminarInstalacion";
             this.buttonEliminarInstalacion.Size = new System.Drawing.Size(161, 39);
             this.buttonEliminarInstalacion.TabIndex = 6;
@@ -1138,7 +1142,7 @@
             // 
             this.buttonAñadirInstalacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAñadirInstalacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAñadirInstalacion.Location = new System.Drawing.Point(564, 426);
+            this.buttonAñadirInstalacion.Location = new System.Drawing.Point(564, 441);
             this.buttonAñadirInstalacion.Name = "buttonAñadirInstalacion";
             this.buttonAñadirInstalacion.Size = new System.Drawing.Size(152, 39);
             this.buttonAñadirInstalacion.TabIndex = 5;
@@ -1168,7 +1172,7 @@
             this.panel1.Controls.Add(this.radioButtonActividades);
             this.panel1.Controls.Add(this.radioButtonEntidades);
             this.panel1.Controls.Add(this.radioButtonHome);
-            this.panel1.Location = new System.Drawing.Point(-3, 21);
+            this.panel1.Location = new System.Drawing.Point(-3, 11);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(932, 65);
             this.panel1.TabIndex = 1;
