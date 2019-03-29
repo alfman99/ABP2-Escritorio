@@ -129,6 +129,7 @@
             this.Sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domingo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.buttonMinimizar = new System.Windows.Forms.Button();
             this.buttonMax = new System.Windows.Forms.Button();
@@ -143,7 +144,6 @@
             this.radioButtonHome = new System.Windows.Forms.RadioButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bindingSourceListaActividades = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -167,9 +167,9 @@
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceListaActividades)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -185,7 +185,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(924, 587);
             this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -234,7 +233,6 @@
             this.label10.Size = new System.Drawing.Size(297, 39);
             this.label10.TabIndex = 0;
             this.label10.Text = "Lista de Entidades";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // dataGridViewListaEntidad
             // 
@@ -261,7 +259,7 @@
             this.dataGridViewListaEntidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaEntidad.Size = new System.Drawing.Size(551, 418);
             this.dataGridViewListaEntidad.TabIndex = 1;
-            this.dataGridViewListaEntidad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaEntidad_CellClick);
+            
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -312,7 +310,6 @@
             // bindingSourceListaEntidades
             // 
             this.bindingSourceListaEntidades.DataSource = typeof(Proyecto2.ENTITATS);
-            this.bindingSourceListaEntidades.CurrentChanged += new System.EventHandler(this.bindingSourceListaEntidades_CurrentChanged);
             // 
             // panel5
             // 
@@ -1255,6 +1252,16 @@
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Proyecto2.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1449,16 +1456,6 @@
             // 
             this.bindingSourceListaActividades.DataSource = typeof(Proyecto2.ACTIVITATS);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Proyecto2.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1501,10 +1498,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceListaActividades)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

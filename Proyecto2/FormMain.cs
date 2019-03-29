@@ -28,6 +28,8 @@ namespace Proyecto2
         private int idEntidad = 0;
         private int idActDem = 0;
         String mensaje = "";
+        
+        #region control de tabs
 
         private void radioButtonHome_CheckedChanged(object sender, EventArgs e)
         {
@@ -96,6 +98,10 @@ namespace Proyecto2
             buttonEditarEquipos.Enabled = false;
         }
 
+        #endregion
+
+        #region botones de ventana
+
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -138,6 +144,9 @@ namespace Proyecto2
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        #endregion
+
+        #region entidades
 
         private void buttonAñadirTel_Click(object sender, EventArgs e)
         {
@@ -157,79 +166,7 @@ namespace Proyecto2
 
         private void buttonEditarEntidad_Click(object sender, EventArgs e)
         {
-            if (dataGridViewListaEntidad.SelectedRows.Count != 0)
-            {
-                //deshabilitamos los botones no necesarios y habilitamos el guardar
-                buttonAñadirEntidad.Enabled = false;
-                buttonEliminarEntidad.Enabled = false;
-                buttonEditarEquipos.Enabled = true;
-                buttonGuardarEntidad.Enabled = true;
-
-                //editamos
-                ENTITATS _entidad = (ENTITATS)dataGridViewListaEntidad.CurrentRow.DataBoundItem;
-
-                labeltelefonos.Show();
-
-                dataGridViewTelefonos.Show();
-                bindingSourceListaTelefonos.DataSource = _entidad.TELEFONS.ToList();
-
-                buttonAñadirTel.Show();
-                buttonEliminarTel.Show();
-
-                textBoxNombreEntidad.Text = _entidad.nom;
-                comboBoxTemporadaEntidad.Text = _entidad.temporada;
-                textBoxDireccionEntidad.Text = _entidad.adreca;
-                textBoxNifEntidad.Text = _entidad.NIF;
-                textBoxCorreoEntidad.Text = _entidad.correu;
-                textBoxContraseñaEntidad.Text = _entidad.password;
-                idEntidad = _entidad.id;
-
-                buttonGuardarEntidad.Focus();
-
-            }
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            FormInstalacion I = new FormInstalacion(null);
-            I.ShowDialog();
-
-        }
-
-        private void bindingSourceListaEntidades_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-            bindingSourceListaEntidades.DataSource = BD.ORM_ENTITATS.SelectAllENTITATS(ref mensaje);
-            bindingSourceListaInstalaciones.DataSource = BD.ORM_INSTALACION.SelectAllINSTALACION(ref mensaje);
-            bindingSourceListaActividades.DataSource = BD.ORM_ACTIVITATS.SelectAllACTIVITATS(ref mensaje);
-            bindingSourceActivitatsDemandades.DataSource = BD.ORM_ACTIVITATS_DEMANADES.SelectAllACTIVITATS(ref mensaje);
-            bindingSourceEquips.DataSource = BD.ORM_EQUIPS.SelectAllEQUIPS(ref mensaje);
-            bindingSourceEspais.DataSource = BD.ORM_ESPAIS.SelectAllESPAIS(ref mensaje);
-            bindingSourceTipusActivitat.DataSource = BD.ORM_TIPUS_ACTIVITAT.SelectAllTIPUS_ACTIVITAT(ref mensaje);
-
-            comboBoxTiposActividad.DataSource = BD.ORM_TIPUS_ACTIVITAT.SelectAllTIPUS_ACTIVITAT(ref mensaje);
-            comboBoxTiposActividad.DisplayMember = "nom";
-
-            comboBoxEspacioActividad.DataSource = BD.ORM_ESPAIS.SelectAllESPAIS(ref mensaje);
-            comboBoxEspacioActividad.DisplayMember = "nom";
-
-            comboBoxEquipoActividad.DataSource = BD.ORM_EQUIPS.SelectAllEQUIPS(ref mensaje);
-            comboBoxEquipoActividad.DisplayMember = "nom";
-
-            if (!mensaje.Equals(""))
-            {
-                DialogResult a = MessageBox.Show(mensaje);
-                if (a == DialogResult.OK)
-                {
-                    this.Close();
-                }
-            }
+            mostrarInfoEntidad();
         }
 
         private void buttonAñadirEntidad_Click(object sender, EventArgs e)
@@ -306,16 +243,6 @@ namespace Proyecto2
             }
         }
 
-        private void dataGridViewListaEntidad_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //ENTITATS entidad = (ENTITATS)dataGridViewListaEntidad.SelectedRows[0].DataBoundItem;
-            //textBoxNombreEntidad.Text = entidad.nom;
-            //comboBoxTemporadaEntidad.Text = entidad.temporada;
-            //textBoxDireccionEntidad.Text = entidad.adreca;
-            //textBoxNifEntidad.Text = entidad.NIF;
-            //textBoxCorreoEntidad.Text = entidad.correu;
-        }
-
         private void buttonGuardarEntidad_Click(object sender, EventArgs e)
         {
             if (dataGridViewListaEntidad.CurrentRow.Selected == true)
@@ -349,7 +276,7 @@ namespace Proyecto2
                 MessageBox.Show("Datos guardados correctamente.", "CORRECTO", MessageBoxButtons.OK);
 
                 //habilitamos botones
-                
+
                 buttonAñadirEntidad.Enabled = true;
                 buttonEliminarEntidad.Enabled = true;
                 buttonGuardarEntidad.Enabled = false;
@@ -375,21 +302,6 @@ namespace Proyecto2
 
             dataGridViewTelefonos.DataSource = null;
             dataGridViewTelefonos.DataSource = _entidad.TELEFONS.ToList();
-        }
-
-        private void refrescarActivitatsDemanades()
-        {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = BD.ORM_ACTIVITATS_DEMANADES.SelectAllACTIVITATS(ref mensaje);
-        }
-
-        private void dataGridViewInstalaciones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            INSTALACIONS instalacionClick = (INSTALACIONS)dataGridViewInstalaciones.SelectedRows[0].DataBoundItem;
-
-            FormInstalacion formInstalacion = new FormInstalacion(instalacionClick);
-
-            formInstalacion.ShowDialog();
         }
 
         private void buttonEliminarEntidad_Click(object sender, EventArgs e)
@@ -432,6 +344,147 @@ namespace Proyecto2
                 BD.ORM_TELEFONS.DeleteTELEFON(_telefon);
                 refrescarListaTelefonos();
             }
+        }
+
+        public void mostrarInfoEntidad()
+        {
+            if (dataGridViewListaEntidad.SelectedRows.Count != 0)
+            {
+                //deshabilitamos los botones no necesarios y habilitamos el guardar
+                buttonAñadirEntidad.Enabled = false;
+                buttonEliminarEntidad.Enabled = false;
+                buttonEditarEquipos.Enabled = true;
+                buttonGuardarEntidad.Enabled = true;
+
+                //editamos
+                ENTITATS _entidad = (ENTITATS)dataGridViewListaEntidad.CurrentRow.DataBoundItem;
+
+                labeltelefonos.Show();
+
+                dataGridViewTelefonos.Show();
+                bindingSourceListaTelefonos.DataSource = _entidad.TELEFONS.ToList();
+
+                buttonAñadirTel.Show();
+                buttonEliminarTel.Show();
+
+                textBoxNombreEntidad.Text = _entidad.nom;
+                comboBoxTemporadaEntidad.Text = _entidad.temporada;
+                textBoxDireccionEntidad.Text = _entidad.adreca;
+                textBoxNifEntidad.Text = _entidad.NIF;
+                textBoxCorreoEntidad.Text = _entidad.correu;
+                textBoxContraseñaEntidad.Text = _entidad.password;
+                idEntidad = _entidad.id;
+
+                buttonGuardarEntidad.Focus();
+
+            }
+        }
+
+        private void dataGridViewListaEntidad_DoubleClick_1(object sender, EventArgs e)
+        {
+            mostrarInfoEntidad();
+        }
+
+        #endregion
+
+        #region FormMain
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            bindingSourceListaEntidades.DataSource = BD.ORM_ENTITATS.SelectAllENTITATS(ref mensaje);
+            bindingSourceListaInstalaciones.DataSource = BD.ORM_INSTALACION.SelectAllINSTALACION(ref mensaje);
+            bindingSourceListaActividades.DataSource = BD.ORM_ACTIVITATS.SelectAllACTIVITATS(ref mensaje);
+            bindingSourceActivitatsDemandades.DataSource = BD.ORM_ACTIVITATS_DEMANADES.SelectAllACTIVITATS(ref mensaje);
+            bindingSourceEquips.DataSource = BD.ORM_EQUIPS.SelectAllEQUIPS(ref mensaje);
+            bindingSourceEspais.DataSource = BD.ORM_ESPAIS.SelectAllESPAIS(ref mensaje);
+            bindingSourceTipusActivitat.DataSource = BD.ORM_TIPUS_ACTIVITAT.SelectAllTIPUS_ACTIVITAT(ref mensaje);
+
+            comboBoxTiposActividad.DataSource = BD.ORM_TIPUS_ACTIVITAT.SelectAllTIPUS_ACTIVITAT(ref mensaje);
+            comboBoxTiposActividad.DisplayMember = "nom";
+
+            comboBoxEspacioActividad.DataSource = BD.ORM_ESPAIS.SelectAllESPAIS(ref mensaje);
+            comboBoxEspacioActividad.DisplayMember = "nom";
+
+            comboBoxEquipoActividad.DataSource = BD.ORM_EQUIPS.SelectAllEQUIPS(ref mensaje);
+            comboBoxEquipoActividad.DisplayMember = "nom";
+
+            if (!mensaje.Equals(""))
+            {
+                DialogResult a = MessageBox.Show(mensaje);
+                if (a == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+        }
+
+        private void FormMain_Activated(object sender, EventArgs e)
+        {
+            dataGridViewInstalaciones.DataSource = null;
+            dataGridViewInstalaciones.DataSource = BD.ORM_INSTALACION.SelectAllINSTALACION(ref mensaje);
+        }
+
+        #endregion
+
+        #region instalaciones
+        private void dataGridViewInstalaciones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            INSTALACIONS instalacionClick = (INSTALACIONS)dataGridViewInstalaciones.SelectedRows[0].DataBoundItem;
+
+            FormInstalacion formInstalacion = new FormInstalacion(instalacionClick);
+
+            formInstalacion.ShowDialog();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            FormInstalacion I = new FormInstalacion(null);
+            I.ShowDialog();
+
+        }
+
+        private void comboBoxHorariosEspais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            TimeSpan inici = TimeSpan.Parse("00:00:00");
+            TimeSpan final = TimeSpan.Parse("00:00:00");
+
+            List<HORARIS_INSTALACIONS> _horaris_instalacions = BD.ORM_HORARIS_INSTALACIONS.SelectAllHORARIS_INSTALACIONS(ref mensaje);
+
+            ESPAIS _espai = (ESPAIS)comboBoxHorariosEspais.SelectedItem;
+
+
+
+            foreach (var item in _horaris_instalacions)
+            {
+                if (item.id_instalacio.Equals(_espai.INSTALACIONS.id))
+                {
+                    inici = item.hora_inici;
+                    final = item.hora_fi;
+                }
+            }
+
+            Console.WriteLine(inici);
+            Console.WriteLine(final);
+        }
+
+        private void buttonMofificarInstalacion_Click(object sender, EventArgs e)
+        {
+            INSTALACIONS instalacionClick = (INSTALACIONS)dataGridViewInstalaciones.SelectedRows[0].DataBoundItem;
+
+            FormInstalacion formInstalacion = new FormInstalacion(instalacionClick);
+
+            formInstalacion.ShowDialog();
+        }
+
+        #endregion
+
+        #region actividades
+        private void refrescarActivitatsDemanades()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = BD.ORM_ACTIVITATS_DEMANADES.SelectAllACTIVITATS(ref mensaje);
         }
 
         private void buttonAñadir_Click(object sender, EventArgs e)
@@ -513,12 +566,6 @@ namespace Proyecto2
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void FormMain_Activated(object sender, EventArgs e)
-        {
-            dataGridViewInstalaciones.DataSource = null;
-            dataGridViewInstalaciones.DataSource = BD.ORM_INSTALACION.SelectAllINSTALACION(ref mensaje);
-        }
-
         private void buttonEditar_Click(object sender, EventArgs e)
         {
             try
@@ -586,54 +633,13 @@ namespace Proyecto2
                     idActDem = 0;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
+        #endregion
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxHorariosEspais_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            TimeSpan inici = TimeSpan.Parse("00:00:00");
-            TimeSpan final = TimeSpan.Parse("00:00:00");
-
-            List<HORARIS_INSTALACIONS> _horaris_instalacions = BD.ORM_HORARIS_INSTALACIONS.SelectAllHORARIS_INSTALACIONS(ref mensaje);
-
-            ESPAIS _espai = (ESPAIS)comboBoxHorariosEspais.SelectedItem;
-
-
-
-            foreach (var item in _horaris_instalacions)
-            {
-                if(item.id_instalacio.Equals(_espai.INSTALACIONS.id))
-                {
-                    inici = item.hora_inici;
-                    final = item.hora_fi;
-                }
-            }
-
-            Console.WriteLine(inici);
-            Console.WriteLine(final);
-        }
-
-        private void buttonMofificarInstalacion_Click(object sender, EventArgs e)
-        {
-            INSTALACIONS instalacionClick = (INSTALACIONS)dataGridViewInstalaciones.SelectedRows[0].DataBoundItem;
-
-            FormInstalacion formInstalacion = new FormInstalacion(instalacionClick);
-
-            formInstalacion.ShowDialog();
-        }
+        
     }
 }
