@@ -159,7 +159,10 @@ namespace Proyecto2
                             gestExtern = false;
                         }
 
-                        checkHorarios();
+                        if(!checkHorarios())
+                        {
+                            Console.WriteLine("purrfect");
+                        }
                     }
                     else
                     {
@@ -177,7 +180,7 @@ namespace Proyecto2
             }
         }
 
-        private void checkHorarios()
+        private bool checkHorarios()
         {
             bool vacio = false;
             foreach (var item in panel2.Controls.OfType<ComboBox>())
@@ -189,6 +192,8 @@ namespace Proyecto2
                     item.Focus();
                 }
             }
+
+            return vacio;
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
