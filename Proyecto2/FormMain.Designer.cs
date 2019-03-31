@@ -1120,6 +1120,7 @@
             this.buttonEliminarInstalacion.TabIndex = 6;
             this.buttonEliminarInstalacion.Text = "Eliminar Instalacion";
             this.buttonEliminarInstalacion.UseVisualStyleBackColor = true;
+            this.buttonEliminarInstalacion.Click += new System.EventHandler(this.buttonEliminarInstalacion_Click);
             // 
             // buttonAñadirInstalacion
             // 

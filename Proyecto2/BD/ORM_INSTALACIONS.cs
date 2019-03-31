@@ -48,11 +48,11 @@ namespace Proyecto2.BD
             return ORM.SaveChanges();
         }
 
-        public static void DeleteINSTALACION(INSTALACIONS instalacion)
+        public static String DeleteINSTALACION(INSTALACIONS instalacion)
         {
             ORM.bd.INSTALACIONS.Remove(instalacion);
 
-            ORM.SaveChanges();
+            return ORM.SaveChanges();
         }
 
         public static String UpdateINSTALACION(int id, String nom, bool gestioExterna, String adreca)
