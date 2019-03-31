@@ -27,7 +27,7 @@ namespace Proyecto2
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void loginApp()
         {
             //cogemos la lista de usuarios que tenemos en la BD
             List<USUARIS> listaUsuarios = BD.ORM_USUARIS.SelectAllUSUARIS(ref mensaje);
@@ -38,9 +38,9 @@ namespace Proyecto2
             bool encontrado = false;
 
             //recorremos la lista en busca del usuario pedido
-            foreach(USUARIS u in listaUsuarios)
+            foreach (USUARIS u in listaUsuarios)
             {
-                if(u.nom == nombre && u.contrasenya == pass)
+                if (u.nom == nombre && u.contrasenya == pass)
                 {
                     //si está, cambiamos la condicion
                     encontrado = true;
@@ -64,8 +64,11 @@ namespace Proyecto2
                 textBoxContraseña.Text = "";
                 textBoxUsuario.Focus();
             }
-            
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loginApp();
         }
 
         //boton de cancelar
@@ -73,8 +76,7 @@ namespace Proyecto2
         {
             this.Close();
         }
-
-
+        
         //estos metodos son para poder mover la ventada desde casi todos los lados
         private void Login_MouseDown(object sender, MouseEventArgs e)
         {
@@ -94,6 +96,20 @@ namespace Proyecto2
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        
+        private void textBoxContraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                loginApp();
+            }
+        }
+
+        private void textBoxUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginApp();
+            }
+        }
     }
 }

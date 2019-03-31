@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -145,6 +146,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bindingSourceListaActividades = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaEntidad)).BeginInit();
@@ -189,12 +192,21 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.tabPage1.Controls.Add(this.dataGridView3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(916, 561);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(8, 58);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(900, 284);
+            this.dataGridView3.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -259,7 +271,6 @@
             this.dataGridViewListaEntidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaEntidad.Size = new System.Drawing.Size(551, 418);
             this.dataGridViewListaEntidad.TabIndex = 1;
-            
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -1031,7 +1042,7 @@
             // buttonMofificarInstalacion
             // 
             this.buttonMofificarInstalacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonMofificarInstalacion.Location = new System.Drawing.Point(396, 441);
+            this.buttonMofificarInstalacion.Location = new System.Drawing.Point(396, 453);
             this.buttonMofificarInstalacion.Name = "buttonMofificarInstalacion";
             this.buttonMofificarInstalacion.Size = new System.Drawing.Size(162, 39);
             this.buttonMofificarInstalacion.TabIndex = 7;
@@ -1103,7 +1114,7 @@
             // 
             this.buttonEliminarInstalacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEliminarInstalacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminarInstalacion.Location = new System.Drawing.Point(722, 452);
+            this.buttonEliminarInstalacion.Location = new System.Drawing.Point(722, 453);
             this.buttonEliminarInstalacion.Name = "buttonEliminarInstalacion";
             this.buttonEliminarInstalacion.Size = new System.Drawing.Size(161, 39);
             this.buttonEliminarInstalacion.TabIndex = 6;
@@ -1114,7 +1125,7 @@
             // 
             this.buttonAñadirInstalacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAñadirInstalacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAñadirInstalacion.Location = new System.Drawing.Point(564, 452);
+            this.buttonAñadirInstalacion.Location = new System.Drawing.Point(564, 453);
             this.buttonAñadirInstalacion.Name = "buttonAñadirInstalacion";
             this.buttonAñadirInstalacion.Size = new System.Drawing.Size(152, 39);
             this.buttonAñadirInstalacion.TabIndex = 5;
@@ -1330,6 +1341,7 @@
             this.labelHora.Size = new System.Drawing.Size(46, 16);
             this.labelHora.TabIndex = 12;
             this.labelHora.Text = "Fecha";
+            this.labelHora.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelHora_MouseDown);
             // 
             // buttonClose
             // 
@@ -1359,6 +1371,7 @@
             this.labelFecha.Size = new System.Drawing.Size(46, 16);
             this.labelFecha.TabIndex = 11;
             this.labelFecha.Text = "Fecha";
+            this.labelFecha.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelFecha_MouseDown);
             // 
             // radioButtonCalendario
             // 
@@ -1470,6 +1483,8 @@
             this.Activated += new System.EventHandler(this.FormMain_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -1623,6 +1638,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Domingo;
         private System.Windows.Forms.Button buttonMofificarInstalacion;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }
 

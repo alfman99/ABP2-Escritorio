@@ -638,8 +638,19 @@ namespace Proyecto2
                 MessageBox.Show(ex.ToString());
             }
         }
+
         #endregion
 
-        
+        private void labelFecha_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void labelHora_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

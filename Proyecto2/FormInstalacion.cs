@@ -159,8 +159,7 @@ namespace Proyecto2
                             gestExtern = false;
                         }
 
-                        //AQUI TE HAS QUEDAO
-                        Console.WriteLine("ok");
+                        checkHorarios();
                     }
                     else
                     {
@@ -176,6 +175,26 @@ namespace Proyecto2
             {
                 MessageBox.Show("Selecciona el nombre de la instalacion");
             }
+        }
+
+        private void checkHorarios()
+        {
+            bool vacio = false;
+            foreach (var item in panel2.Controls.OfType<ComboBox>())
+            {
+                if (!vacio && item.SelectedIndex == -1)
+                {
+                    vacio = true;
+                    MessageBox.Show("Tienes que completar todos horarios");
+                    item.Focus();
+                }
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
