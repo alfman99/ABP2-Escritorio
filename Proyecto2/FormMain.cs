@@ -652,5 +652,17 @@ namespace Proyecto2
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void buttonEliminarInstalacion_Click(object sender, EventArgs e)
+        {
+            INSTALACIONS _instalacion = (INSTALACIONS)dataGridViewInstalaciones.CurrentRow.DataBoundItem;
+
+            mensaje = BD.ORM_INSTALACION.DeleteINSTALACION(_instalacion);
+
+            if (!mensaje.Equals(""))
+            {
+                MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

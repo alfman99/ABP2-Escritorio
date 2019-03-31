@@ -16,6 +16,8 @@ namespace Proyecto2
     {
         private INSTALACIONS instalacionModif = null;
 
+        private int idInstalacion;
+
         private String mensaje = "";
 
         public FormInstalacion(INSTALACIONS instalacion)
@@ -159,8 +161,23 @@ namespace Proyecto2
                             gestExtern = false;
                         }
 
-                        checkHorarios();
-                        checkHorariosCorrecto();
+                        if (!checkHorarios())
+                        {
+                            String error = BD.ORM_INSTALACION.InsertINSTALACION(textBoxNombreInstalacion.Text, gestExtern, textBoxDireccionInstalacion.Text);
+
+                            inputHorarios();
+
+                            if (!error.Equals(""))
+                            {
+                                MessageBox.Show(error);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Instalacion creada satisfactoriamente");
+                            }
+
+                            this.Close();
+                        }
                     }
                     else
                     {
@@ -233,6 +250,111 @@ namespace Proyecto2
                     vacio = true;
                     MessageBox.Show("Tienes que completar todos horarios");
                     item.Focus();
+                }
+            }
+
+            return vacio;
+        }
+
+        private void inputHorarios()
+        {
+            List<INSTALACIONS> instalaciones = BD.ORM_INSTALACION.SelectAllINSTALACION(ref mensaje);
+
+            foreach (var item in instalaciones)
+            {
+                if (item.nom == textBoxNombreInstalacion.Text)
+                {
+                    idInstalacion = item.id;
+                }
+                else
+                {
+                    idInstalacion = -1;
+                }
+            }
+
+            List<DIES_SETMANA> a = BD.ORM_DIES_SETMANA.SelectAllDIES_SETMANA(ref mensaje);
+
+            if (idInstalacion == -1)
+            {
+                MessageBox.Show("Error!");
+            }
+            else
+            {
+                foreach (var item in a)
+                {
+                    switch (item.nom.ToLower())
+                    {
+                        case "lunes":
+                            if (!comboBoxLunesIni.SelectedItem.ToString().Equals("CERRADO"))
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxLunesIni.SelectedItem.ToString()), TimeSpan.Parse(comboBoxLunesFin.SelectedItem.ToString()), idInstalacion, item.id);
+                            }
+                            else
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse("00:00"), TimeSpan.Parse("00:00"), idInstalacion, item.id);
+                            }
+                            break;
+                        case "martes":
+                            if (!comboBoxMartesIni.SelectedItem.ToString().Equals("CERRADO"))
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxMartesIni.SelectedItem.ToString()), TimeSpan.Parse(comboBoxMartesFin.SelectedItem.ToString()), idInstalacion, item.id);
+                            }
+                            else
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse("00:00"), TimeSpan.Parse("00:00"), idInstalacion, item.id);
+                            }
+                            break;
+                        case "miercoles":
+                            if (!comboBoxMiercolesIni.SelectedItem.ToString().Equals("CERRADO"))
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxMiercolesIni.SelectedItem.ToString()), TimeSpan.Parse(comboBoxMiercolesFin.SelectedItem.ToString()), idInstalacion, item.id);
+                            }
+                            else
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse("00:00"), TimeSpan.Parse("00:00"), idInstalacion, item.id);
+                            }
+                            break;
+                        case "jueves":
+                            if (!comboBoxJuevesIni.SelectedItem.ToString().Equals("CERRADO"))
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxJuevesIni.SelectedItem.ToString()), TimeSpan.Parse(comboBoxMiercolesFin.SelectedItem.ToString()), idInstalacion, item.id);
+                            }
+                            else
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse("00:00"), TimeSpan.Parse("00:00"), idInstalacion, item.id);
+                            }
+                            break;
+                        case "viernes":
+                            if (!comboBoxViernesIni.SelectedItem.ToString().Equals("CERRADO"))
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxViernesIni.SelectedItem.ToString()), TimeSpan.Parse(comboBoxViernesFin.SelectedItem.ToString()), idInstalacion, item.id);
+                            }
+                            else
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse("00:00"), TimeSpan.Parse("00:00"), idInstalacion, item.id);
+                            }
+                            break;
+                        case "sabado":
+                            if (!comboBoxSabadoIni.SelectedItem.ToString().Equals("CERRADO"))
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxSabadoIni.SelectedItem.ToString()), TimeSpan.Parse(comboBoxSabadoFin.SelectedItem.ToString()), idInstalacion, item.id);
+                            }
+                            else
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse("00:00"), TimeSpan.Parse("00:00"), idInstalacion, item.id);
+                            }
+                            break;
+                        case "domingo":
+                            if (!comboBoxDomingoIni.SelectedItem.ToString().Equals("CERRADO"))
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse(comboBoxDomingoIni.SelectedItem.ToString()), TimeSpan.Parse(comboBoxDomingoFin.SelectedItem.ToString()), idInstalacion, item.id);
+                            }
+                            else
+                            {
+                                BD.ORM_HORARIS_INSTALACIONS.InsertHORARIS_INSTALACIONS(TimeSpan.Parse("00:00"), TimeSpan.Parse("00:00"), idInstalacion, item.id);
+                            }
+                            break;
+                    }
                 }
             }
         }
