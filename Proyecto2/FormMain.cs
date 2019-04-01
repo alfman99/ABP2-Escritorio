@@ -401,6 +401,7 @@ namespace Proyecto2
             comboBoxEquipoActividad.DataSource = BD.ORM_EQUIPS.SelectAllEQUIPS(ref mensaje);
             comboBoxEquipoActividad.DisplayMember = "nom";
 
+            ///////////ESTA PARTE HAY QUE MEJORARLA
             //-------------------------------------------------------------------------------------------
 
             List<TimeSpan> tiempos = new List<TimeSpan>();
