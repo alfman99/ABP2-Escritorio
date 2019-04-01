@@ -170,6 +170,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelEntiespais.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PasarACalendario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FormTelefonos.cs">
@@ -237,6 +238,7 @@
     <None Include="Properties\DataSources\HORARIS_ACT_DEMANA.datasource" />
     <None Include="Properties\DataSources\HORARIS_INSTALACIONS.datasource" />
     <None Include="Properties\DataSources\INSTALACIONS.datasource" />
+    <None Include="Properties\DataSources\PasarACalendario.datasource" />
     <None Include="Properties\DataSources\SEXES.datasource" />
     <None Include="Properties\DataSources\TELEFONS.datasource" />
     <None Include="Properties\DataSources\TIPUS_ACTIVITAT.datasource" />

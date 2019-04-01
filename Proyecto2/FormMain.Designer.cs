@@ -31,14 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.comboBoxEspaciosHome = new System.Windows.Forms.ComboBox();
+            this.bindingSourceEspais = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewCalendario = new System.Windows.Forms.DataGridView();
-            this.Lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Domingo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lunesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.martesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miercolesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.juevesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viernesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sabadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domingoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSourcePasarActividades = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -85,7 +90,6 @@
             this.idequipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bindingSourceEquips = new System.Windows.Forms.BindingSource(this.components);
             this.idespaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.bindingSourceEspais = new System.Windows.Forms.BindingSource(this.components);
             this.idtipusactivitatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bindingSourceTipusActivitat = new System.Windows.Forms.BindingSource(this.components);
             this.numdiesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -125,6 +129,8 @@
             this.buttonEliminarInstalacion = new System.Windows.Forms.Button();
             this.buttonAñadirInstalacion = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.pasarACalendarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.calendarioGRIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label12 = new System.Windows.Forms.Label();
             this.comboBoxHorariosEspais = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -145,7 +151,9 @@
             this.bindingSourceListaActividades = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCalendario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePasarActividades)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaEntidad)).BeginInit();
@@ -157,7 +165,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEquips)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipusActivitat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceActivitatsDemandades)).BeginInit();
             this.panel2.SuspendLayout();
@@ -165,6 +172,8 @@
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInstalaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceListaInstalaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pasarACalendarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.calendarioGRIDBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
@@ -188,6 +197,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.tabPage1.Controls.Add(this.label16);
+            this.tabPage1.Controls.Add(this.comboBoxEspaciosHome);
             this.tabPage1.Controls.Add(this.dataGridViewCalendario);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -196,73 +207,111 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(41, 70);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(36, 13);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Espai:";
+            // 
+            // comboBoxEspaciosHome
+            // 
+            this.comboBoxEspaciosHome.DataSource = this.bindingSourceEspais;
+            this.comboBoxEspaciosHome.DisplayMember = "nom";
+            this.comboBoxEspaciosHome.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEspaciosHome.FormattingEnabled = true;
+            this.comboBoxEspaciosHome.Location = new System.Drawing.Point(119, 67);
+            this.comboBoxEspaciosHome.Name = "comboBoxEspaciosHome";
+            this.comboBoxEspaciosHome.Size = new System.Drawing.Size(234, 21);
+            this.comboBoxEspaciosHome.TabIndex = 1;
+            // 
+            // bindingSourceEspais
+            // 
+            this.bindingSourceEspais.DataSource = typeof(Proyecto2.ESPAIS);
+            // 
             // dataGridViewCalendario
             // 
             this.dataGridViewCalendario.AllowUserToAddRows = false;
             this.dataGridViewCalendario.AllowUserToDeleteRows = false;
+            this.dataGridViewCalendario.AutoGenerateColumns = false;
             this.dataGridViewCalendario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCalendario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Lunes,
-            this.Martes,
-            this.Miercoles,
-            this.Jueves,
-            this.Viernes,
-            this.Sabado,
-            this.Domingo});
-            this.dataGridViewCalendario.Location = new System.Drawing.Point(8, 58);
+            this.horaDataGridViewTextBoxColumn,
+            this.lunesDataGridViewTextBoxColumn,
+            this.martesDataGridViewTextBoxColumn,
+            this.miercolesDataGridViewTextBoxColumn,
+            this.juevesDataGridViewTextBoxColumn,
+            this.viernesDataGridViewTextBoxColumn,
+            this.sabadoDataGridViewTextBoxColumn,
+            this.domingoDataGridViewTextBoxColumn});
+            this.dataGridViewCalendario.DataSource = this.bindingSourcePasarActividades;
+            this.dataGridViewCalendario.Location = new System.Drawing.Point(10, 107);
             this.dataGridViewCalendario.Name = "dataGridViewCalendario";
             this.dataGridViewCalendario.ReadOnly = true;
-            this.dataGridViewCalendario.Size = new System.Drawing.Size(900, 495);
+            this.dataGridViewCalendario.Size = new System.Drawing.Size(900, 451);
             this.dataGridViewCalendario.TabIndex = 0;
             // 
-            // Lunes
+            // horaDataGridViewTextBoxColumn
             // 
-            this.Lunes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Lunes.HeaderText = "Lunes";
-            this.Lunes.Name = "Lunes";
-            this.Lunes.ReadOnly = true;
+            this.horaDataGridViewTextBoxColumn.DataPropertyName = "_hora";
+            this.horaDataGridViewTextBoxColumn.HeaderText = "_hora";
+            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
+            this.horaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Martes
+            // lunesDataGridViewTextBoxColumn
             // 
-            this.Martes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Martes.HeaderText = "Martes";
-            this.Martes.Name = "Martes";
-            this.Martes.ReadOnly = true;
+            this.lunesDataGridViewTextBoxColumn.DataPropertyName = "Lunes";
+            this.lunesDataGridViewTextBoxColumn.HeaderText = "Lunes";
+            this.lunesDataGridViewTextBoxColumn.Name = "lunesDataGridViewTextBoxColumn";
+            this.lunesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Miercoles
+            // martesDataGridViewTextBoxColumn
             // 
-            this.Miercoles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Miercoles.HeaderText = "Miercoles";
-            this.Miercoles.Name = "Miercoles";
-            this.Miercoles.ReadOnly = true;
+            this.martesDataGridViewTextBoxColumn.DataPropertyName = "Martes";
+            this.martesDataGridViewTextBoxColumn.HeaderText = "Martes";
+            this.martesDataGridViewTextBoxColumn.Name = "martesDataGridViewTextBoxColumn";
+            this.martesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Jueves
+            // miercolesDataGridViewTextBoxColumn
             // 
-            this.Jueves.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Jueves.HeaderText = "Jueves";
-            this.Jueves.Name = "Jueves";
-            this.Jueves.ReadOnly = true;
+            this.miercolesDataGridViewTextBoxColumn.DataPropertyName = "Miercoles";
+            this.miercolesDataGridViewTextBoxColumn.HeaderText = "Miercoles";
+            this.miercolesDataGridViewTextBoxColumn.Name = "miercolesDataGridViewTextBoxColumn";
+            this.miercolesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Viernes
+            // juevesDataGridViewTextBoxColumn
             // 
-            this.Viernes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Viernes.HeaderText = "Viernes";
-            this.Viernes.Name = "Viernes";
-            this.Viernes.ReadOnly = true;
+            this.juevesDataGridViewTextBoxColumn.DataPropertyName = "Jueves";
+            this.juevesDataGridViewTextBoxColumn.HeaderText = "Jueves";
+            this.juevesDataGridViewTextBoxColumn.Name = "juevesDataGridViewTextBoxColumn";
+            this.juevesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Sabado
+            // viernesDataGridViewTextBoxColumn
             // 
-            this.Sabado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Sabado.HeaderText = "Sabado";
-            this.Sabado.Name = "Sabado";
-            this.Sabado.ReadOnly = true;
+            this.viernesDataGridViewTextBoxColumn.DataPropertyName = "Viernes";
+            this.viernesDataGridViewTextBoxColumn.HeaderText = "Viernes";
+            this.viernesDataGridViewTextBoxColumn.Name = "viernesDataGridViewTextBoxColumn";
+            this.viernesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Domingo
+            // sabadoDataGridViewTextBoxColumn
             // 
-            this.Domingo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Domingo.HeaderText = "Domingo";
-            this.Domingo.Name = "Domingo";
-            this.Domingo.ReadOnly = true;
+            this.sabadoDataGridViewTextBoxColumn.DataPropertyName = "Sabado";
+            this.sabadoDataGridViewTextBoxColumn.HeaderText = "Sabado";
+            this.sabadoDataGridViewTextBoxColumn.Name = "sabadoDataGridViewTextBoxColumn";
+            this.sabadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // domingoDataGridViewTextBoxColumn
+            // 
+            this.domingoDataGridViewTextBoxColumn.DataPropertyName = "Domingo";
+            this.domingoDataGridViewTextBoxColumn.HeaderText = "Domingo";
+            this.domingoDataGridViewTextBoxColumn.Name = "domingoDataGridViewTextBoxColumn";
+            this.domingoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bindingSourcePasarActividades
+            // 
+            this.bindingSourcePasarActividades.DataSource = typeof(Proyecto2.PasarACalendario);
             // 
             // tabPage2
             // 
@@ -775,10 +824,6 @@
             this.idespaiDataGridViewTextBoxColumn.ValueMember = "id";
             this.idespaiDataGridViewTextBoxColumn.Width = 5;
             // 
-            // bindingSourceEspais
-            // 
-            this.bindingSourceEspais.DataSource = typeof(Proyecto2.ESPAIS);
-            // 
             // idtipusactivitatDataGridViewTextBoxColumn
             // 
             this.idtipusactivitatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
@@ -886,7 +931,6 @@
             // 
             // textBoxDiasActividad
             // 
-            this.textBoxDiasActividad.Enabled = false;
             this.textBoxDiasActividad.Location = new System.Drawing.Point(106, 230);
             this.textBoxDiasActividad.Name = "textBoxDiasActividad";
             this.textBoxDiasActividad.Size = new System.Drawing.Size(168, 20);
@@ -895,7 +939,6 @@
             // 
             // textBoxDuracionActividad
             // 
-            this.textBoxDuracionActividad.Enabled = false;
             this.textBoxDuracionActividad.Location = new System.Drawing.Point(106, 200);
             this.textBoxDuracionActividad.Name = "textBoxDuracionActividad";
             this.textBoxDuracionActividad.Size = new System.Drawing.Size(168, 20);
@@ -932,7 +975,6 @@
             // comboBoxTiposActividad
             // 
             this.comboBoxTiposActividad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxTiposActividad.Enabled = false;
             this.comboBoxTiposActividad.FormattingEnabled = true;
             this.comboBoxTiposActividad.Location = new System.Drawing.Point(106, 110);
             this.comboBoxTiposActividad.Name = "comboBoxTiposActividad";
@@ -951,7 +993,6 @@
             // 
             // textBoxNombreActividad
             // 
-            this.textBoxNombreActividad.Enabled = false;
             this.textBoxNombreActividad.Location = new System.Drawing.Point(106, 80);
             this.textBoxNombreActividad.Name = "textBoxNombreActividad";
             this.textBoxNombreActividad.Size = new System.Drawing.Size(168, 20);
@@ -994,6 +1035,7 @@
             // 
             this.buttonGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonGuardar.Enabled = false;
             this.buttonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGuardar.Location = new System.Drawing.Point(14, 445);
             this.buttonGuardar.Name = "buttonGuardar";
@@ -1199,6 +1241,10 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // pasarACalendarioBindingSource
+            // 
+            this.pasarACalendarioBindingSource.DataSource = typeof(Proyecto2.PasarACalendario);
             // 
             // label12
             // 
@@ -1460,9 +1506,13 @@
             this.Text = "Form1";
             this.Activated += new System.EventHandler(this.FormMain_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.SizeChanged += new System.EventHandler(this.FormMain_SizeChanged);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCalendario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePasarActividades)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -1477,7 +1527,6 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEquips)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipusActivitat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceActivitatsDemandades)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -1486,6 +1535,8 @@
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInstalaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceListaInstalaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pasarACalendarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.calendarioGRIDBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1605,13 +1656,21 @@
         private System.Windows.Forms.Button buttonMofificarInstalacion;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridViewCalendario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lunes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Martes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Miercoles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Jueves;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Viernes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sabado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Domingo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn instalacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource calendarioGRIDBindingSource;
+        private System.Windows.Forms.ComboBox comboBoxEspaciosHome;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.BindingSource pasarACalendarioBindingSource;
+        private System.Windows.Forms.BindingSource bindingSourcePasarActividades;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lunesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn martesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn miercolesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn juevesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn viernesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sabadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domingoDataGridViewTextBoxColumn;
     }
 }
 

@@ -58,20 +58,13 @@ namespace Proyecto2
         private void radioButtonActividades_CheckedChanged(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage3;
-
+            
             labeltelefonos.Hide();
             dataGridViewTelefonos.Hide();
             buttonAñadirTel.Hide();
             buttonEliminarTel.Hide();
             buttonGuardarEntidad.Enabled = false;
             buttonEditarEquipos.Enabled = false;
-
-            /*
-            if (WindowState == FormWindowState.Maximized)
-            {
-                label3.Font = new Font("Microsoft Sans Serif",24);
-            }
-            */
         }
 
         private void radioButtonInstalaciones_CheckedChanged(object sender, EventArgs e)
@@ -112,12 +105,10 @@ namespace Proyecto2
             if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
-                buttonMax.Image = Proyecto2.Properties.Resources.normal2;
             }
             else
             {
                 WindowState = FormWindowState.Normal;
-                buttonMax.Image = Proyecto2.Properties.Resources.maximizar;
             }
         } //Hacer grande la pantalla con sus botones
 
@@ -399,6 +390,7 @@ namespace Proyecto2
             bindingSourceEquips.DataSource = BD.ORM_EQUIPS.SelectAllEQUIPS(ref mensaje);
             bindingSourceEspais.DataSource = BD.ORM_ESPAIS.SelectAllESPAIS(ref mensaje);
             bindingSourceTipusActivitat.DataSource = BD.ORM_TIPUS_ACTIVITAT.SelectAllTIPUS_ACTIVITAT(ref mensaje);
+            
 
             comboBoxTiposActividad.DataSource = BD.ORM_TIPUS_ACTIVITAT.SelectAllTIPUS_ACTIVITAT(ref mensaje);
             comboBoxTiposActividad.DisplayMember = "nom";
@@ -409,9 +401,11 @@ namespace Proyecto2
             comboBoxEquipoActividad.DataSource = BD.ORM_EQUIPS.SelectAllEQUIPS(ref mensaje);
             comboBoxEquipoActividad.DisplayMember = "nom";
 
+            //-------------------------------------------------------------------------------------------
 
-            //ESTOY POR AQUI
             List<TimeSpan> tiempos = new List<TimeSpan>();
+
+            List<PasarACalendario> listaCalendario = new List<PasarACalendario>();
 
             for (int i = 0; i < 48; i++)
             {
@@ -428,14 +422,30 @@ namespace Proyecto2
 
                 hora = (i / 2).ToString();
 
-                tiempos.Add(TimeSpan.Parse(hora + ":" + minuto));
+                listaCalendario.Add(new PasarACalendario((ESPAIS)comboBoxEspaciosHome.SelectedItem, TimeSpan.Parse(hora + ":" + minuto)));
             }
 
-            for(int i = 0; i < 48; i++)
+            mensaje = "";
+
+            foreach (var item in listaCalendario)
             {
-                Console.WriteLine(tiempos[i]);
+                item.HacerTodo(ref mensaje);
+
+                if (!mensaje.Equals(""))
+                {
+                    MessageBox.Show(mensaje);
+                }
             }
-            
+
+            bindingSourcePasarActividades.DataSource = listaCalendario;
+
+
+
+
+
+
+            //-------------------------------------------------------------------------------------------
+
 
             if (!mensaje.Equals(""))
             {
@@ -445,6 +455,15 @@ namespace Proyecto2
                     this.Close();
                 }
             }
+
+
+            textBoxNombreActividad.Text = "";
+            textBoxDuracionActividad.Text = "";
+            comboBoxEquipoActividad.SelectedIndex = -1;
+            comboBoxEspacioActividad.SelectedIndex = -1;
+            comboBoxTiposActividad.SelectedIndex = -1;
+            textBoxDiasActividad.Text = "";
+
         }
 
         private void FormMain_Activated(object sender, EventArgs e)
@@ -546,9 +565,9 @@ namespace Proyecto2
                     refrescarActivitatsDemanades();
                     textBoxNombreActividad.Text = "";
                     textBoxDuracionActividad.Text = "";
-                    comboBoxEquipoActividad.SelectedIndex = 0;
-                    comboBoxEspacioActividad.SelectedIndex = 0;
-                    comboBoxTiposActividad.SelectedIndex = 0;
+                    comboBoxEquipoActividad.SelectedIndex = -1;
+                    comboBoxEspacioActividad.SelectedIndex = -1;
+                    comboBoxTiposActividad.SelectedIndex = -1;
                     textBoxDiasActividad.Text = "";
                 }
             }
@@ -603,7 +622,7 @@ namespace Proyecto2
                 textBoxNombreActividad.Text = _activitat.nom;
                 comboBoxTiposActividad.SelectedItem = _activitat.TIPUS_ACTIVITAT;
                 comboBoxEspacioActividad.SelectedItem = _activitat.ESPAIS;
-                comboBoxEquipoActividad.SelectedItem = _activitat.ACTIVITATS;
+                comboBoxEquipoActividad.SelectedItem = _activitat.EQUIPS;
                 textBoxDuracionActividad.Text = _activitat.durada.ToString();
                 textBoxDiasActividad.Text = _activitat.num_dies.ToString();
                 if (_activitat.assignada.Equals(true))
@@ -617,19 +636,25 @@ namespace Proyecto2
 
                 idActDem = _activitat.id;
 
+                buttonGuardar.Enabled = true;
+                buttonAñadir.Enabled = false;
+                buttonEliminar.Enabled = false;
+
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            ACTIVITATS_DEMANADES _actDemanades = (ACTIVITATS_DEMANADES)dataGridView1.CurrentRow.DataBoundItem;
+            
 
             try
             {
+                ACTIVITATS_DEMANADES _actDemanades = (ACTIVITATS_DEMANADES)dataGridView1.CurrentRow.DataBoundItem;
+
                 String nombre = textBoxNombreActividad.Text;
                 TimeSpan duracion = TimeSpan.Parse(textBoxDuracionActividad.Text);
                 int idEquipo = ((EQUIPS)comboBoxEquipoActividad.SelectedItem).id;
@@ -660,6 +685,20 @@ namespace Proyecto2
                     refrescarActivitatsDemanades();
                     idActDem = 0;
                 }
+
+
+
+                textBoxNombreActividad.Text = "";
+                comboBoxTiposActividad.SelectedIndex = -1;
+                comboBoxEspacioActividad.SelectedIndex = -1;
+                comboBoxEquipoActividad.SelectedIndex = -1;
+                textBoxDuracionActividad.Text = "";
+                textBoxDiasActividad.Text = "";
+                comboBoxAsignadaActividad.SelectedIndex = -1;
+
+                buttonGuardar.Enabled = false;
+                buttonAñadir.Enabled = true;
+                buttonEliminar.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -705,7 +744,16 @@ namespace Proyecto2
             }
         }
 
-
-
+        private void FormMain_SizeChanged(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                buttonMax.Image = Proyecto2.Properties.Resources.maximizar;
+            }
+            else
+            {
+                buttonMax.Image = Proyecto2.Properties.Resources.normal2;
+            }
+        }
     }
 }
