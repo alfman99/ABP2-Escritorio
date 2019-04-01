@@ -56,8 +56,6 @@ namespace Proyecto2
 
                 List<HORARIS_INSTALACIONS> listaHorarios = instalacionModif.HORARIS_INSTALACIONS.ToList();
 
-               
-
             }
             else
             {

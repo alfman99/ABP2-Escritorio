@@ -413,6 +413,28 @@ namespace Proyecto2
             //ESTOY POR AQUI
             List<TimeSpan> tiempos = new List<TimeSpan>();
 
+            for (int i = 0; i < 48; i++)
+            {
+                String hora, minuto;
+
+                if (i % 2 == 0)
+                {
+                    minuto = "00";
+                }
+                else
+                {
+                    minuto = "30";
+                }
+
+                hora = (i / 2).ToString();
+
+                tiempos.Add(TimeSpan.Parse(hora + ":" + minuto));
+            }
+
+            for(int i = 0; i < 48; i++)
+            {
+                Console.WriteLine(tiempos[i]);
+            }
             
 
             if (!mensaje.Equals(""))
