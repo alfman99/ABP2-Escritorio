@@ -30,6 +30,7 @@ namespace Proyecto2
         private void loginApp()
         {
             //cogemos la lista de usuarios que tenemos en la BD
+            mensaje = "";
             List<USUARIS> listaUsuarios = BD.ORM_USUARIS.SelectAllUSUARIS(ref mensaje);
 
             //guardamos los campos escritos en los textbox
@@ -38,14 +39,24 @@ namespace Proyecto2
             bool encontrado = false;
 
             //recorremos la lista en busca del usuario pedido
-            foreach (USUARIS u in listaUsuarios)
+            if (mensaje.Equals(""))
             {
-                if (u.nom == nombre && u.contrasenya == pass)
+                foreach (USUARIS u in listaUsuarios)
                 {
-                    //si está, cambiamos la condicion
-                    encontrado = true;
+                    if (u.nom == nombre && u.contrasenya == pass)
+                    {
+                        //si está, cambiamos la condicion
+                        encontrado = true;
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show(mensaje);
+            }
+
+
+
 
             //si está, abrimos el siguiente form
             if (encontrado)
@@ -76,7 +87,7 @@ namespace Proyecto2
         {
             this.Close();
         }
-        
+
         //estos metodos son para poder mover la ventada desde casi todos los lados
         private void Login_MouseDown(object sender, MouseEventArgs e)
         {
@@ -98,7 +109,7 @@ namespace Proyecto2
 
         private void textBoxContraseña_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 loginApp();
             }

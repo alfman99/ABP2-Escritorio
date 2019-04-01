@@ -28,7 +28,7 @@ namespace Proyecto2
         private int idEntidad = 0;
         private int idActDem = 0;
         String mensaje = "";
-        
+
         #region control de tabs
 
         private void radioButtonHome_CheckedChanged(object sender, EventArgs e)
@@ -653,16 +653,31 @@ namespace Proyecto2
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        //HE PUESTO CASCADA EN TODO Y SIGUE SIN FUNCIONAR PORFAVOR AYUDA
         private void buttonEliminarInstalacion_Click(object sender, EventArgs e)
         {
             INSTALACIONS _instalacion = (INSTALACIONS)dataGridViewInstalaciones.CurrentRow.DataBoundItem;
 
-            mensaje = BD.ORM_INSTALACION.DeleteINSTALACION(_instalacion);
-
-            if (!mensaje.Equals(""))
+            if (DialogResult.OK == MessageBox.Show("Estás seguro de que quieres borrar esta instalacion?\nRecuerda que puede tener informacion asociada que tambien se borrará!", "Atencion!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information))
             {
-                MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mensaje = BD.ORM_INSTALACION.DeleteINSTALACION(_instalacion);
+
+                if (!mensaje.Equals(""))
+                {
+                    MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Operacion realizada satisfactoriamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Operacion cancelada", "No se ha realizado la operacion.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+
+
     }
 }
