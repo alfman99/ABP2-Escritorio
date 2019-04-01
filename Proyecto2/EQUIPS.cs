@@ -30,15 +30,15 @@ namespace Proyecto2
         public int id_categoria_edat { get; set; }
         public int id_competicio { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ACTIVITATS> ACTIVITATS { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ACTIVITATS_DEMANADES> ACTIVITATS_DEMANADES { get; set; }
         public virtual CATEGORIES CATEGORIES { get; set; }
         public virtual CATEGORIES_EDAT CATEGORIES_EDAT { get; set; }
         public virtual COMPETICIO COMPETICIO { get; set; }
         public virtual ENTITATS ENTITATS { get; set; }
         public virtual ESPORTS ESPORTS { get; set; }
         public virtual SEXES SEXES { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ACTIVITATS> ACTIVITATS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ACTIVITATS_DEMANADES> ACTIVITATS_DEMANADES { get; set; }
     }
 }

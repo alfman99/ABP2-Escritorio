@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="entiespaisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="entiespaisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ACTIVITATS">
           <Key>
             <PropertyRef Name="id" />
@@ -173,7 +173,9 @@
           <Property Name="contrasenya" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_ACTIVITATS_ACTIVITATS_DEMANADES">
-          <End Role="ACTIVITATS_DEMANADES" Type="Self.ACTIVITATS_DEMANADES" Multiplicity="1" />
+          <End Role="ACTIVITATS_DEMANADES" Type="Self.ACTIVITATS_DEMANADES" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ACTIVITATS" Type="Self.ACTIVITATS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ACTIVITATS_DEMANADES">
@@ -197,7 +199,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ACTIVITATS_DEMANADES_ESPAIS">
-          <End Role="ESPAIS" Type="Self.ESPAIS" Multiplicity="1" />
+          <End Role="ESPAIS" Type="Self.ESPAIS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ACTIVITATS_DEMANADES" Type="Self.ACTIVITATS_DEMANADES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ESPAIS">
@@ -341,7 +345,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ESPAIS_INSTALACIONS">
-          <End Role="INSTALACIONS" Type="Self.INSTALACIONS" Multiplicity="1" />
+          <End Role="INSTALACIONS" Type="Self.INSTALACIONS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ESPAIS" Type="Self.ESPAIS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="INSTALACIONS">
@@ -353,7 +359,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HORARIS_ACT_DEMANA_ACTIVITATS_DEMANADES">
-          <End Role="ACTIVITATS_DEMANADES" Type="Self.ACTIVITATS_DEMANADES" Multiplicity="1" />
+          <End Role="ACTIVITATS_DEMANADES" Type="Self.ACTIVITATS_DEMANADES" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="HORARIS_ACT_DEMANA" Type="Self.HORARIS_ACT_DEMANA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ACTIVITATS_DEMANADES">
@@ -377,7 +385,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HORARIS_ACTIVITAT_ACTIVITATS">
-          <End Role="ACTIVITATS" Type="Self.ACTIVITATS" Multiplicity="1" />
+          <End Role="ACTIVITATS" Type="Self.ACTIVITATS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="HORARIS_ACTIVITAT" Type="Self.HORARIS_ACTIVITAT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ACTIVITATS">
@@ -413,7 +423,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HORARIS_INSTALACIONS_INSTALACIONS1">
-          <End Role="INSTALACIONS" Type="Self.INSTALACIONS" Multiplicity="1" />
+          <End Role="INSTALACIONS" Type="Self.INSTALACIONS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="HORARIS_INSTALACIONS" Type="Self.HORARIS_INSTALACIONS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="INSTALACIONS">
@@ -544,48 +556,10 @@
             <End Role="TELEFONS" EntitySet="TELEFONS" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="entiespaisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ACTIVITATS">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="id_equip" Type="Int32" Nullable="false" />
-          <Property Name="id_tipus_activitat" Type="Int32" Nullable="false" />
-          <Property Name="id_activitat_demanada" Type="Int32" Nullable="false" />
-          <Property Name="id_usuari" Type="Int32" Nullable="false" />
-          <Property Name="data_ultima_mod" Type="DateTime" Precision="0" />
-          <Property Name="id_espai" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ACTIVITATS_DEMANADES" Relationship="Self.FK_ACTIVITATS_ACTIVITATS_DEMANADES" FromRole="ACTIVITATS" ToRole="ACTIVITATS_DEMANADES" />
-          <NavigationProperty Name="EQUIPS" Relationship="Self.FK_ACTIVITATS_EQUIPS" FromRole="ACTIVITATS" ToRole="EQUIPS" />
-          <NavigationProperty Name="ESPAIS" Relationship="Self.FK_ACTIVITATS_ESPAIS" FromRole="ACTIVITATS" ToRole="ESPAIS" />
-          <NavigationProperty Name="TIPUS_ACTIVITAT" Relationship="Self.FK_ACTIVITATS_TIPUS_ACTIVITAT" FromRole="ACTIVITATS" ToRole="TIPUS_ACTIVITAT" />
-          <NavigationProperty Name="USUARIS" Relationship="Self.FK_ACTIVITATS_USUARIS" FromRole="ACTIVITATS" ToRole="USUARIS" />
-          <NavigationProperty Name="HORARIS_ACTIVITAT" Relationship="Self.FK_HORARIS_ACTIVITAT_ACTIVITATS" FromRole="ACTIVITATS" ToRole="HORARIS_ACTIVITAT" />
-        </EntityType>
-        <EntityType Name="ACTIVITATS_DEMANADES">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="durada" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="id_equip" Type="Int32" Nullable="false" />
-          <Property Name="id_espai" Type="Int32" Nullable="false" />
-          <Property Name="id_tipus_activitat" Type="Int32" Nullable="false" />
-          <Property Name="num_dies" Type="Int32" Nullable="false" />
-          <Property Name="assignada" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="ACTIVITATS" Relationship="Self.FK_ACTIVITATS_ACTIVITATS_DEMANADES" FromRole="ACTIVITATS_DEMANADES" ToRole="ACTIVITATS" />
-          <NavigationProperty Name="EQUIPS" Relationship="Self.FK_ACTIVITATS_DEMANADES_EQUIPS" FromRole="ACTIVITATS_DEMANADES" ToRole="EQUIPS" />
-          <NavigationProperty Name="ESPAIS" Relationship="Self.FK_ACTIVITATS_DEMANADES_ESPAIS" FromRole="ACTIVITATS_DEMANADES" ToRole="ESPAIS" />
-          <NavigationProperty Name="TIPUS_ACTIVITAT" Relationship="Self.FK_ACTIVITATS_DEMANADES_TIPUS_ACTIVITAT" FromRole="ACTIVITATS_DEMANADES" ToRole="TIPUS_ACTIVITAT" />
-          <NavigationProperty Name="HORARIS_ACT_DEMANA" Relationship="Self.FK_HORARIS_ACT_DEMANA_ACTIVITATS_DEMANADES" FromRole="ACTIVITATS_DEMANADES" ToRole="HORARIS_ACT_DEMANA" />
-        </EntityType>
         <EntityType Name="CATEGORIES">
           <Key>
             <PropertyRef Name="id" />
@@ -618,7 +592,7 @@
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="HORARIS_ACT_DEMANA" Relationship="Self.FK_HORARIS_ACT_DEMANA_DIES_SETMANA" FromRole="DIES_SETMANA" ToRole="HORARIS_ACT_DEMANA" />
           <NavigationProperty Name="HORARIS_ACTIVITAT" Relationship="Self.FK_HORARIS_ACTIVITAT_DIES_SETMANA" FromRole="DIES_SETMANA" ToRole="HORARIS_ACTIVITAT" />
-          <NavigationProperty Name="HORARIS_INSTALACIONS" Relationship="Self.FK_HORARIS_INSTALACIONS_DIES_SETMANA" FromRole="DIES_SETMANA" ToRole="HORARIS_INSTALACIONS" />
+          <NavigationProperty Name="HORARIS_INSTALACIONS" Relationship="entiespaisModel.FK_HORARIS_INSTALACIONS_DIES_SETMANA" FromRole="DIES_SETMANA" ToRole="HORARIS_INSTALACIONS" />
         </EntityType>
         <EntityType Name="ENTITATS">
           <Key>
@@ -646,27 +620,14 @@
           <Property Name="id_categoria" Type="Int32" Nullable="false" />
           <Property Name="id_categoria_edat" Type="Int32" Nullable="false" />
           <Property Name="id_competicio" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ACTIVITATS" Relationship="Self.FK_ACTIVITATS_EQUIPS" FromRole="EQUIPS" ToRole="ACTIVITATS" />
-          <NavigationProperty Name="ACTIVITATS_DEMANADES" Relationship="Self.FK_ACTIVITATS_DEMANADES_EQUIPS" FromRole="EQUIPS" ToRole="ACTIVITATS_DEMANADES" />
           <NavigationProperty Name="CATEGORIES" Relationship="Self.FK_EQUIPS_CATEGORIES" FromRole="EQUIPS" ToRole="CATEGORIES" />
           <NavigationProperty Name="CATEGORIES_EDAT" Relationship="Self.FK_EQUIPS_CATEGORIES_EDAT" FromRole="EQUIPS" ToRole="CATEGORIES_EDAT" />
           <NavigationProperty Name="COMPETICIO" Relationship="Self.FK_EQUIPS_COMPETICIO" FromRole="EQUIPS" ToRole="COMPETICIO" />
           <NavigationProperty Name="ENTITATS" Relationship="Self.FK_EQUIPS_ENTITATS1" FromRole="EQUIPS" ToRole="ENTITATS" />
           <NavigationProperty Name="ESPORTS" Relationship="Self.FK_EQUIPS_ESPORTS" FromRole="EQUIPS" ToRole="ESPORTS" />
           <NavigationProperty Name="SEXES" Relationship="Self.FK_EQUIPS_SEXES" FromRole="EQUIPS" ToRole="SEXES" />
-        </EntityType>
-        <EntityType Name="ESPAIS">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nom" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="preu" Type="Double" Nullable="false" />
-          <Property Name="exterior" Type="Boolean" Nullable="false" />
-          <Property Name="id_instalacio" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ACTIVITATS" Relationship="Self.FK_ACTIVITATS_ESPAIS" FromRole="ESPAIS" ToRole="ACTIVITATS" />
-          <NavigationProperty Name="ACTIVITATS_DEMANADES" Relationship="Self.FK_ACTIVITATS_DEMANADES_ESPAIS" FromRole="ESPAIS" ToRole="ACTIVITATS_DEMANADES" />
-          <NavigationProperty Name="INSTALACIONS" Relationship="Self.FK_ESPAIS_INSTALACIONS" FromRole="ESPAIS" ToRole="INSTALACIONS" />
+          <NavigationProperty Name="ACTIVITATS" Relationship="entiespaisModel.FK_ACTIVITATS_EQUIPS" FromRole="EQUIPS" ToRole="ACTIVITATS" />
+          <NavigationProperty Name="ACTIVITATS_DEMANADES" Relationship="entiespaisModel.FK_ACTIVITATS_DEMANADES_EQUIPS" FromRole="EQUIPS" ToRole="ACTIVITATS_DEMANADES" />
         </EntityType>
         <EntityType Name="ESPORTS">
           <Key>
@@ -685,8 +646,8 @@
           <Property Name="hora_fi" Type="Time" Nullable="false" Precision="7" />
           <Property Name="id_activitat_demanada" Type="Int32" Nullable="false" />
           <Property Name="id_dia_setmana" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ACTIVITATS_DEMANADES" Relationship="Self.FK_HORARIS_ACT_DEMANA_ACTIVITATS_DEMANADES" FromRole="HORARIS_ACT_DEMANA" ToRole="ACTIVITATS_DEMANADES" />
           <NavigationProperty Name="DIES_SETMANA" Relationship="Self.FK_HORARIS_ACT_DEMANA_DIES_SETMANA" FromRole="HORARIS_ACT_DEMANA" ToRole="DIES_SETMANA" />
+          <NavigationProperty Name="ACTIVITATS_DEMANADES" Relationship="entiespaisModel.FK_HORARIS_ACT_DEMANA_ACTIVITATS_DEMANADES" FromRole="HORARIS_ACT_DEMANA" ToRole="ACTIVITATS_DEMANADES" />
         </EntityType>
         <EntityType Name="HORARIS_ACTIVITAT">
           <Key>
@@ -697,31 +658,8 @@
           <Property Name="hora_fi" Type="Time" Nullable="false" Precision="7" />
           <Property Name="id_activitat" Type="Int32" Nullable="false" />
           <Property Name="id_dia_setmana" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ACTIVITATS" Relationship="Self.FK_HORARIS_ACTIVITAT_ACTIVITATS" FromRole="HORARIS_ACTIVITAT" ToRole="ACTIVITATS" />
           <NavigationProperty Name="DIES_SETMANA" Relationship="Self.FK_HORARIS_ACTIVITAT_DIES_SETMANA" FromRole="HORARIS_ACTIVITAT" ToRole="DIES_SETMANA" />
-        </EntityType>
-        <EntityType Name="HORARIS_INSTALACIONS">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="hora_inici" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="hora_fi" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="id_instalacio" Type="Int32" Nullable="false" />
-          <Property Name="id_dia_setmana" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DIES_SETMANA" Relationship="Self.FK_HORARIS_INSTALACIONS_DIES_SETMANA" FromRole="HORARIS_INSTALACIONS" ToRole="DIES_SETMANA" />
-          <NavigationProperty Name="INSTALACIONS" Relationship="Self.FK_HORARIS_INSTALACIONS_INSTALACIONS1" FromRole="HORARIS_INSTALACIONS" ToRole="INSTALACIONS" />
-        </EntityType>
-        <EntityType Name="INSTALACIONS">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="gestioExterna" Type="Boolean" Nullable="false" />
-          <Property Name="adreca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="ESPAIS" Relationship="Self.FK_ESPAIS_INSTALACIONS" FromRole="INSTALACIONS" ToRole="ESPAIS" />
-          <NavigationProperty Name="HORARIS_INSTALACIONS" Relationship="Self.FK_HORARIS_INSTALACIONS_INSTALACIONS1" FromRole="INSTALACIONS" ToRole="HORARIS_INSTALACIONS" />
+          <NavigationProperty Name="ACTIVITATS" Relationship="entiespaisModel.FK_HORARIS_ACTIVITAT_ACTIVITATS" FromRole="HORARIS_ACTIVITAT" ToRole="ACTIVITATS" />
         </EntityType>
         <EntityType Name="SEXES">
           <Key>
@@ -747,8 +685,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="ACTIVITATS" Relationship="Self.FK_ACTIVITATS_TIPUS_ACTIVITAT" FromRole="TIPUS_ACTIVITAT" ToRole="ACTIVITATS" />
-          <NavigationProperty Name="ACTIVITATS_DEMANADES" Relationship="Self.FK_ACTIVITATS_DEMANADES_TIPUS_ACTIVITAT" FromRole="TIPUS_ACTIVITAT" ToRole="ACTIVITATS_DEMANADES" />
+          <NavigationProperty Name="ACTIVITATS" Relationship="entiespaisModel.FK_ACTIVITATS_TIPUS_ACTIVITAT" FromRole="TIPUS_ACTIVITAT" ToRole="ACTIVITATS" />
+          <NavigationProperty Name="ACTIVITATS_DEMANADES" Relationship="entiespaisModel.FK_ACTIVITATS_DEMANADES_TIPUS_ACTIVITAT" FromRole="TIPUS_ACTIVITAT" ToRole="ACTIVITATS_DEMANADES" />
         </EntityType>
         <EntityType Name="USUARIS">
           <Key>
@@ -758,128 +696,8 @@
           <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="correu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="contrasenya" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="ACTIVITATS" Relationship="Self.FK_ACTIVITATS_USUARIS" FromRole="USUARIS" ToRole="ACTIVITATS" />
+          <NavigationProperty Name="ACTIVITATS" Relationship="entiespaisModel.FK_ACTIVITATS_USUARIS" FromRole="USUARIS" ToRole="ACTIVITATS" />
         </EntityType>
-        <Association Name="FK_ACTIVITATS_ACTIVITATS_DEMANADES">
-          <End Role="ACTIVITATS_DEMANADES" Type="Self.ACTIVITATS_DEMANADES" Multiplicity="1" />
-          <End Role="ACTIVITATS" Type="Self.ACTIVITATS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ACTIVITATS_DEMANADES">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ACTIVITATS">
-              <PropertyRef Name="id_activitat_demanada" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ACTIVITATS_EQUIPS">
-          <End Role="EQUIPS" Type="Self.EQUIPS" Multiplicity="1" />
-          <End Role="ACTIVITATS" Type="Self.ACTIVITATS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EQUIPS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ACTIVITATS">
-              <PropertyRef Name="id_equip" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ACTIVITATS_ESPAIS">
-          <End Role="ESPAIS" Type="Self.ESPAIS" Multiplicity="1" />
-          <End Role="ACTIVITATS" Type="Self.ACTIVITATS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ESPAIS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ACTIVITATS">
-              <PropertyRef Name="id_espai" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ACTIVITATS_TIPUS_ACTIVITAT">
-          <End Role="TIPUS_ACTIVITAT" Type="Self.TIPUS_ACTIVITAT" Multiplicity="1" />
-          <End Role="ACTIVITATS" Type="Self.ACTIVITATS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TIPUS_ACTIVITAT">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ACTIVITATS">
-              <PropertyRef Name="id_tipus_activitat" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ACTIVITATS_USUARIS">
-          <End Role="USUARIS" Type="Self.USUARIS" Multiplicity="1" />
-          <End Role="ACTIVITATS" Type="Self.ACTIVITATS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USUARIS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ACTIVITATS">
-              <PropertyRef Name="id_usuari" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_HORARIS_ACTIVITAT_ACTIVITATS">
-          <End Role="ACTIVITATS" Type="Self.ACTIVITATS" Multiplicity="1" />
-          <End Role="HORARIS_ACTIVITAT" Type="Self.HORARIS_ACTIVITAT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ACTIVITATS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="HORARIS_ACTIVITAT">
-              <PropertyRef Name="id_activitat" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ACTIVITATS_DEMANADES_EQUIPS">
-          <End Role="EQUIPS" Type="Self.EQUIPS" Multiplicity="1" />
-          <End Role="ACTIVITATS_DEMANADES" Type="Self.ACTIVITATS_DEMANADES" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EQUIPS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ACTIVITATS_DEMANADES">
-              <PropertyRef Name="id_equip" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ACTIVITATS_DEMANADES_ESPAIS">
-          <End Role="ESPAIS" Type="Self.ESPAIS" Multiplicity="1" />
-          <End Role="ACTIVITATS_DEMANADES" Type="Self.ACTIVITATS_DEMANADES" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ESPAIS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ACTIVITATS_DEMANADES">
-              <PropertyRef Name="id_espai" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ACTIVITATS_DEMANADES_TIPUS_ACTIVITAT">
-          <End Role="TIPUS_ACTIVITAT" Type="Self.TIPUS_ACTIVITAT" Multiplicity="1" />
-          <End Role="ACTIVITATS_DEMANADES" Type="Self.ACTIVITATS_DEMANADES" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TIPUS_ACTIVITAT">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ACTIVITATS_DEMANADES">
-              <PropertyRef Name="id_tipus_activitat" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_HORARIS_ACT_DEMANA_ACTIVITATS_DEMANADES">
-          <End Role="ACTIVITATS_DEMANADES" Type="Self.ACTIVITATS_DEMANADES" Multiplicity="1" />
-          <End Role="HORARIS_ACT_DEMANA" Type="Self.HORARIS_ACT_DEMANA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ACTIVITATS_DEMANADES">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="HORARIS_ACT_DEMANA">
-              <PropertyRef Name="id_activitat_demanada" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_EQUIPS_CATEGORIES">
           <End Role="CATEGORIES" Type="Self.CATEGORIES" Multiplicity="1" />
           <End Role="EQUIPS" Type="Self.EQUIPS" Multiplicity="*" />
@@ -940,18 +758,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_HORARIS_INSTALACIONS_DIES_SETMANA">
-          <End Role="DIES_SETMANA" Type="Self.DIES_SETMANA" Multiplicity="1" />
-          <End Role="HORARIS_INSTALACIONS" Type="Self.HORARIS_INSTALACIONS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DIES_SETMANA">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="HORARIS_INSTALACIONS">
-              <PropertyRef Name="id_dia_setmana" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_EQUIPS_ENTITATS1">
           <End Role="ENTITATS" Type="Self.ENTITATS" Multiplicity="1" />
           <End Role="EQUIPS" Type="Self.EQUIPS" Multiplicity="*" />
@@ -1000,89 +806,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ESPAIS_INSTALACIONS">
-          <End Role="INSTALACIONS" Type="Self.INSTALACIONS" Multiplicity="1" />
-          <End Role="ESPAIS" Type="Self.ESPAIS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="INSTALACIONS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ESPAIS">
-              <PropertyRef Name="id_instalacio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_HORARIS_INSTALACIONS_INSTALACIONS1">
-          <End Role="INSTALACIONS" Type="Self.INSTALACIONS" Multiplicity="1" />
-          <End Role="HORARIS_INSTALACIONS" Type="Self.HORARIS_INSTALACIONS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="INSTALACIONS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="HORARIS_INSTALACIONS">
-              <PropertyRef Name="id_instalacio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="entiespaisEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ACTIVITATS" EntityType="Self.ACTIVITATS" />
-          <EntitySet Name="ACTIVITATS_DEMANADES" EntityType="Self.ACTIVITATS_DEMANADES" />
           <EntitySet Name="CATEGORIES" EntityType="Self.CATEGORIES" />
           <EntitySet Name="CATEGORIES_EDAT" EntityType="Self.CATEGORIES_EDAT" />
           <EntitySet Name="COMPETICIO" EntityType="Self.COMPETICIO" />
           <EntitySet Name="DIES_SETMANA" EntityType="Self.DIES_SETMANA" />
           <EntitySet Name="ENTITATS" EntityType="Self.ENTITATS" />
           <EntitySet Name="EQUIPS" EntityType="Self.EQUIPS" />
-          <EntitySet Name="ESPAIS" EntityType="Self.ESPAIS" />
           <EntitySet Name="ESPORTS" EntityType="Self.ESPORTS" />
           <EntitySet Name="HORARIS_ACT_DEMANA" EntityType="Self.HORARIS_ACT_DEMANA" />
           <EntitySet Name="HORARIS_ACTIVITAT" EntityType="Self.HORARIS_ACTIVITAT" />
-          <EntitySet Name="HORARIS_INSTALACIONS" EntityType="Self.HORARIS_INSTALACIONS" />
-          <EntitySet Name="INSTALACIONS" EntityType="Self.INSTALACIONS" />
           <EntitySet Name="SEXES" EntityType="Self.SEXES" />
           <EntitySet Name="TELEFONS" EntityType="Self.TELEFONS" />
           <EntitySet Name="TIPUS_ACTIVITAT" EntityType="Self.TIPUS_ACTIVITAT" />
           <EntitySet Name="USUARIS" EntityType="Self.USUARIS" />
-          <AssociationSet Name="FK_ACTIVITATS_ACTIVITATS_DEMANADES" Association="Self.FK_ACTIVITATS_ACTIVITATS_DEMANADES">
-            <End Role="ACTIVITATS_DEMANADES" EntitySet="ACTIVITATS_DEMANADES" />
-            <End Role="ACTIVITATS" EntitySet="ACTIVITATS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ACTIVITATS_EQUIPS" Association="Self.FK_ACTIVITATS_EQUIPS">
-            <End Role="EQUIPS" EntitySet="EQUIPS" />
-            <End Role="ACTIVITATS" EntitySet="ACTIVITATS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ACTIVITATS_ESPAIS" Association="Self.FK_ACTIVITATS_ESPAIS">
-            <End Role="ESPAIS" EntitySet="ESPAIS" />
-            <End Role="ACTIVITATS" EntitySet="ACTIVITATS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ACTIVITATS_TIPUS_ACTIVITAT" Association="Self.FK_ACTIVITATS_TIPUS_ACTIVITAT">
-            <End Role="TIPUS_ACTIVITAT" EntitySet="TIPUS_ACTIVITAT" />
-            <End Role="ACTIVITATS" EntitySet="ACTIVITATS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ACTIVITATS_USUARIS" Association="Self.FK_ACTIVITATS_USUARIS">
-            <End Role="USUARIS" EntitySet="USUARIS" />
-            <End Role="ACTIVITATS" EntitySet="ACTIVITATS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HORARIS_ACTIVITAT_ACTIVITATS" Association="Self.FK_HORARIS_ACTIVITAT_ACTIVITATS">
-            <End Role="ACTIVITATS" EntitySet="ACTIVITATS" />
-            <End Role="HORARIS_ACTIVITAT" EntitySet="HORARIS_ACTIVITAT" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ACTIVITATS_DEMANADES_EQUIPS" Association="Self.FK_ACTIVITATS_DEMANADES_EQUIPS">
-            <End Role="EQUIPS" EntitySet="EQUIPS" />
-            <End Role="ACTIVITATS_DEMANADES" EntitySet="ACTIVITATS_DEMANADES" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ACTIVITATS_DEMANADES_ESPAIS" Association="Self.FK_ACTIVITATS_DEMANADES_ESPAIS">
-            <End Role="ESPAIS" EntitySet="ESPAIS" />
-            <End Role="ACTIVITATS_DEMANADES" EntitySet="ACTIVITATS_DEMANADES" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ACTIVITATS_DEMANADES_TIPUS_ACTIVITAT" Association="Self.FK_ACTIVITATS_DEMANADES_TIPUS_ACTIVITAT">
-            <End Role="TIPUS_ACTIVITAT" EntitySet="TIPUS_ACTIVITAT" />
-            <End Role="ACTIVITATS_DEMANADES" EntitySet="ACTIVITATS_DEMANADES" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HORARIS_ACT_DEMANA_ACTIVITATS_DEMANADES" Association="Self.FK_HORARIS_ACT_DEMANA_ACTIVITATS_DEMANADES">
-            <End Role="ACTIVITATS_DEMANADES" EntitySet="ACTIVITATS_DEMANADES" />
-            <End Role="HORARIS_ACT_DEMANA" EntitySet="HORARIS_ACT_DEMANA" />
-          </AssociationSet>
           <AssociationSet Name="FK_EQUIPS_CATEGORIES" Association="Self.FK_EQUIPS_CATEGORIES">
             <End Role="CATEGORIES" EntitySet="CATEGORIES" />
             <End Role="EQUIPS" EntitySet="EQUIPS" />
@@ -1103,10 +840,6 @@
             <End Role="DIES_SETMANA" EntitySet="DIES_SETMANA" />
             <End Role="HORARIS_ACTIVITAT" EntitySet="HORARIS_ACTIVITAT" />
           </AssociationSet>
-          <AssociationSet Name="FK_HORARIS_INSTALACIONS_DIES_SETMANA" Association="Self.FK_HORARIS_INSTALACIONS_DIES_SETMANA">
-            <End Role="DIES_SETMANA" EntitySet="DIES_SETMANA" />
-            <End Role="HORARIS_INSTALACIONS" EntitySet="HORARIS_INSTALACIONS" />
-          </AssociationSet>
           <AssociationSet Name="FK_EQUIPS_ENTITATS1" Association="Self.FK_EQUIPS_ENTITATS1">
             <End Role="ENTITATS" EntitySet="ENTITATS" />
             <End Role="EQUIPS" EntitySet="EQUIPS" />
@@ -1123,49 +856,311 @@
             <End Role="SEXES" EntitySet="SEXES" />
             <End Role="EQUIPS" EntitySet="EQUIPS" />
           </AssociationSet>
-          <AssociationSet Name="FK_ESPAIS_INSTALACIONS" Association="Self.FK_ESPAIS_INSTALACIONS">
+          <EntitySet Name="ACTIVITATS" EntityType="entiespaisModel.ACTIVITATS" />
+          <EntitySet Name="ACTIVITATS_DEMANADES" EntityType="entiespaisModel.ACTIVITATS_DEMANADES" />
+          <EntitySet Name="ESPAIS" EntityType="entiespaisModel.ESPAIS" />
+          <EntitySet Name="HORARIS_INSTALACIONS" EntityType="entiespaisModel.HORARIS_INSTALACIONS" />
+          <EntitySet Name="INSTALACIONS" EntityType="entiespaisModel.INSTALACIONS" />
+          <AssociationSet Name="FK_ACTIVITATS_ACTIVITATS_DEMANADES" Association="entiespaisModel.FK_ACTIVITATS_ACTIVITATS_DEMANADES">
+            <End Role="ACTIVITATS_DEMANADES" EntitySet="ACTIVITATS_DEMANADES" />
+            <End Role="ACTIVITATS" EntitySet="ACTIVITATS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ACTIVITATS_EQUIPS" Association="entiespaisModel.FK_ACTIVITATS_EQUIPS">
+            <End Role="EQUIPS" EntitySet="EQUIPS" />
+            <End Role="ACTIVITATS" EntitySet="ACTIVITATS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ACTIVITATS_ESPAIS" Association="entiespaisModel.FK_ACTIVITATS_ESPAIS">
+            <End Role="ESPAIS" EntitySet="ESPAIS" />
+            <End Role="ACTIVITATS" EntitySet="ACTIVITATS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ACTIVITATS_TIPUS_ACTIVITAT" Association="entiespaisModel.FK_ACTIVITATS_TIPUS_ACTIVITAT">
+            <End Role="TIPUS_ACTIVITAT" EntitySet="TIPUS_ACTIVITAT" />
+            <End Role="ACTIVITATS" EntitySet="ACTIVITATS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ACTIVITATS_USUARIS" Association="entiespaisModel.FK_ACTIVITATS_USUARIS">
+            <End Role="USUARIS" EntitySet="USUARIS" />
+            <End Role="ACTIVITATS" EntitySet="ACTIVITATS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HORARIS_ACTIVITAT_ACTIVITATS" Association="entiespaisModel.FK_HORARIS_ACTIVITAT_ACTIVITATS">
+            <End Role="ACTIVITATS" EntitySet="ACTIVITATS" />
+            <End Role="HORARIS_ACTIVITAT" EntitySet="HORARIS_ACTIVITAT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ACTIVITATS_DEMANADES_EQUIPS" Association="entiespaisModel.FK_ACTIVITATS_DEMANADES_EQUIPS">
+            <End Role="EQUIPS" EntitySet="EQUIPS" />
+            <End Role="ACTIVITATS_DEMANADES" EntitySet="ACTIVITATS_DEMANADES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ACTIVITATS_DEMANADES_ESPAIS" Association="entiespaisModel.FK_ACTIVITATS_DEMANADES_ESPAIS">
+            <End Role="ESPAIS" EntitySet="ESPAIS" />
+            <End Role="ACTIVITATS_DEMANADES" EntitySet="ACTIVITATS_DEMANADES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ACTIVITATS_DEMANADES_TIPUS_ACTIVITAT" Association="entiespaisModel.FK_ACTIVITATS_DEMANADES_TIPUS_ACTIVITAT">
+            <End Role="TIPUS_ACTIVITAT" EntitySet="TIPUS_ACTIVITAT" />
+            <End Role="ACTIVITATS_DEMANADES" EntitySet="ACTIVITATS_DEMANADES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HORARIS_ACT_DEMANA_ACTIVITATS_DEMANADES" Association="entiespaisModel.FK_HORARIS_ACT_DEMANA_ACTIVITATS_DEMANADES">
+            <End Role="ACTIVITATS_DEMANADES" EntitySet="ACTIVITATS_DEMANADES" />
+            <End Role="HORARIS_ACT_DEMANA" EntitySet="HORARIS_ACT_DEMANA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HORARIS_INSTALACIONS_DIES_SETMANA" Association="entiespaisModel.FK_HORARIS_INSTALACIONS_DIES_SETMANA">
+            <End Role="DIES_SETMANA" EntitySet="DIES_SETMANA" />
+            <End Role="HORARIS_INSTALACIONS" EntitySet="HORARIS_INSTALACIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ESPAIS_INSTALACIONS" Association="entiespaisModel.FK_ESPAIS_INSTALACIONS">
             <End Role="INSTALACIONS" EntitySet="INSTALACIONS" />
             <End Role="ESPAIS" EntitySet="ESPAIS" />
           </AssociationSet>
-          <AssociationSet Name="FK_HORARIS_INSTALACIONS_INSTALACIONS1" Association="Self.FK_HORARIS_INSTALACIONS_INSTALACIONS1">
+          <AssociationSet Name="FK_HORARIS_INSTALACIONS_INSTALACIONS1" Association="entiespaisModel.FK_HORARIS_INSTALACIONS_INSTALACIONS1">
             <End Role="INSTALACIONS" EntitySet="INSTALACIONS" />
             <End Role="HORARIS_INSTALACIONS" EntitySet="HORARIS_INSTALACIONS" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
+        <EntityType Name="ACTIVITATS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_equip" Type="Int32" Nullable="false" />
+          <Property Name="id_tipus_activitat" Type="Int32" Nullable="false" />
+          <Property Name="id_activitat_demanada" Type="Int32" Nullable="false" />
+          <Property Name="id_usuari" Type="Int32" Nullable="false" />
+          <Property Name="data_ultima_mod" Type="DateTime" Precision="0" />
+          <Property Name="id_espai" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ACTIVITATS_DEMANADES" Relationship="entiespaisModel.FK_ACTIVITATS_ACTIVITATS_DEMANADES" FromRole="ACTIVITATS" ToRole="ACTIVITATS_DEMANADES" />
+          <NavigationProperty Name="EQUIPS" Relationship="entiespaisModel.FK_ACTIVITATS_EQUIPS" FromRole="ACTIVITATS" ToRole="EQUIPS" />
+          <NavigationProperty Name="ESPAIS" Relationship="entiespaisModel.FK_ACTIVITATS_ESPAIS" FromRole="ACTIVITATS" ToRole="ESPAIS" />
+          <NavigationProperty Name="TIPUS_ACTIVITAT" Relationship="entiespaisModel.FK_ACTIVITATS_TIPUS_ACTIVITAT" FromRole="ACTIVITATS" ToRole="TIPUS_ACTIVITAT" />
+          <NavigationProperty Name="USUARIS" Relationship="entiespaisModel.FK_ACTIVITATS_USUARIS" FromRole="ACTIVITATS" ToRole="USUARIS" />
+          <NavigationProperty Name="HORARIS_ACTIVITAT" Relationship="entiespaisModel.FK_HORARIS_ACTIVITAT_ACTIVITATS" FromRole="ACTIVITATS" ToRole="HORARIS_ACTIVITAT" />
+        </EntityType>
+        <EntityType Name="ACTIVITATS_DEMANADES">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="durada" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="id_equip" Type="Int32" Nullable="false" />
+          <Property Name="id_espai" Type="Int32" Nullable="false" />
+          <Property Name="id_tipus_activitat" Type="Int32" Nullable="false" />
+          <Property Name="num_dies" Type="Int32" Nullable="false" />
+          <Property Name="assignada" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ACTIVITATS" Relationship="entiespaisModel.FK_ACTIVITATS_ACTIVITATS_DEMANADES" FromRole="ACTIVITATS_DEMANADES" ToRole="ACTIVITATS" />
+          <NavigationProperty Name="EQUIPS" Relationship="entiespaisModel.FK_ACTIVITATS_DEMANADES_EQUIPS" FromRole="ACTIVITATS_DEMANADES" ToRole="EQUIPS" />
+          <NavigationProperty Name="ESPAIS" Relationship="entiespaisModel.FK_ACTIVITATS_DEMANADES_ESPAIS" FromRole="ACTIVITATS_DEMANADES" ToRole="ESPAIS" />
+          <NavigationProperty Name="TIPUS_ACTIVITAT" Relationship="entiespaisModel.FK_ACTIVITATS_DEMANADES_TIPUS_ACTIVITAT" FromRole="ACTIVITATS_DEMANADES" ToRole="TIPUS_ACTIVITAT" />
+          <NavigationProperty Name="HORARIS_ACT_DEMANA" Relationship="entiespaisModel.FK_HORARIS_ACT_DEMANA_ACTIVITATS_DEMANADES" FromRole="ACTIVITATS_DEMANADES" ToRole="HORARIS_ACT_DEMANA" />
+        </EntityType>
+        <EntityType Name="ESPAIS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="preu" Type="Double" Nullable="false" />
+          <Property Name="exterior" Type="Boolean" Nullable="false" />
+          <Property Name="id_instalacio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ACTIVITATS" Relationship="entiespaisModel.FK_ACTIVITATS_ESPAIS" FromRole="ESPAIS" ToRole="ACTIVITATS" />
+          <NavigationProperty Name="ACTIVITATS_DEMANADES" Relationship="entiespaisModel.FK_ACTIVITATS_DEMANADES_ESPAIS" FromRole="ESPAIS" ToRole="ACTIVITATS_DEMANADES" />
+          <NavigationProperty Name="INSTALACIONS" Relationship="entiespaisModel.FK_ESPAIS_INSTALACIONS" FromRole="ESPAIS" ToRole="INSTALACIONS" />
+        </EntityType>
+        <EntityType Name="HORARIS_INSTALACIONS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hora_inici" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="hora_fi" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="id_instalacio" Type="Int32" Nullable="false" />
+          <Property Name="id_dia_setmana" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DIES_SETMANA" Relationship="entiespaisModel.FK_HORARIS_INSTALACIONS_DIES_SETMANA" FromRole="HORARIS_INSTALACIONS" ToRole="DIES_SETMANA" />
+          <NavigationProperty Name="INSTALACIONS" Relationship="entiespaisModel.FK_HORARIS_INSTALACIONS_INSTALACIONS1" FromRole="HORARIS_INSTALACIONS" ToRole="INSTALACIONS" />
+        </EntityType>
+        <EntityType Name="INSTALACIONS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gestioExterna" Type="Boolean" Nullable="false" />
+          <Property Name="adreca" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ESPAIS" Relationship="entiespaisModel.FK_ESPAIS_INSTALACIONS" FromRole="INSTALACIONS" ToRole="ESPAIS" />
+          <NavigationProperty Name="HORARIS_INSTALACIONS" Relationship="entiespaisModel.FK_HORARIS_INSTALACIONS_INSTALACIONS1" FromRole="INSTALACIONS" ToRole="HORARIS_INSTALACIONS" />
+        </EntityType>
+        <Association Name="FK_ACTIVITATS_ACTIVITATS_DEMANADES">
+          <End Type="entiespaisModel.ACTIVITATS_DEMANADES" Role="ACTIVITATS_DEMANADES" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="entiespaisModel.ACTIVITATS" Role="ACTIVITATS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACTIVITATS_DEMANADES">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ACTIVITATS">
+              <PropertyRef Name="id_activitat_demanada" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ACTIVITATS_EQUIPS">
+          <End Type="entiespaisModel.EQUIPS" Role="EQUIPS" Multiplicity="1" />
+          <End Type="entiespaisModel.ACTIVITATS" Role="ACTIVITATS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EQUIPS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ACTIVITATS">
+              <PropertyRef Name="id_equip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ACTIVITATS_ESPAIS">
+          <End Type="entiespaisModel.ESPAIS" Role="ESPAIS" Multiplicity="1" />
+          <End Type="entiespaisModel.ACTIVITATS" Role="ACTIVITATS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESPAIS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ACTIVITATS">
+              <PropertyRef Name="id_espai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ACTIVITATS_TIPUS_ACTIVITAT">
+          <End Type="entiespaisModel.TIPUS_ACTIVITAT" Role="TIPUS_ACTIVITAT" Multiplicity="1" />
+          <End Type="entiespaisModel.ACTIVITATS" Role="ACTIVITATS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPUS_ACTIVITAT">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ACTIVITATS">
+              <PropertyRef Name="id_tipus_activitat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ACTIVITATS_USUARIS">
+          <End Type="entiespaisModel.USUARIS" Role="USUARIS" Multiplicity="1" />
+          <End Type="entiespaisModel.ACTIVITATS" Role="ACTIVITATS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ACTIVITATS">
+              <PropertyRef Name="id_usuari" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HORARIS_ACTIVITAT_ACTIVITATS">
+          <End Type="entiespaisModel.ACTIVITATS" Role="ACTIVITATS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="entiespaisModel.HORARIS_ACTIVITAT" Role="HORARIS_ACTIVITAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACTIVITATS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HORARIS_ACTIVITAT">
+              <PropertyRef Name="id_activitat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ACTIVITATS_DEMANADES_EQUIPS">
+          <End Type="entiespaisModel.EQUIPS" Role="EQUIPS" Multiplicity="1" />
+          <End Type="entiespaisModel.ACTIVITATS_DEMANADES" Role="ACTIVITATS_DEMANADES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EQUIPS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ACTIVITATS_DEMANADES">
+              <PropertyRef Name="id_equip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ACTIVITATS_DEMANADES_ESPAIS">
+          <End Type="entiespaisModel.ESPAIS" Role="ESPAIS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="entiespaisModel.ACTIVITATS_DEMANADES" Role="ACTIVITATS_DEMANADES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESPAIS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ACTIVITATS_DEMANADES">
+              <PropertyRef Name="id_espai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ACTIVITATS_DEMANADES_TIPUS_ACTIVITAT">
+          <End Type="entiespaisModel.TIPUS_ACTIVITAT" Role="TIPUS_ACTIVITAT" Multiplicity="1" />
+          <End Type="entiespaisModel.ACTIVITATS_DEMANADES" Role="ACTIVITATS_DEMANADES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPUS_ACTIVITAT">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ACTIVITATS_DEMANADES">
+              <PropertyRef Name="id_tipus_activitat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HORARIS_ACT_DEMANA_ACTIVITATS_DEMANADES">
+          <End Type="entiespaisModel.ACTIVITATS_DEMANADES" Role="ACTIVITATS_DEMANADES" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="entiespaisModel.HORARIS_ACT_DEMANA" Role="HORARIS_ACT_DEMANA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACTIVITATS_DEMANADES">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HORARIS_ACT_DEMANA">
+              <PropertyRef Name="id_activitat_demanada" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HORARIS_INSTALACIONS_DIES_SETMANA">
+          <End Type="entiespaisModel.DIES_SETMANA" Role="DIES_SETMANA" Multiplicity="1" />
+          <End Type="entiespaisModel.HORARIS_INSTALACIONS" Role="HORARIS_INSTALACIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIES_SETMANA">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HORARIS_INSTALACIONS">
+              <PropertyRef Name="id_dia_setmana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ESPAIS_INSTALACIONS">
+          <End Type="entiespaisModel.INSTALACIONS" Role="INSTALACIONS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="entiespaisModel.ESPAIS" Role="ESPAIS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INSTALACIONS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ESPAIS">
+              <PropertyRef Name="id_instalacio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HORARIS_INSTALACIONS_INSTALACIONS1">
+          <End Type="entiespaisModel.INSTALACIONS" Role="INSTALACIONS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="entiespaisModel.HORARIS_INSTALACIONS" Role="HORARIS_INSTALACIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INSTALACIONS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HORARIS_INSTALACIONS">
+              <PropertyRef Name="id_instalacio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="entiespaisModelStoreContainer" CdmEntityContainer="entiespaisEntities1">
-          <EntitySetMapping Name="ACTIVITATS">
-            <EntityTypeMapping TypeName="entiespaisModel.ACTIVITATS">
-              <MappingFragment StoreEntitySet="ACTIVITATS">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="nom" ColumnName="nom" />
-                <ScalarProperty Name="id_equip" ColumnName="id_equip" />
-                <ScalarProperty Name="id_tipus_activitat" ColumnName="id_tipus_activitat" />
-                <ScalarProperty Name="id_activitat_demanada" ColumnName="id_activitat_demanada" />
-                <ScalarProperty Name="id_usuari" ColumnName="id_usuari" />
-                <ScalarProperty Name="data_ultima_mod" ColumnName="data_ultima_mod" />
-                <ScalarProperty Name="id_espai" ColumnName="id_espai" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ACTIVITATS_DEMANADES">
-            <EntityTypeMapping TypeName="entiespaisModel.ACTIVITATS_DEMANADES">
-              <MappingFragment StoreEntitySet="ACTIVITATS_DEMANADES">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="nom" ColumnName="nom" />
-                <ScalarProperty Name="durada" ColumnName="durada" />
-                <ScalarProperty Name="id_equip" ColumnName="id_equip" />
-                <ScalarProperty Name="id_espai" ColumnName="id_espai" />
-                <ScalarProperty Name="id_tipus_activitat" ColumnName="id_tipus_activitat" />
-                <ScalarProperty Name="num_dies" ColumnName="num_dies" />
-                <ScalarProperty Name="assignada" ColumnName="assignada" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CATEGORIES">
             <EntityTypeMapping TypeName="entiespaisModel.CATEGORIES">
               <MappingFragment StoreEntitySet="CATEGORIES">
@@ -1225,17 +1220,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ESPAIS">
-            <EntityTypeMapping TypeName="entiespaisModel.ESPAIS">
-              <MappingFragment StoreEntitySet="ESPAIS">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="nom" ColumnName="nom" />
-                <ScalarProperty Name="preu" ColumnName="preu" />
-                <ScalarProperty Name="exterior" ColumnName="exterior" />
-                <ScalarProperty Name="id_instalacio" ColumnName="id_instalacio" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ESPORTS">
             <EntityTypeMapping TypeName="entiespaisModel.ESPORTS">
               <MappingFragment StoreEntitySet="ESPORTS">
@@ -1263,27 +1247,6 @@
                 <ScalarProperty Name="hora_fi" ColumnName="hora_fi" />
                 <ScalarProperty Name="id_activitat" ColumnName="id_activitat" />
                 <ScalarProperty Name="id_dia_setmana" ColumnName="id_dia_setmana" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="HORARIS_INSTALACIONS">
-            <EntityTypeMapping TypeName="entiespaisModel.HORARIS_INSTALACIONS">
-              <MappingFragment StoreEntitySet="HORARIS_INSTALACIONS">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="hora_inici" ColumnName="hora_inici" />
-                <ScalarProperty Name="hora_fi" ColumnName="hora_fi" />
-                <ScalarProperty Name="id_instalacio" ColumnName="id_instalacio" />
-                <ScalarProperty Name="id_dia_setmana" ColumnName="id_dia_setmana" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="INSTALACIONS">
-            <EntityTypeMapping TypeName="entiespaisModel.INSTALACIONS">
-              <MappingFragment StoreEntitySet="INSTALACIONS">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="nom" ColumnName="nom" />
-                <ScalarProperty Name="gestioExterna" ColumnName="gestioExterna" />
-                <ScalarProperty Name="adreca" ColumnName="adreca" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1320,6 +1283,66 @@
                 <ScalarProperty Name="nom" ColumnName="nom" />
                 <ScalarProperty Name="correu" ColumnName="correu" />
                 <ScalarProperty Name="contrasenya" ColumnName="contrasenya" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACTIVITATS">
+            <EntityTypeMapping TypeName="entiespaisModel.ACTIVITATS">
+              <MappingFragment StoreEntitySet="ACTIVITATS">
+                <ScalarProperty Name="id_espai" ColumnName="id_espai" />
+                <ScalarProperty Name="data_ultima_mod" ColumnName="data_ultima_mod" />
+                <ScalarProperty Name="id_usuari" ColumnName="id_usuari" />
+                <ScalarProperty Name="id_activitat_demanada" ColumnName="id_activitat_demanada" />
+                <ScalarProperty Name="id_tipus_activitat" ColumnName="id_tipus_activitat" />
+                <ScalarProperty Name="id_equip" ColumnName="id_equip" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACTIVITATS_DEMANADES">
+            <EntityTypeMapping TypeName="entiespaisModel.ACTIVITATS_DEMANADES">
+              <MappingFragment StoreEntitySet="ACTIVITATS_DEMANADES">
+                <ScalarProperty Name="assignada" ColumnName="assignada" />
+                <ScalarProperty Name="num_dies" ColumnName="num_dies" />
+                <ScalarProperty Name="id_tipus_activitat" ColumnName="id_tipus_activitat" />
+                <ScalarProperty Name="id_espai" ColumnName="id_espai" />
+                <ScalarProperty Name="id_equip" ColumnName="id_equip" />
+                <ScalarProperty Name="durada" ColumnName="durada" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESPAIS">
+            <EntityTypeMapping TypeName="entiespaisModel.ESPAIS">
+              <MappingFragment StoreEntitySet="ESPAIS">
+                <ScalarProperty Name="id_instalacio" ColumnName="id_instalacio" />
+                <ScalarProperty Name="exterior" ColumnName="exterior" />
+                <ScalarProperty Name="preu" ColumnName="preu" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HORARIS_INSTALACIONS">
+            <EntityTypeMapping TypeName="entiespaisModel.HORARIS_INSTALACIONS">
+              <MappingFragment StoreEntitySet="HORARIS_INSTALACIONS">
+                <ScalarProperty Name="id_dia_setmana" ColumnName="id_dia_setmana" />
+                <ScalarProperty Name="id_instalacio" ColumnName="id_instalacio" />
+                <ScalarProperty Name="hora_fi" ColumnName="hora_fi" />
+                <ScalarProperty Name="hora_inici" ColumnName="hora_inici" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INSTALACIONS">
+            <EntityTypeMapping TypeName="entiespaisModel.INSTALACIONS">
+              <MappingFragment StoreEntitySet="INSTALACIONS">
+                <ScalarProperty Name="adreca" ColumnName="adreca" />
+                <ScalarProperty Name="gestioExterna" ColumnName="gestioExterna" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

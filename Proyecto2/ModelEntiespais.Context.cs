@@ -25,23 +25,23 @@ namespace Proyecto2
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ACTIVITATS> ACTIVITATS { get; set; }
-        public virtual DbSet<ACTIVITATS_DEMANADES> ACTIVITATS_DEMANADES { get; set; }
         public virtual DbSet<CATEGORIES> CATEGORIES { get; set; }
         public virtual DbSet<CATEGORIES_EDAT> CATEGORIES_EDAT { get; set; }
         public virtual DbSet<COMPETICIO> COMPETICIO { get; set; }
         public virtual DbSet<DIES_SETMANA> DIES_SETMANA { get; set; }
         public virtual DbSet<ENTITATS> ENTITATS { get; set; }
         public virtual DbSet<EQUIPS> EQUIPS { get; set; }
-        public virtual DbSet<ESPAIS> ESPAIS { get; set; }
         public virtual DbSet<ESPORTS> ESPORTS { get; set; }
         public virtual DbSet<HORARIS_ACT_DEMANA> HORARIS_ACT_DEMANA { get; set; }
         public virtual DbSet<HORARIS_ACTIVITAT> HORARIS_ACTIVITAT { get; set; }
-        public virtual DbSet<HORARIS_INSTALACIONS> HORARIS_INSTALACIONS { get; set; }
-        public virtual DbSet<INSTALACIONS> INSTALACIONS { get; set; }
         public virtual DbSet<SEXES> SEXES { get; set; }
         public virtual DbSet<TELEFONS> TELEFONS { get; set; }
         public virtual DbSet<TIPUS_ACTIVITAT> TIPUS_ACTIVITAT { get; set; }
         public virtual DbSet<USUARIS> USUARIS { get; set; }
+        public virtual DbSet<ACTIVITATS> ACTIVITATS { get; set; }
+        public virtual DbSet<ACTIVITATS_DEMANADES> ACTIVITATS_DEMANADES { get; set; }
+        public virtual DbSet<ESPAIS> ESPAIS { get; set; }
+        public virtual DbSet<HORARIS_INSTALACIONS> HORARIS_INSTALACIONS { get; set; }
+        public virtual DbSet<INSTALACIONS> INSTALACIONS { get; set; }
     }
 }
