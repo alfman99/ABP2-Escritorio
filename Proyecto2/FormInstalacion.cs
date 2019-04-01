@@ -53,11 +53,22 @@ namespace Proyecto2
 
                 bindingSourceEspaciosInstalacion.DataSource = instalacionModif.ESPAIS.ToList();
                 buttonAñadirInstalacion.Enabled = false;
+
+                List<HORARIS_INSTALACIONS> listaHorarios = instalacionModif.HORARIS_INSTALACIONS.ToList();
+
+               
+
             }
             else
             {
                 buttonGuardarModificacion.Enabled = false;
             }
+
+            foreach (var item in panel2.Controls.OfType<ComboBox>())
+            {
+                checkHorariosCorrecto();
+            }
+
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -202,40 +213,45 @@ namespace Proyecto2
             {
                 mal = true;
                 MessageBox.Show("El horario final del lunes ha de ser mas tarde que el de inicio");
-            }else
+            }
+            else
             {
-                if(comboBoxMartesIni.SelectedIndex > comboBoxMartesFin.SelectedIndex || (comboBoxMartesIni.SelectedIndex == 0 && comboBoxMartesFin.SelectedIndex != 0))
+                if (comboBoxMartesIni.SelectedIndex > comboBoxMartesFin.SelectedIndex || (comboBoxMartesIni.SelectedIndex == 0 && comboBoxMartesFin.SelectedIndex != 0))
                 {
                     mal = true;
                     MessageBox.Show("El horario final del martes ha de ser mas tarde que el de inicio");
-                }else
+                }
+                else
                 {
                     if (comboBoxMiercolesIni.SelectedIndex > comboBoxMiercolesFin.SelectedIndex || (comboBoxMiercolesIni.SelectedIndex == 0 && comboBoxMiercolesFin.SelectedIndex != 0))
                     {
                         mal = true;
                         MessageBox.Show("El horario final del miercoles ha de ser mas tarde que el de inicio");
-                    }else
+                    }
+                    else
                     {
-                        if(comboBoxJuevesIni.SelectedIndex > comboBoxJuevesFin.SelectedIndex || (comboBoxJuevesIni.SelectedIndex == 0 && comboBoxJuevesFin.SelectedIndex != 0))
+                        if (comboBoxJuevesIni.SelectedIndex > comboBoxJuevesFin.SelectedIndex || (comboBoxJuevesIni.SelectedIndex == 0 && comboBoxJuevesFin.SelectedIndex != 0))
                         {
                             mal = true;
                             MessageBox.Show("El horario final del jueves ha de ser mas tarde que el de inicio");
                         }
                         else
                         {
-                            if(comboBoxViernesIni.SelectedIndex > comboBoxViernesFin.SelectedIndex || (comboBoxViernesIni.SelectedIndex == 0 && comboBoxViernesFin.SelectedIndex != 0))
+                            if (comboBoxViernesIni.SelectedIndex > comboBoxViernesFin.SelectedIndex || (comboBoxViernesIni.SelectedIndex == 0 && comboBoxViernesFin.SelectedIndex != 0))
                             {
                                 mal = true;
                                 MessageBox.Show("El horario final del viernes ha de ser mas tarde que el de inicio");
-                            }else
+                            }
+                            else
                             {
-                                if(comboBoxSabadoIni.SelectedIndex > comboBoxSabadoFin.SelectedIndex || (comboBoxSabadoIni.SelectedIndex == 0 && comboBoxSabadoFin.SelectedIndex != 0))
+                                if (comboBoxSabadoIni.SelectedIndex > comboBoxSabadoFin.SelectedIndex || (comboBoxSabadoIni.SelectedIndex == 0 && comboBoxSabadoFin.SelectedIndex != 0))
                                 {
                                     mal = true;
                                     MessageBox.Show("El horario final del sabado ha de ser mas tarde que el de inicio");
-                                }else
+                                }
+                                else
                                 {
-                                    if(comboBoxDomingoIni.SelectedIndex > comboBoxDomingoFin.SelectedIndex || (comboBoxDomingoIni.SelectedIndex == 0 && comboBoxDomingoFin.SelectedIndex != 0))
+                                    if (comboBoxDomingoIni.SelectedIndex > comboBoxDomingoFin.SelectedIndex || (comboBoxDomingoIni.SelectedIndex == 0 && comboBoxDomingoFin.SelectedIndex != 0))
                                     {
                                         mal = true;
                                         MessageBox.Show("El horario final del domingo ha de ser mas tarde que el de inicio");
