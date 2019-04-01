@@ -1152,7 +1152,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(3, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(910, 555);
+            this.panel8.Size = new System.Drawing.Size(0, 0);
             this.panel8.TabIndex = 0;
             // 
             // label12
