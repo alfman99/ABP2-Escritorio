@@ -172,7 +172,7 @@ namespace Proyecto2
                             gestExtern = false;
                         }
 
-                        if (!checkHorarios())
+                        if (!checkHorarios() && !checkHorariosCorrecto())
                         {
                             String error = BD.ORM_INSTALACION.InsertINSTALACION(textBoxNombreInstalacion.Text, gestExtern, textBoxDireccionInstalacion.Text);
 
@@ -206,46 +206,54 @@ namespace Proyecto2
             }
         }
 
-        private void checkHorariosCorrecto()
+        private bool checkHorariosCorrecto()
         {
+            bool mal = false;
             if (comboBoxLunesIni.SelectedIndex > comboBoxLunesFin.SelectedIndex || (comboBoxLunesIni.SelectedIndex == 0 && comboBoxLunesFin.SelectedIndex != 0))
             {
+                mal = true;
                 MessageBox.Show("El horario final del lunes ha de ser mas tarde que el de inicio");
             }
             else
             {
                 if (comboBoxMartesIni.SelectedIndex > comboBoxMartesFin.SelectedIndex || (comboBoxMartesIni.SelectedIndex == 0 && comboBoxMartesFin.SelectedIndex != 0))
                 {
+                    mal = true;
                     MessageBox.Show("El horario final del martes ha de ser mas tarde que el de inicio");
                 }
                 else
                 {
                     if (comboBoxMiercolesIni.SelectedIndex > comboBoxMiercolesFin.SelectedIndex || (comboBoxMiercolesIni.SelectedIndex == 0 && comboBoxMiercolesFin.SelectedIndex != 0))
                     {
+                        mal = true;
                         MessageBox.Show("El horario final del miercoles ha de ser mas tarde que el de inicio");
                     }
                     else
                     {
                         if (comboBoxJuevesIni.SelectedIndex > comboBoxJuevesFin.SelectedIndex || (comboBoxJuevesIni.SelectedIndex == 0 && comboBoxJuevesFin.SelectedIndex != 0))
                         {
+                            mal = true;
                             MessageBox.Show("El horario final del jueves ha de ser mas tarde que el de inicio");
                         }
                         else
                         {
                             if (comboBoxViernesIni.SelectedIndex > comboBoxViernesFin.SelectedIndex || (comboBoxViernesIni.SelectedIndex == 0 && comboBoxViernesFin.SelectedIndex != 0))
                             {
+                                mal = true;
                                 MessageBox.Show("El horario final del viernes ha de ser mas tarde que el de inicio");
                             }
                             else
                             {
                                 if (comboBoxSabadoIni.SelectedIndex > comboBoxSabadoFin.SelectedIndex || (comboBoxSabadoIni.SelectedIndex == 0 && comboBoxSabadoFin.SelectedIndex != 0))
                                 {
+                                    mal = true;
                                     MessageBox.Show("El horario final del sabado ha de ser mas tarde que el de inicio");
                                 }
                                 else
                                 {
                                     if (comboBoxDomingoIni.SelectedIndex > comboBoxDomingoFin.SelectedIndex || (comboBoxDomingoIni.SelectedIndex == 0 && comboBoxDomingoFin.SelectedIndex != 0))
                                     {
+                                        mal = true;
                                         MessageBox.Show("El horario final del domingo ha de ser mas tarde que el de inicio");
                                     }
                                 }
@@ -254,6 +262,7 @@ namespace Proyecto2
                     }
                 }
             }
+            return mal;
         }
 
         private bool checkHorarios()
