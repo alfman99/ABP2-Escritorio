@@ -25,39 +25,46 @@ namespace Proyecto2
             this._hora = hora;
         }
 
-        public void HacerTodo(ref String mensaje)
+        public void HacerTodo()
         {
-            mensaje = "";
+            String mensaje = "";
 
-            List<DIES_SETMANA> diasDeLaSemana = BD.ORM_DIES_SETMANA.SelectAllDIES_SETMANA(ref mensaje);
+            List<DIES_SETMANA> diasSemana = BD.ORM_DIES_SETMANA.SelectAllDIES_SETMANA(ref mensaje);
+            List<HORARIS_ACTIVITAT> horariosActividades = BD.ORM_HORARIS_ACTIVITAT.SelectAllHORARIS_ACTIVITAT(ref mensaje);
 
-            if (mensaje.Equals(""))
+            foreach (var dia in diasSemana)
             {
-                foreach (var hora in _espacio.INSTALACIONS.HORARIS_INSTALACIONS)
+                foreach (var horarioActividad in horariosActividades)
                 {
-                    switch (hora.id_dia_setmana)
+                    if (horarioActividad.id_dia_setmana == dia.id)
                     {
-                        case 1:
-                            Lunes = "LUNES";
-                            break;
-                        case 2:
-                            Martes = "MARTES";
-                            break;
-                        case 3:
-                            Miercoles = "MIERCOLES";
-                            break;
-                        case 4:
-                            Jueves = "JUEVBES";
-                            break;
-                        case 5:
-                            Viernes = "VIERNES";
-                            break;
-                        case 6:
-                            Sabado = "SABADO";
-                            break;
-                        case 7:
-                            Domingo = "DMINGO";
-                            break;
+                        if ((_hora >= horarioActividad.hora_inici) && (_hora <= horarioActividad.hora_fi) && horarioActividad.ACTIVITATS.ACTIVITATS_DEMANADES.assignada)
+                        {
+                            switch (dia.nom.ToLower())
+                            {
+                                case "lunes":
+                                    Lunes = horarioActividad.ACTIVITATS.nom;
+                                    break;
+                                case "martes":
+                                    Martes = horarioActividad.ACTIVITATS.nom;
+                                    break;
+                                case "miercoles":
+                                    Miercoles = horarioActividad.ACTIVITATS.nom;
+                                    break;
+                                case "jueves":
+                                    Jueves = horarioActividad.ACTIVITATS.nom;
+                                    break;
+                                case "viernes":
+                                    Viernes = horarioActividad.ACTIVITATS.nom;
+                                    break;
+                                case "sabado":
+                                    Sabado = horarioActividad.ACTIVITATS.nom;
+                                    break;
+                                case "domingo":
+                                    Domingo = horarioActividad.ACTIVITATS.nom;
+                                    break;
+                            }
+                        }
                     }
                 }
             }

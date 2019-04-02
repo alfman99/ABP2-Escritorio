@@ -58,7 +58,7 @@ namespace Proyecto2
         private void radioButtonActividades_CheckedChanged(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage3;
-            
+
             labeltelefonos.Hide();
             dataGridViewTelefonos.Hide();
             buttonAñadirTel.Hide();
@@ -390,7 +390,7 @@ namespace Proyecto2
             bindingSourceEquips.DataSource = BD.ORM_EQUIPS.SelectAllEQUIPS(ref mensaje);
             bindingSourceEspais.DataSource = BD.ORM_ESPAIS.SelectAllESPAIS(ref mensaje);
             bindingSourceTipusActivitat.DataSource = BD.ORM_TIPUS_ACTIVITAT.SelectAllTIPUS_ACTIVITAT(ref mensaje);
-            
+
 
             comboBoxTiposActividad.DataSource = BD.ORM_TIPUS_ACTIVITAT.SelectAllTIPUS_ACTIVITAT(ref mensaje);
             comboBoxTiposActividad.DisplayMember = "nom";
@@ -400,52 +400,6 @@ namespace Proyecto2
 
             comboBoxEquipoActividad.DataSource = BD.ORM_EQUIPS.SelectAllEQUIPS(ref mensaje);
             comboBoxEquipoActividad.DisplayMember = "nom";
-
-            ///////////ESTA PARTE HAY QUE MEJORARLA
-            //-------------------------------------------------------------------------------------------
-
-            List<TimeSpan> tiempos = new List<TimeSpan>();
-
-            List<PasarACalendario> listaCalendario = new List<PasarACalendario>();
-
-            for (int i = 0; i < 48; i++)
-            {
-                String hora, minuto;
-
-                if (i % 2 == 0)
-                {
-                    minuto = "00";
-                }
-                else
-                {
-                    minuto = "30";
-                }
-
-                hora = (i / 2).ToString();
-
-                listaCalendario.Add(new PasarACalendario((ESPAIS)comboBoxEspaciosHome.SelectedItem, TimeSpan.Parse(hora + ":" + minuto)));
-            }
-
-            mensaje = "";
-
-            foreach (var item in listaCalendario)
-            {
-                item.HacerTodo(ref mensaje);
-
-                if (!mensaje.Equals(""))
-                {
-                    MessageBox.Show(mensaje);
-                }
-            }
-
-            bindingSourcePasarActividades.DataSource = listaCalendario;
-
-
-
-
-
-
-            //-------------------------------------------------------------------------------------------
 
 
             if (!mensaje.Equals(""))
@@ -459,11 +413,30 @@ namespace Proyecto2
 
 
             textBoxNombreActividad.Text = "";
-            textBoxDuracionActividad.Text = "";
+            comboBoxDuracionActividad.SelectedIndex = -1;
             comboBoxEquipoActividad.SelectedIndex = -1;
             comboBoxEspacioActividad.SelectedIndex = -1;
             comboBoxTiposActividad.SelectedIndex = -1;
             textBoxDiasActividad.Text = "";
+
+            comboBoxActivitats.SelectedIndex = -1;
+
+            List<ACTIVITATS_DEMANADES> _activitats_dem = BD.ORM_ACTIVITATS_DEMANADES.SelectAllACTIVITATS(ref mensaje);
+            List<ACTIVITATS_DEMANADES> _activitats_dem_BUENAS = new List<ACTIVITATS_DEMANADES>();
+
+            ESPAIS _espai = (ESPAIS)comboBoxEspaciosHome.SelectedItem;
+
+            foreach (var activitat in _activitats_dem)
+            {
+                if(activitat.assignada == false && activitat.ESPAIS.id_instalacio == _espai.id_instalacio)
+                {
+                    _activitats_dem_BUENAS.Add(activitat);
+                }
+            }
+
+            bindingSourceEspaisActivitats.DataSource = _activitats_dem_BUENAS;
+
+            setCalendarioWithActividades();
 
         }
 
@@ -551,7 +524,7 @@ namespace Proyecto2
                 }
 
                 mensaje = BD.ORM_ACTIVITATS_DEMANADES.InsertACTIVITATS_DEMANADES(textBoxNombreActividad.Text,
-                     System.TimeSpan.Parse(textBoxDuracionActividad.Text),
+                     System.TimeSpan.Parse(comboBoxDuracionActividad.SelectedItem.ToString()),
                      ((EQUIPS)comboBoxEquipoActividad.SelectedItem).id,
                      ((ESPAIS)comboBoxEspacioActividad.SelectedItem).id,
                      ((TIPUS_ACTIVITAT)comboBoxTiposActividad.SelectedItem).id, int.Parse(textBoxDiasActividad.Text),
@@ -565,7 +538,7 @@ namespace Proyecto2
                 {
                     refrescarActivitatsDemanades();
                     textBoxNombreActividad.Text = "";
-                    textBoxDuracionActividad.Text = "";
+                    comboBoxDuracionActividad.SelectedIndex = -1;
                     comboBoxEquipoActividad.SelectedIndex = -1;
                     comboBoxEspacioActividad.SelectedIndex = -1;
                     comboBoxTiposActividad.SelectedIndex = -1;
@@ -624,7 +597,7 @@ namespace Proyecto2
                 comboBoxTiposActividad.SelectedItem = _activitat.TIPUS_ACTIVITAT;
                 comboBoxEspacioActividad.SelectedItem = _activitat.ESPAIS;
                 comboBoxEquipoActividad.SelectedItem = _activitat.EQUIPS;
-                textBoxDuracionActividad.Text = _activitat.durada.ToString();
+                comboBoxDuracionActividad.SelectedItem = _activitat.durada.ToString();
                 textBoxDiasActividad.Text = _activitat.num_dies.ToString();
                 if (_activitat.assignada.Equals(true))
                 {
@@ -650,14 +623,14 @@ namespace Proyecto2
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            
+
 
             try
             {
                 ACTIVITATS_DEMANADES _actDemanades = (ACTIVITATS_DEMANADES)dataGridView1.CurrentRow.DataBoundItem;
 
                 String nombre = textBoxNombreActividad.Text;
-                TimeSpan duracion = TimeSpan.Parse(textBoxDuracionActividad.Text);
+                TimeSpan duracion = TimeSpan.Parse(comboBoxDuracionActividad.SelectedItem.ToString());
                 int idEquipo = ((EQUIPS)comboBoxEquipoActividad.SelectedItem).id;
                 int idEspacio = ((ESPAIS)comboBoxEspacioActividad.SelectedItem).id;
                 int idTipoAct = ((TIPUS_ACTIVITAT)comboBoxTiposActividad.SelectedItem).id;
@@ -693,13 +666,14 @@ namespace Proyecto2
                 comboBoxTiposActividad.SelectedIndex = -1;
                 comboBoxEspacioActividad.SelectedIndex = -1;
                 comboBoxEquipoActividad.SelectedIndex = -1;
-                textBoxDuracionActividad.Text = "";
+                comboBoxDuracionActividad.SelectedIndex = -1;
                 textBoxDiasActividad.Text = "";
                 comboBoxAsignadaActividad.SelectedIndex = -1;
 
                 buttonGuardar.Enabled = false;
                 buttonAñadir.Enabled = true;
                 buttonEliminar.Enabled = true;
+
             }
             catch (Exception ex)
             {
@@ -755,6 +729,61 @@ namespace Proyecto2
             {
                 buttonMax.Image = Proyecto2.Properties.Resources.normal2;
             }
+        }
+
+
+        private void setCalendarioWithActividades()
+        {
+            List<TimeSpan> tiempos = new List<TimeSpan>();
+
+            List<PasarACalendario> listaCalendario = new List<PasarACalendario>();
+
+            ESPAIS _espai = (ESPAIS)comboBoxEspaciosHome.SelectedItem;
+
+            List<DIES_SETMANA> diasSemana = BD.ORM_DIES_SETMANA.SelectAllDIES_SETMANA(ref mensaje);
+
+            TimeSpan horaMINSEMANA = TimeSpan.Parse("23:59:59");
+            TimeSpan horaMAXSEMANA = TimeSpan.Parse("00:00:00");
+
+
+            foreach (var hora in _espai.INSTALACIONS.HORARIS_INSTALACIONS)
+            {
+                if (horaMINSEMANA > hora.hora_inici)
+                {
+                    horaMINSEMANA = hora.hora_inici;
+                }
+                if (horaMAXSEMANA < hora.hora_fi)
+                {
+                    horaMAXSEMANA = hora.hora_fi;
+                }
+            }
+
+            Console.WriteLine("MIN: " + horaMINSEMANA + "\nMAX: " + horaMAXSEMANA);
+
+            TimeSpan horaConcreta = horaMINSEMANA;
+            do
+            {
+                listaCalendario.Add(new PasarACalendario(_espai, horaConcreta));
+                horaConcreta += TimeSpan.Parse("00:30:00");
+            } while (horaConcreta <= horaMAXSEMANA);
+
+
+
+            foreach (var filaCalendario in listaCalendario)
+            {
+                filaCalendario.HacerTodo();
+            }
+
+            bindingSourcePasarActividades.DataSource = listaCalendario;
+        }
+
+        private void comboBoxActivitats_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ACTIVITATS_DEMANADES act_dem = (ACTIVITATS_DEMANADES)comboBoxActivitats.SelectedItem;
+
+            textBoxActivitatNombre.Text = act_dem.nom;
+            comboBoxDurada.SelectedItem = act_dem.durada.ToString();
+
         }
     }
 }
