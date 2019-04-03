@@ -55,13 +55,16 @@ namespace Proyecto2.BD
             return ORM.SaveChanges();
         }
 
-        public static String UpdateINSTALACION(int id, String nom, bool gestioExterna, String adreca)
+        public static String UpdateINSTALACION(int id, INSTALACIONS newInstalacion)
         {
             INSTALACIONS instalacion = ORM.bd.INSTALACIONS.Find(id);
 
-            instalacion.nom = nom;
-            instalacion.gestioExterna = gestioExterna;
-            instalacion.adreca = adreca;
+            instalacion.nom = newInstalacion.nom;
+            instalacion.gestioExterna = newInstalacion.gestioExterna;
+            instalacion.adreca = newInstalacion.adreca;
+
+            instalacion.HORARIS_INSTALACIONS = newInstalacion.HORARIS_INSTALACIONS;
+            instalacion.ESPAIS = newInstalacion.ESPAIS;
 
             return ORM.SaveChanges();
         }

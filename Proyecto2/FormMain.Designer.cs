@@ -29,9 +29,72 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.groupBoxActivitats = new System.Windows.Forms.GroupBox();
+            this.groupBoxAsignarHorarios = new System.Windows.Forms.GroupBox();
+            this.groupBoxLunes = new System.Windows.Forms.GroupBox();
+            this.comboBoxLUNESActFIN = new System.Windows.Forms.ComboBox();
+            this.comboBoxLUNESActINI = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.buttonAsignarActividad = new System.Windows.Forms.Button();
+            this.groupBoxMartes = new System.Windows.Forms.GroupBox();
+            this.comboBoxMARTESActFIN = new System.Windows.Forms.ComboBox();
+            this.comboBoxMARTESActINI = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.groupBoxJueves = new System.Windows.Forms.GroupBox();
+            this.comboBoxJUEVESActFIN = new System.Windows.Forms.ComboBox();
+            this.comboBoxJUEVESActINI = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.groupBoxMiercoles = new System.Windows.Forms.GroupBox();
+            this.comboBoxMIERCOLESActFIN = new System.Windows.Forms.ComboBox();
+            this.comboBoxMIERCOLESActINI = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.groupBoxViernes = new System.Windows.Forms.GroupBox();
+            this.comboBoxVIERNESActFIN = new System.Windows.Forms.ComboBox();
+            this.comboBoxVIERNESActINI = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.groupBoxDomingo = new System.Windows.Forms.GroupBox();
+            this.comboBoxDOMINGOActFIN = new System.Windows.Forms.ComboBox();
+            this.comboBoxDOMINGOActINI = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.groupBoxSabado = new System.Windows.Forms.GroupBox();
+            this.comboBoxSABADOActFIN = new System.Windows.Forms.ComboBox();
+            this.comboBoxSABADOActINI = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.textBoxDiasActividadMain = new System.Windows.Forms.TextBox();
+            this.labelActDias = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.textBoxEquipoActividadMain = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBoxActivitats = new System.Windows.Forms.ComboBox();
+            this.bindingSourceEspaisActivitats = new System.Windows.Forms.BindingSource(this.components);
+            this.labelActNombre = new System.Windows.Forms.Label();
+            this.textBoxActivitatNombre = new System.Windows.Forms.TextBox();
+            this.labelActDurada = new System.Windows.Forms.Label();
+            this.comboBoxDurada = new System.Windows.Forms.ComboBox();
+            this.dataGridViewCalendario = new System.Windows.Forms.DataGridView();
+            this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lunesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.martesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miercolesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.juevesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viernesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sabadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domingoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSourcePasarActividades = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxEspaciosHome = new System.Windows.Forms.ComboBox();
+            this.bindingSourceEspais = new System.Windows.Forms.BindingSource(this.components);
+            this.label16 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -78,7 +141,6 @@
             this.idequipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bindingSourceEquips = new System.Windows.Forms.BindingSource(this.components);
             this.idespaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.bindingSourceEspais = new System.Windows.Forms.BindingSource(this.components);
             this.idtipusactivitatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bindingSourceTipusActivitat = new System.Windows.Forms.BindingSource(this.components);
             this.numdiesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,10 +148,10 @@
             this.bindingSourceActivitatsDemandades = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBoxDuracionActividad = new System.Windows.Forms.ComboBox();
             this.comboBoxAsignadaActividad = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxDiasActividad = new System.Windows.Forms.TextBox();
-            this.textBoxDuracionActividad = new System.Windows.Forms.TextBox();
             this.comboBoxEquipoActividad = new System.Windows.Forms.ComboBox();
             this.comboBoxEspacioActividad = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -118,17 +180,10 @@
             this.buttonEliminarInstalacion = new System.Windows.Forms.Button();
             this.buttonAñadirInstalacion = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.pasarACalendarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.calendarioGRIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label12 = new System.Windows.Forms.Label();
             this.comboBoxHorariosEspais = new System.Windows.Forms.ComboBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Domingo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -147,7 +202,20 @@
             this.bindingSourceListaActividades = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.groupBoxActivitats.SuspendLayout();
+            this.groupBoxAsignarHorarios.SuspendLayout();
+            this.groupBoxLunes.SuspendLayout();
+            this.groupBoxMartes.SuspendLayout();
+            this.groupBoxJueves.SuspendLayout();
+            this.groupBoxMiercoles.SuspendLayout();
+            this.groupBoxViernes.SuspendLayout();
+            this.groupBoxDomingo.SuspendLayout();
+            this.groupBoxSabado.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaisActivitats)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCalendario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePasarActividades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspais)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaEntidad)).BeginInit();
@@ -159,7 +227,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEquips)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipusActivitat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceActivitatsDemandades)).BeginInit();
             this.panel2.SuspendLayout();
@@ -167,8 +234,8 @@
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInstalaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceListaInstalaciones)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pasarACalendarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.calendarioGRIDBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
@@ -186,27 +253,657 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(924, 587);
+            this.tabControl1.Size = new System.Drawing.Size(986, 601);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.tabPage1.Controls.Add(this.dataGridView3);
+            this.tabPage1.Controls.Add(this.groupBoxActivitats);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(916, 561);
+            this.tabPage1.Size = new System.Drawing.Size(978, 575);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             // 
-            // dataGridView3
+            // groupBoxActivitats
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(8, 58);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(900, 284);
-            this.dataGridView3.TabIndex = 0;
+            this.groupBoxActivitats.Controls.Add(this.groupBoxAsignarHorarios);
+            this.groupBoxActivitats.Controls.Add(this.groupBox7);
+            this.groupBoxActivitats.Controls.Add(this.dataGridViewCalendario);
+            this.groupBoxActivitats.Controls.Add(this.comboBoxEspaciosHome);
+            this.groupBoxActivitats.Controls.Add(this.label16);
+            this.groupBoxActivitats.Location = new System.Drawing.Point(8, 58);
+            this.groupBoxActivitats.Name = "groupBoxActivitats";
+            this.groupBoxActivitats.Size = new System.Drawing.Size(961, 511);
+            this.groupBoxActivitats.TabIndex = 5;
+            this.groupBoxActivitats.TabStop = false;
+            this.groupBoxActivitats.Text = "Activitats";
+            // 
+            // groupBoxAsignarHorarios
+            // 
+            this.groupBoxAsignarHorarios.Controls.Add(this.groupBoxLunes);
+            this.groupBoxAsignarHorarios.Controls.Add(this.buttonAsignarActividad);
+            this.groupBoxAsignarHorarios.Controls.Add(this.groupBoxMartes);
+            this.groupBoxAsignarHorarios.Controls.Add(this.groupBoxJueves);
+            this.groupBoxAsignarHorarios.Controls.Add(this.groupBoxMiercoles);
+            this.groupBoxAsignarHorarios.Controls.Add(this.groupBoxViernes);
+            this.groupBoxAsignarHorarios.Controls.Add(this.groupBoxDomingo);
+            this.groupBoxAsignarHorarios.Controls.Add(this.groupBoxSabado);
+            this.groupBoxAsignarHorarios.Location = new System.Drawing.Point(290, 320);
+            this.groupBoxAsignarHorarios.Name = "groupBoxAsignarHorarios";
+            this.groupBoxAsignarHorarios.Size = new System.Drawing.Size(665, 185);
+            this.groupBoxAsignarHorarios.TabIndex = 12;
+            this.groupBoxAsignarHorarios.TabStop = false;
+            this.groupBoxAsignarHorarios.Text = "Asignar Horarios";
+            // 
+            // groupBoxLunes
+            // 
+            this.groupBoxLunes.Controls.Add(this.comboBoxLUNESActFIN);
+            this.groupBoxLunes.Controls.Add(this.comboBoxLUNESActINI);
+            this.groupBoxLunes.Controls.Add(this.label21);
+            this.groupBoxLunes.Controls.Add(this.label20);
+            this.groupBoxLunes.Location = new System.Drawing.Point(6, 19);
+            this.groupBoxLunes.Name = "groupBoxLunes";
+            this.groupBoxLunes.Size = new System.Drawing.Size(157, 80);
+            this.groupBoxLunes.TabIndex = 0;
+            this.groupBoxLunes.TabStop = false;
+            this.groupBoxLunes.Text = "Lunes";
+            // 
+            // comboBoxLUNESActFIN
+            // 
+            this.comboBoxLUNESActFIN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLUNESActFIN.FormattingEnabled = true;
+            this.comboBoxLUNESActFIN.Items.AddRange(new object[] {
+            "No hay actividad"});
+            this.comboBoxLUNESActFIN.Location = new System.Drawing.Point(44, 51);
+            this.comboBoxLUNESActFIN.Name = "comboBoxLUNESActFIN";
+            this.comboBoxLUNESActFIN.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxLUNESActFIN.TabIndex = 3;
+            // 
+            // comboBoxLUNESActINI
+            // 
+            this.comboBoxLUNESActINI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLUNESActINI.FormattingEnabled = true;
+            this.comboBoxLUNESActINI.Items.AddRange(new object[] {
+            "No hay actividad"});
+            this.comboBoxLUNESActINI.Location = new System.Drawing.Point(44, 19);
+            this.comboBoxLUNESActINI.Name = "comboBoxLUNESActINI";
+            this.comboBoxLUNESActINI.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxLUNESActINI.TabIndex = 2;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(7, 54);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(21, 13);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Fin";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(7, 22);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(32, 13);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Inicio";
+            // 
+            // buttonAsignarActividad
+            // 
+            this.buttonAsignarActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAsignarActividad.Location = new System.Drawing.Point(495, 105);
+            this.buttonAsignarActividad.Name = "buttonAsignarActividad";
+            this.buttonAsignarActividad.Size = new System.Drawing.Size(157, 75);
+            this.buttonAsignarActividad.TabIndex = 11;
+            this.buttonAsignarActividad.Text = "Asignar";
+            this.buttonAsignarActividad.UseVisualStyleBackColor = true;
+            this.buttonAsignarActividad.Click += new System.EventHandler(this.buttonAsignarActividad_Click);
+            // 
+            // groupBoxMartes
+            // 
+            this.groupBoxMartes.Controls.Add(this.comboBoxMARTESActFIN);
+            this.groupBoxMartes.Controls.Add(this.comboBoxMARTESActINI);
+            this.groupBoxMartes.Controls.Add(this.label22);
+            this.groupBoxMartes.Controls.Add(this.label23);
+            this.groupBoxMartes.Location = new System.Drawing.Point(169, 19);
+            this.groupBoxMartes.Name = "groupBoxMartes";
+            this.groupBoxMartes.Size = new System.Drawing.Size(157, 80);
+            this.groupBoxMartes.TabIndex = 4;
+            this.groupBoxMartes.TabStop = false;
+            this.groupBoxMartes.Text = "Martes";
+            // 
+            // comboBoxMARTESActFIN
+            // 
+            this.comboBoxMARTESActFIN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMARTESActFIN.FormattingEnabled = true;
+            this.comboBoxMARTESActFIN.Location = new System.Drawing.Point(44, 51);
+            this.comboBoxMARTESActFIN.Name = "comboBoxMARTESActFIN";
+            this.comboBoxMARTESActFIN.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxMARTESActFIN.TabIndex = 3;
+            // 
+            // comboBoxMARTESActINI
+            // 
+            this.comboBoxMARTESActINI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMARTESActINI.FormattingEnabled = true;
+            this.comboBoxMARTESActINI.Location = new System.Drawing.Point(44, 19);
+            this.comboBoxMARTESActINI.Name = "comboBoxMARTESActINI";
+            this.comboBoxMARTESActINI.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxMARTESActINI.TabIndex = 2;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(7, 54);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(21, 13);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Fin";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(7, 22);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(32, 13);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Inicio";
+            // 
+            // groupBoxJueves
+            // 
+            this.groupBoxJueves.Controls.Add(this.comboBoxJUEVESActFIN);
+            this.groupBoxJueves.Controls.Add(this.comboBoxJUEVESActINI);
+            this.groupBoxJueves.Controls.Add(this.label19);
+            this.groupBoxJueves.Controls.Add(this.label32);
+            this.groupBoxJueves.Location = new System.Drawing.Point(495, 19);
+            this.groupBoxJueves.Name = "groupBoxJueves";
+            this.groupBoxJueves.Size = new System.Drawing.Size(157, 80);
+            this.groupBoxJueves.TabIndex = 5;
+            this.groupBoxJueves.TabStop = false;
+            this.groupBoxJueves.Text = "Jueves";
+            // 
+            // comboBoxJUEVESActFIN
+            // 
+            this.comboBoxJUEVESActFIN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxJUEVESActFIN.FormattingEnabled = true;
+            this.comboBoxJUEVESActFIN.Location = new System.Drawing.Point(44, 51);
+            this.comboBoxJUEVESActFIN.Name = "comboBoxJUEVESActFIN";
+            this.comboBoxJUEVESActFIN.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxJUEVESActFIN.TabIndex = 3;
+            // 
+            // comboBoxJUEVESActINI
+            // 
+            this.comboBoxJUEVESActINI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxJUEVESActINI.FormattingEnabled = true;
+            this.comboBoxJUEVESActINI.Location = new System.Drawing.Point(44, 19);
+            this.comboBoxJUEVESActINI.Name = "comboBoxJUEVESActINI";
+            this.comboBoxJUEVESActINI.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxJUEVESActINI.TabIndex = 2;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(7, 54);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(21, 13);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Fin";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(7, 22);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(32, 13);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "Inicio";
+            // 
+            // groupBoxMiercoles
+            // 
+            this.groupBoxMiercoles.Controls.Add(this.comboBoxMIERCOLESActFIN);
+            this.groupBoxMiercoles.Controls.Add(this.comboBoxMIERCOLESActINI);
+            this.groupBoxMiercoles.Controls.Add(this.label24);
+            this.groupBoxMiercoles.Controls.Add(this.label25);
+            this.groupBoxMiercoles.Location = new System.Drawing.Point(332, 19);
+            this.groupBoxMiercoles.Name = "groupBoxMiercoles";
+            this.groupBoxMiercoles.Size = new System.Drawing.Size(157, 80);
+            this.groupBoxMiercoles.TabIndex = 4;
+            this.groupBoxMiercoles.TabStop = false;
+            this.groupBoxMiercoles.Text = "Miercoles";
+            // 
+            // comboBoxMIERCOLESActFIN
+            // 
+            this.comboBoxMIERCOLESActFIN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMIERCOLESActFIN.FormattingEnabled = true;
+            this.comboBoxMIERCOLESActFIN.Location = new System.Drawing.Point(44, 51);
+            this.comboBoxMIERCOLESActFIN.Name = "comboBoxMIERCOLESActFIN";
+            this.comboBoxMIERCOLESActFIN.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxMIERCOLESActFIN.TabIndex = 3;
+            // 
+            // comboBoxMIERCOLESActINI
+            // 
+            this.comboBoxMIERCOLESActINI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMIERCOLESActINI.FormattingEnabled = true;
+            this.comboBoxMIERCOLESActINI.Location = new System.Drawing.Point(44, 19);
+            this.comboBoxMIERCOLESActINI.Name = "comboBoxMIERCOLESActINI";
+            this.comboBoxMIERCOLESActINI.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxMIERCOLESActINI.TabIndex = 2;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(7, 54);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(21, 13);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "Fin";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(7, 22);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(32, 13);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Inicio";
+            // 
+            // groupBoxViernes
+            // 
+            this.groupBoxViernes.Controls.Add(this.comboBoxVIERNESActFIN);
+            this.groupBoxViernes.Controls.Add(this.comboBoxVIERNESActINI);
+            this.groupBoxViernes.Controls.Add(this.label26);
+            this.groupBoxViernes.Controls.Add(this.label27);
+            this.groupBoxViernes.Location = new System.Drawing.Point(6, 100);
+            this.groupBoxViernes.Name = "groupBoxViernes";
+            this.groupBoxViernes.Size = new System.Drawing.Size(157, 80);
+            this.groupBoxViernes.TabIndex = 4;
+            this.groupBoxViernes.TabStop = false;
+            this.groupBoxViernes.Text = "Viernes";
+            // 
+            // comboBoxVIERNESActFIN
+            // 
+            this.comboBoxVIERNESActFIN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxVIERNESActFIN.FormattingEnabled = true;
+            this.comboBoxVIERNESActFIN.Location = new System.Drawing.Point(44, 51);
+            this.comboBoxVIERNESActFIN.Name = "comboBoxVIERNESActFIN";
+            this.comboBoxVIERNESActFIN.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxVIERNESActFIN.TabIndex = 3;
+            // 
+            // comboBoxVIERNESActINI
+            // 
+            this.comboBoxVIERNESActINI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxVIERNESActINI.FormattingEnabled = true;
+            this.comboBoxVIERNESActINI.Location = new System.Drawing.Point(44, 19);
+            this.comboBoxVIERNESActINI.Name = "comboBoxVIERNESActINI";
+            this.comboBoxVIERNESActINI.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxVIERNESActINI.TabIndex = 2;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(7, 54);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(21, 13);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Fin";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(7, 22);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(32, 13);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Inicio";
+            // 
+            // groupBoxDomingo
+            // 
+            this.groupBoxDomingo.Controls.Add(this.comboBoxDOMINGOActFIN);
+            this.groupBoxDomingo.Controls.Add(this.comboBoxDOMINGOActINI);
+            this.groupBoxDomingo.Controls.Add(this.label30);
+            this.groupBoxDomingo.Controls.Add(this.label31);
+            this.groupBoxDomingo.Location = new System.Drawing.Point(332, 100);
+            this.groupBoxDomingo.Name = "groupBoxDomingo";
+            this.groupBoxDomingo.Size = new System.Drawing.Size(157, 80);
+            this.groupBoxDomingo.TabIndex = 4;
+            this.groupBoxDomingo.TabStop = false;
+            this.groupBoxDomingo.Text = "Domingo";
+            // 
+            // comboBoxDOMINGOActFIN
+            // 
+            this.comboBoxDOMINGOActFIN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDOMINGOActFIN.FormattingEnabled = true;
+            this.comboBoxDOMINGOActFIN.Location = new System.Drawing.Point(44, 51);
+            this.comboBoxDOMINGOActFIN.Name = "comboBoxDOMINGOActFIN";
+            this.comboBoxDOMINGOActFIN.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxDOMINGOActFIN.TabIndex = 3;
+            // 
+            // comboBoxDOMINGOActINI
+            // 
+            this.comboBoxDOMINGOActINI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDOMINGOActINI.FormattingEnabled = true;
+            this.comboBoxDOMINGOActINI.Location = new System.Drawing.Point(44, 19);
+            this.comboBoxDOMINGOActINI.Name = "comboBoxDOMINGOActINI";
+            this.comboBoxDOMINGOActINI.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxDOMINGOActINI.TabIndex = 2;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(7, 54);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(21, 13);
+            this.label30.TabIndex = 1;
+            this.label30.Text = "Fin";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(7, 22);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(32, 13);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "Inicio";
+            // 
+            // groupBoxSabado
+            // 
+            this.groupBoxSabado.Controls.Add(this.comboBoxSABADOActFIN);
+            this.groupBoxSabado.Controls.Add(this.comboBoxSABADOActINI);
+            this.groupBoxSabado.Controls.Add(this.label28);
+            this.groupBoxSabado.Controls.Add(this.label29);
+            this.groupBoxSabado.Location = new System.Drawing.Point(169, 100);
+            this.groupBoxSabado.Name = "groupBoxSabado";
+            this.groupBoxSabado.Size = new System.Drawing.Size(157, 80);
+            this.groupBoxSabado.TabIndex = 4;
+            this.groupBoxSabado.TabStop = false;
+            this.groupBoxSabado.Text = "Sabado";
+            // 
+            // comboBoxSABADOActFIN
+            // 
+            this.comboBoxSABADOActFIN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSABADOActFIN.FormattingEnabled = true;
+            this.comboBoxSABADOActFIN.Location = new System.Drawing.Point(44, 51);
+            this.comboBoxSABADOActFIN.Name = "comboBoxSABADOActFIN";
+            this.comboBoxSABADOActFIN.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxSABADOActFIN.TabIndex = 3;
+            // 
+            // comboBoxSABADOActINI
+            // 
+            this.comboBoxSABADOActINI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSABADOActINI.FormattingEnabled = true;
+            this.comboBoxSABADOActINI.Location = new System.Drawing.Point(44, 19);
+            this.comboBoxSABADOActINI.Name = "comboBoxSABADOActINI";
+            this.comboBoxSABADOActINI.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxSABADOActINI.TabIndex = 2;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(7, 54);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(21, 13);
+            this.label28.TabIndex = 1;
+            this.label28.Text = "Fin";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(7, 22);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(32, 13);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "Inicio";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.textBoxDiasActividadMain);
+            this.groupBox7.Controls.Add(this.labelActDias);
+            this.groupBox7.Controls.Add(this.label33);
+            this.groupBox7.Controls.Add(this.textBoxEquipoActividadMain);
+            this.groupBox7.Controls.Add(this.label18);
+            this.groupBox7.Controls.Add(this.comboBoxActivitats);
+            this.groupBox7.Controls.Add(this.labelActNombre);
+            this.groupBox7.Controls.Add(this.textBoxActivitatNombre);
+            this.groupBox7.Controls.Add(this.labelActDurada);
+            this.groupBox7.Controls.Add(this.comboBoxDurada);
+            this.groupBox7.Location = new System.Drawing.Point(6, 322);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(278, 183);
+            this.groupBox7.TabIndex = 10;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Asignar actividades";
+            // 
+            // textBoxDiasActividadMain
+            // 
+            this.textBoxDiasActividadMain.Location = new System.Drawing.Point(132, 125);
+            this.textBoxDiasActividadMain.Name = "textBoxDiasActividadMain";
+            this.textBoxDiasActividadMain.Size = new System.Drawing.Size(121, 20);
+            this.textBoxDiasActividadMain.TabIndex = 12;
+            // 
+            // labelActDias
+            // 
+            this.labelActDias.AutoSize = true;
+            this.labelActDias.Location = new System.Drawing.Point(15, 128);
+            this.labelActDias.Name = "labelActDias";
+            this.labelActDias.Size = new System.Drawing.Size(31, 13);
+            this.labelActDias.TabIndex = 11;
+            this.labelActDias.Text = "Dias:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(15, 75);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(43, 13);
+            this.label33.TabIndex = 9;
+            this.label33.Text = "Equipo:";
+            // 
+            // textBoxEquipoActividadMain
+            // 
+            this.textBoxEquipoActividadMain.Location = new System.Drawing.Point(132, 72);
+            this.textBoxEquipoActividadMain.Name = "textBoxEquipoActividadMain";
+            this.textBoxEquipoActividadMain.Size = new System.Drawing.Size(121, 20);
+            this.textBoxEquipoActividadMain.TabIndex = 10;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(15, 22);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(111, 13);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Activitats demanades:";
+            // 
+            // comboBoxActivitats
+            // 
+            this.comboBoxActivitats.DataSource = this.bindingSourceEspaisActivitats;
+            this.comboBoxActivitats.DisplayMember = "nom";
+            this.comboBoxActivitats.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxActivitats.FormattingEnabled = true;
+            this.comboBoxActivitats.Location = new System.Drawing.Point(132, 19);
+            this.comboBoxActivitats.Name = "comboBoxActivitats";
+            this.comboBoxActivitats.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxActivitats.TabIndex = 3;
+            this.comboBoxActivitats.SelectedIndexChanged += new System.EventHandler(this.comboBoxActivitats_SelectedIndexChanged);
+            // 
+            // bindingSourceEspaisActivitats
+            // 
+            this.bindingSourceEspaisActivitats.DataSource = typeof(Proyecto2.ACTIVITATS_DEMANADES);
+            // 
+            // labelActNombre
+            // 
+            this.labelActNombre.AutoSize = true;
+            this.labelActNombre.Location = new System.Drawing.Point(15, 49);
+            this.labelActNombre.Name = "labelActNombre";
+            this.labelActNombre.Size = new System.Drawing.Size(47, 13);
+            this.labelActNombre.TabIndex = 5;
+            this.labelActNombre.Text = "Nombre:";
+            // 
+            // textBoxActivitatNombre
+            // 
+            this.textBoxActivitatNombre.Location = new System.Drawing.Point(132, 46);
+            this.textBoxActivitatNombre.Name = "textBoxActivitatNombre";
+            this.textBoxActivitatNombre.Size = new System.Drawing.Size(121, 20);
+            this.textBoxActivitatNombre.TabIndex = 6;
+            // 
+            // labelActDurada
+            // 
+            this.labelActDurada.AutoSize = true;
+            this.labelActDurada.Location = new System.Drawing.Point(15, 101);
+            this.labelActDurada.Name = "labelActDurada";
+            this.labelActDurada.Size = new System.Drawing.Size(45, 13);
+            this.labelActDurada.TabIndex = 7;
+            this.labelActDurada.Text = "Durada:";
+            // 
+            // comboBoxDurada
+            // 
+            this.comboBoxDurada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDurada.FormattingEnabled = true;
+            this.comboBoxDurada.Items.AddRange(new object[] {
+            "00:30:00",
+            "01:00:00",
+            "01:30:00",
+            "02:00:00",
+            "02:30:00",
+            "03:00:00",
+            "03:30:00",
+            "04:00:00",
+            "04:30:00",
+            "05:00:00",
+            "05:30:00",
+            "06:00:00",
+            "07:30:00",
+            "08:00:00",
+            "08:30:00",
+            "09:00:00",
+            "09:30:00",
+            "10:00:00",
+            "10:30:00",
+            "11:00:00",
+            "11:30:00",
+            "12:00:00",
+            "12:30:00"});
+            this.comboBoxDurada.Location = new System.Drawing.Point(132, 98);
+            this.comboBoxDurada.Name = "comboBoxDurada";
+            this.comboBoxDurada.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDurada.TabIndex = 8;
+            // 
+            // dataGridViewCalendario
+            // 
+            this.dataGridViewCalendario.AllowUserToAddRows = false;
+            this.dataGridViewCalendario.AllowUserToDeleteRows = false;
+            this.dataGridViewCalendario.AutoGenerateColumns = false;
+            this.dataGridViewCalendario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCalendario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.horaDataGridViewTextBoxColumn,
+            this.lunesDataGridViewTextBoxColumn,
+            this.martesDataGridViewTextBoxColumn,
+            this.miercolesDataGridViewTextBoxColumn,
+            this.juevesDataGridViewTextBoxColumn,
+            this.viernesDataGridViewTextBoxColumn,
+            this.sabadoDataGridViewTextBoxColumn,
+            this.domingoDataGridViewTextBoxColumn});
+            this.dataGridViewCalendario.DataSource = this.bindingSourcePasarActividades;
+            this.dataGridViewCalendario.Location = new System.Drawing.Point(6, 54);
+            this.dataGridViewCalendario.Name = "dataGridViewCalendario";
+            this.dataGridViewCalendario.ReadOnly = true;
+            this.dataGridViewCalendario.Size = new System.Drawing.Size(941, 256);
+            this.dataGridViewCalendario.TabIndex = 0;
+            // 
+            // horaDataGridViewTextBoxColumn
+            // 
+            this.horaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.horaDataGridViewTextBoxColumn.DataPropertyName = "_hora";
+            this.horaDataGridViewTextBoxColumn.HeaderText = "HORA";
+            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
+            this.horaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lunesDataGridViewTextBoxColumn
+            // 
+            this.lunesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lunesDataGridViewTextBoxColumn.DataPropertyName = "Lunes";
+            this.lunesDataGridViewTextBoxColumn.HeaderText = "Lunes";
+            this.lunesDataGridViewTextBoxColumn.Name = "lunesDataGridViewTextBoxColumn";
+            this.lunesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // martesDataGridViewTextBoxColumn
+            // 
+            this.martesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.martesDataGridViewTextBoxColumn.DataPropertyName = "Martes";
+            this.martesDataGridViewTextBoxColumn.HeaderText = "Martes";
+            this.martesDataGridViewTextBoxColumn.Name = "martesDataGridViewTextBoxColumn";
+            this.martesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // miercolesDataGridViewTextBoxColumn
+            // 
+            this.miercolesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.miercolesDataGridViewTextBoxColumn.DataPropertyName = "Miercoles";
+            this.miercolesDataGridViewTextBoxColumn.HeaderText = "Miercoles";
+            this.miercolesDataGridViewTextBoxColumn.Name = "miercolesDataGridViewTextBoxColumn";
+            this.miercolesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // juevesDataGridViewTextBoxColumn
+            // 
+            this.juevesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.juevesDataGridViewTextBoxColumn.DataPropertyName = "Jueves";
+            this.juevesDataGridViewTextBoxColumn.HeaderText = "Jueves";
+            this.juevesDataGridViewTextBoxColumn.Name = "juevesDataGridViewTextBoxColumn";
+            this.juevesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // viernesDataGridViewTextBoxColumn
+            // 
+            this.viernesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.viernesDataGridViewTextBoxColumn.DataPropertyName = "Viernes";
+            this.viernesDataGridViewTextBoxColumn.HeaderText = "Viernes";
+            this.viernesDataGridViewTextBoxColumn.Name = "viernesDataGridViewTextBoxColumn";
+            this.viernesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sabadoDataGridViewTextBoxColumn
+            // 
+            this.sabadoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sabadoDataGridViewTextBoxColumn.DataPropertyName = "Sabado";
+            this.sabadoDataGridViewTextBoxColumn.HeaderText = "Sabado";
+            this.sabadoDataGridViewTextBoxColumn.Name = "sabadoDataGridViewTextBoxColumn";
+            this.sabadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // domingoDataGridViewTextBoxColumn
+            // 
+            this.domingoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.domingoDataGridViewTextBoxColumn.DataPropertyName = "Domingo";
+            this.domingoDataGridViewTextBoxColumn.HeaderText = "Domingo";
+            this.domingoDataGridViewTextBoxColumn.Name = "domingoDataGridViewTextBoxColumn";
+            this.domingoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bindingSourcePasarActividades
+            // 
+            this.bindingSourcePasarActividades.DataSource = typeof(Proyecto2.PasarACalendario);
+            // 
+            // comboBoxEspaciosHome
+            // 
+            this.comboBoxEspaciosHome.DataSource = this.bindingSourceEspais;
+            this.comboBoxEspaciosHome.DisplayMember = "nom";
+            this.comboBoxEspaciosHome.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEspaciosHome.FormattingEnabled = true;
+            this.comboBoxEspaciosHome.Location = new System.Drawing.Point(76, 27);
+            this.comboBoxEspaciosHome.Name = "comboBoxEspaciosHome";
+            this.comboBoxEspaciosHome.Size = new System.Drawing.Size(234, 21);
+            this.comboBoxEspaciosHome.TabIndex = 1;
+            this.comboBoxEspaciosHome.SelectedIndexChanged += new System.EventHandler(this.comboBoxEspaciosHome_SelectedIndexChanged);
+            // 
+            // bindingSourceEspais
+            // 
+            this.bindingSourceEspais.DataSource = typeof(Proyecto2.ESPAIS);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(21, 30);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(36, 13);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Espai:";
             // 
             // tabPage2
             // 
@@ -216,7 +913,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(916, 561);
+            this.tabPage2.Size = new System.Drawing.Size(978, 575);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             // 
@@ -615,7 +1312,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(916, 561);
+            this.tabPage3.Size = new System.Drawing.Size(978, 575);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             // 
@@ -629,7 +1326,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(9, 48);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(589, 490);
+            this.panel3.Size = new System.Drawing.Size(604, 490);
             this.panel3.TabIndex = 6;
             // 
             // dataGridView1
@@ -656,7 +1353,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(555, 407);
+            this.dataGridView1.Size = new System.Drawing.Size(570, 407);
             this.dataGridView1.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn1
@@ -719,10 +1416,6 @@
             this.idespaiDataGridViewTextBoxColumn.ValueMember = "id";
             this.idespaiDataGridViewTextBoxColumn.Width = 5;
             // 
-            // bindingSourceEspais
-            // 
-            this.bindingSourceEspais.DataSource = typeof(Proyecto2.ESPAIS);
-            // 
             // idtipusactivitatDataGridViewTextBoxColumn
             // 
             this.idtipusactivitatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
@@ -782,10 +1475,10 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
+            this.panel2.Controls.Add(this.comboBoxDuracionActividad);
             this.panel2.Controls.Add(this.comboBoxAsignadaActividad);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBoxDiasActividad);
-            this.panel2.Controls.Add(this.textBoxDuracionActividad);
             this.panel2.Controls.Add(this.comboBoxEquipoActividad);
             this.panel2.Controls.Add(this.comboBoxEspacioActividad);
             this.panel2.Controls.Add(this.label8);
@@ -801,10 +1494,43 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.buttonEditar);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(604, 48);
+            this.panel2.Location = new System.Drawing.Point(619, 48);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(292, 490);
             this.panel2.TabIndex = 5;
+            // 
+            // comboBoxDuracionActividad
+            // 
+            this.comboBoxDuracionActividad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDuracionActividad.FormattingEnabled = true;
+            this.comboBoxDuracionActividad.Items.AddRange(new object[] {
+            "00:30:00",
+            "01:00:00",
+            "01:30:00",
+            "02:00:00",
+            "02:30:00",
+            "03:00:00",
+            "03:30:00",
+            "04:00:00",
+            "04:30:00",
+            "05:00:00",
+            "05:30:00",
+            "06:00:00",
+            "07:30:00",
+            "08:00:00",
+            "08:30:00",
+            "09:00:00",
+            "09:30:00",
+            "10:00:00",
+            "10:30:00",
+            "11:00:00",
+            "11:30:00",
+            "12:00:00",
+            "12:30:00"});
+            this.comboBoxDuracionActividad.Location = new System.Drawing.Point(106, 201);
+            this.comboBoxDuracionActividad.Name = "comboBoxDuracionActividad";
+            this.comboBoxDuracionActividad.Size = new System.Drawing.Size(168, 21);
+            this.comboBoxDuracionActividad.TabIndex = 19;
             // 
             // comboBoxAsignadaActividad
             // 
@@ -830,20 +1556,11 @@
             // 
             // textBoxDiasActividad
             // 
-            this.textBoxDiasActividad.Enabled = false;
             this.textBoxDiasActividad.Location = new System.Drawing.Point(106, 230);
             this.textBoxDiasActividad.Name = "textBoxDiasActividad";
             this.textBoxDiasActividad.Size = new System.Drawing.Size(168, 20);
             this.textBoxDiasActividad.TabIndex = 16;
             this.textBoxDiasActividad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDiasActividad_KeyPress);
-            // 
-            // textBoxDuracionActividad
-            // 
-            this.textBoxDuracionActividad.Enabled = false;
-            this.textBoxDuracionActividad.Location = new System.Drawing.Point(106, 200);
-            this.textBoxDuracionActividad.Name = "textBoxDuracionActividad";
-            this.textBoxDuracionActividad.Size = new System.Drawing.Size(168, 20);
-            this.textBoxDuracionActividad.TabIndex = 15;
             // 
             // comboBoxEquipoActividad
             // 
@@ -876,7 +1593,6 @@
             // comboBoxTiposActividad
             // 
             this.comboBoxTiposActividad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxTiposActividad.Enabled = false;
             this.comboBoxTiposActividad.FormattingEnabled = true;
             this.comboBoxTiposActividad.Location = new System.Drawing.Point(106, 110);
             this.comboBoxTiposActividad.Name = "comboBoxTiposActividad";
@@ -895,7 +1611,6 @@
             // 
             // textBoxNombreActividad
             // 
-            this.textBoxNombreActividad.Enabled = false;
             this.textBoxNombreActividad.Location = new System.Drawing.Point(106, 80);
             this.textBoxNombreActividad.Name = "textBoxNombreActividad";
             this.textBoxNombreActividad.Size = new System.Drawing.Size(168, 20);
@@ -938,6 +1653,7 @@
             // 
             this.buttonGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonGuardar.Enabled = false;
             this.buttonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGuardar.Location = new System.Drawing.Point(14, 445);
             this.buttonGuardar.Name = "buttonGuardar";
@@ -1020,7 +1736,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(916, 561);
+            this.tabPage4.Size = new System.Drawing.Size(978, 575);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             // 
@@ -1036,7 +1752,7 @@
             this.panel7.Controls.Add(this.buttonAñadirInstalacion);
             this.panel7.Location = new System.Drawing.Point(9, 48);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(899, 505);
+            this.panel7.Size = new System.Drawing.Size(914, 505);
             this.panel7.TabIndex = 7;
             // 
             // buttonMofificarInstalacion
@@ -1070,7 +1786,7 @@
             this.dataGridViewInstalaciones.Name = "dataGridViewInstalaciones";
             this.dataGridViewInstalaciones.ReadOnly = true;
             this.dataGridViewInstalaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(869, 424);
+            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(884, 424);
             this.dataGridViewInstalaciones.TabIndex = 2;
             this.dataGridViewInstalaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInstalaciones_CellDoubleClick);
             // 
@@ -1114,7 +1830,7 @@
             // 
             this.buttonEliminarInstalacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEliminarInstalacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminarInstalacion.Location = new System.Drawing.Point(722, 453);
+            this.buttonEliminarInstalacion.Location = new System.Drawing.Point(737, 453);
             this.buttonEliminarInstalacion.Name = "buttonEliminarInstalacion";
             this.buttonEliminarInstalacion.Size = new System.Drawing.Size(161, 39);
             this.buttonEliminarInstalacion.TabIndex = 6;
@@ -1126,7 +1842,7 @@
             // 
             this.buttonAñadirInstalacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAñadirInstalacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAñadirInstalacion.Location = new System.Drawing.Point(564, 453);
+            this.buttonAñadirInstalacion.Location = new System.Drawing.Point(579, 453);
             this.buttonAñadirInstalacion.Name = "buttonAñadirInstalacion";
             this.buttonAñadirInstalacion.Size = new System.Drawing.Size(152, 39);
             this.buttonAñadirInstalacion.TabIndex = 5;
@@ -1139,21 +1855,14 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(916, 561);
+            this.tabPage5.Size = new System.Drawing.Size(978, 575);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // panel8
+            // pasarACalendarioBindingSource
             // 
-            this.panel8.Controls.Add(this.label12);
-            this.panel8.Controls.Add(this.comboBoxHorariosEspais);
-            this.panel8.Controls.Add(this.dataGridView2);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(3, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(910, 555);
-            this.panel8.TabIndex = 0;
+            this.pasarACalendarioBindingSource.DataSource = typeof(Proyecto2.PasarACalendario);
             // 
             // label12
             // 
@@ -1177,74 +1886,6 @@
             this.comboBoxHorariosEspais.ValueMember = "id";
             this.comboBoxHorariosEspais.SelectedIndexChanged += new System.EventHandler(this.comboBoxHorariosEspais_SelectedIndexChanged);
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Lunes,
-            this.Martes,
-            this.Miercoles,
-            this.Jueves,
-            this.Viernes,
-            this.Sabado,
-            this.Domingo});
-            this.dataGridView2.Location = new System.Drawing.Point(21, 84);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(866, 306);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // Lunes
-            // 
-            this.Lunes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Lunes.HeaderText = "Lunes";
-            this.Lunes.Name = "Lunes";
-            this.Lunes.ReadOnly = true;
-            // 
-            // Martes
-            // 
-            this.Martes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Martes.HeaderText = "Martes";
-            this.Martes.Name = "Martes";
-            this.Martes.ReadOnly = true;
-            // 
-            // Miercoles
-            // 
-            this.Miercoles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Miercoles.HeaderText = "Miercoles";
-            this.Miercoles.Name = "Miercoles";
-            this.Miercoles.ReadOnly = true;
-            // 
-            // Jueves
-            // 
-            this.Jueves.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Jueves.HeaderText = "Jueves";
-            this.Jueves.Name = "Jueves";
-            this.Jueves.ReadOnly = true;
-            // 
-            // Viernes
-            // 
-            this.Viernes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Viernes.HeaderText = "Viernes";
-            this.Viernes.Name = "Viernes";
-            this.Viernes.ReadOnly = true;
-            // 
-            // Sabado
-            // 
-            this.Sabado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Sabado.HeaderText = "Sabado";
-            this.Sabado.Name = "Sabado";
-            this.Sabado.ReadOnly = true;
-            // 
-            // Domingo
-            // 
-            this.Domingo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Domingo.HeaderText = "Domingo";
-            this.Domingo.Name = "Domingo";
-            this.Domingo.ReadOnly = true;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1260,7 +1901,7 @@
             this.panel1.Controls.Add(this.radioButtonHome);
             this.panel1.Location = new System.Drawing.Point(-3, 9);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(932, 65);
+            this.panel1.Size = new System.Drawing.Size(994, 65);
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -1287,7 +1928,7 @@
             this.panel6.Controls.Add(this.labelFecha);
             this.panel6.Location = new System.Drawing.Point(1, -3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(924, 30);
+            this.panel6.Size = new System.Drawing.Size(986, 30);
             this.panel6.TabIndex = 13;
             this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseDown);
             // 
@@ -1298,7 +1939,7 @@
             this.buttonMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMinimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMinimizar.Image = global::Proyecto2.Properties.Resources.minimizar;
-            this.buttonMinimizar.Location = new System.Drawing.Point(834, 0);
+            this.buttonMinimizar.Location = new System.Drawing.Point(896, 0);
             this.buttonMinimizar.Name = "buttonMinimizar";
             this.buttonMinimizar.Size = new System.Drawing.Size(30, 30);
             this.buttonMinimizar.TabIndex = 9;
@@ -1312,7 +1953,7 @@
             this.buttonMax.FlatAppearance.BorderSize = 0;
             this.buttonMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMax.Image = global::Proyecto2.Properties.Resources.maximizar;
-            this.buttonMax.Location = new System.Drawing.Point(864, 0);
+            this.buttonMax.Location = new System.Drawing.Point(926, 0);
             this.buttonMax.Name = "buttonMax";
             this.buttonMax.Size = new System.Drawing.Size(30, 30);
             this.buttonMax.TabIndex = 8;
@@ -1337,7 +1978,7 @@
             this.labelHora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHora.ForeColor = System.Drawing.Color.White;
-            this.labelHora.Location = new System.Drawing.Point(574, 8);
+            this.labelHora.Location = new System.Drawing.Point(636, 8);
             this.labelHora.Name = "labelHora";
             this.labelHora.Size = new System.Drawing.Size(46, 16);
             this.labelHora.TabIndex = 12;
@@ -1353,7 +1994,7 @@
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClose.Image = global::Proyecto2.Properties.Resources.cruz;
-            this.buttonClose.Location = new System.Drawing.Point(894, 0);
+            this.buttonClose.Location = new System.Drawing.Point(956, 0);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(30, 30);
             this.buttonClose.TabIndex = 7;
@@ -1367,7 +2008,7 @@
             this.labelFecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFecha.ForeColor = System.Drawing.Color.White;
-            this.labelFecha.Location = new System.Drawing.Point(503, 8);
+            this.labelFecha.Location = new System.Drawing.Point(565, 8);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(46, 16);
             this.labelFecha.TabIndex = 11;
@@ -1474,18 +2115,42 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 587);
+            this.ClientSize = new System.Drawing.Size(986, 601);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Activated += new System.EventHandler(this.FormMain_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.SizeChanged += new System.EventHandler(this.FormMain_SizeChanged);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.groupBoxActivitats.ResumeLayout(false);
+            this.groupBoxActivitats.PerformLayout();
+            this.groupBoxAsignarHorarios.ResumeLayout(false);
+            this.groupBoxLunes.ResumeLayout(false);
+            this.groupBoxLunes.PerformLayout();
+            this.groupBoxMartes.ResumeLayout(false);
+            this.groupBoxMartes.PerformLayout();
+            this.groupBoxJueves.ResumeLayout(false);
+            this.groupBoxJueves.PerformLayout();
+            this.groupBoxMiercoles.ResumeLayout(false);
+            this.groupBoxMiercoles.PerformLayout();
+            this.groupBoxViernes.ResumeLayout(false);
+            this.groupBoxViernes.PerformLayout();
+            this.groupBoxDomingo.ResumeLayout(false);
+            this.groupBoxDomingo.PerformLayout();
+            this.groupBoxSabado.ResumeLayout(false);
+            this.groupBoxSabado.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaisActivitats)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCalendario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePasarActividades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspais)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -1500,7 +2165,6 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEquips)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipusActivitat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceActivitatsDemandades)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -1509,9 +2173,8 @@
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInstalaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceListaInstalaciones)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pasarACalendarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.calendarioGRIDBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1548,7 +2211,6 @@
         private System.Windows.Forms.ComboBox comboBoxAsignadaActividad;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxDiasActividad;
-        private System.Windows.Forms.TextBox textBoxDuracionActividad;
         private System.Windows.Forms.ComboBox comboBoxEquipoActividad;
         private System.Windows.Forms.ComboBox comboBoxEspacioActividad;
         private System.Windows.Forms.Label label8;
@@ -1626,20 +2288,77 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn idtipusactivitatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numdiesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn assignadaDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBoxHorariosEspais;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lunes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Martes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Miercoles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Jueves;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Viernes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sabado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Domingo;
         private System.Windows.Forms.Button buttonMofificarInstalacion;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridViewCalendario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn instalacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource calendarioGRIDBindingSource;
+        private System.Windows.Forms.ComboBox comboBoxEspaciosHome;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.BindingSource pasarACalendarioBindingSource;
+        private System.Windows.Forms.BindingSource bindingSourcePasarActividades;
+        private System.Windows.Forms.GroupBox groupBoxActivitats;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lunesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn martesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn miercolesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn juevesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn viernesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sabadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domingoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBoxActivitats;
+        private System.Windows.Forms.BindingSource bindingSourceEspaisActivitats;
+        private System.Windows.Forms.ComboBox comboBoxDuracionActividad;
+        private System.Windows.Forms.TextBox textBoxActivitatNombre;
+        private System.Windows.Forms.Label labelActNombre;
+        private System.Windows.Forms.ComboBox comboBoxDurada;
+        private System.Windows.Forms.Label labelActDurada;
+        private System.Windows.Forms.GroupBox groupBoxJueves;
+        private System.Windows.Forms.ComboBox comboBoxJUEVESActFIN;
+        private System.Windows.Forms.ComboBox comboBoxJUEVESActINI;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBoxDomingo;
+        private System.Windows.Forms.ComboBox comboBoxDOMINGOActFIN;
+        private System.Windows.Forms.ComboBox comboBoxDOMINGOActINI;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.GroupBox groupBoxSabado;
+        private System.Windows.Forms.ComboBox comboBoxSABADOActFIN;
+        private System.Windows.Forms.ComboBox comboBoxSABADOActINI;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.GroupBox groupBoxViernes;
+        private System.Windows.Forms.ComboBox comboBoxVIERNESActFIN;
+        private System.Windows.Forms.ComboBox comboBoxVIERNESActINI;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.GroupBox groupBoxMiercoles;
+        private System.Windows.Forms.ComboBox comboBoxMIERCOLESActFIN;
+        private System.Windows.Forms.ComboBox comboBoxMIERCOLESActINI;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.GroupBox groupBoxMartes;
+        private System.Windows.Forms.ComboBox comboBoxMARTESActFIN;
+        private System.Windows.Forms.ComboBox comboBoxMARTESActINI;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.GroupBox groupBoxLunes;
+        private System.Windows.Forms.ComboBox comboBoxLUNESActFIN;
+        private System.Windows.Forms.ComboBox comboBoxLUNESActINI;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox textBoxEquipoActividadMain;
+        private System.Windows.Forms.Button buttonAsignarActividad;
+        private System.Windows.Forms.GroupBox groupBoxAsignarHorarios;
+        private System.Windows.Forms.TextBox textBoxDiasActividadMain;
+        private System.Windows.Forms.Label labelActDias;
     }
 }
 

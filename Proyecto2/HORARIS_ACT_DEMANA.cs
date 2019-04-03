@@ -20,7 +20,7 @@ namespace Proyecto2
         public int id_activitat_demanada { get; set; }
         public int id_dia_setmana { get; set; }
     
-        public virtual ACTIVITATS_DEMANADES ACTIVITATS_DEMANADES { get; set; }
         public virtual DIES_SETMANA DIES_SETMANA { get; set; }
+        public virtual ACTIVITATS_DEMANADES ACTIVITATS_DEMANADES { get; set; }
     }
 }
