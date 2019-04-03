@@ -53,6 +53,9 @@ namespace Proyecto2
                 }
 
                 //se ha de insertar los horarios
+                //comboBoxLunesIni.Text = instalacionModif.HORARIS_INSTALACIONS.ElementAt(0).hora_inici.Hours.ToString() + ":"+ instalacionModif.HORARIS_INSTALACIONS.ElementAt(1).hora_inici.Minutes.ToString();
+                //textBoxNombreEspacio.Text = instalacionModif.HORARIS_INSTALACIONS.ElementAt(3).hora_inici.Hours.ToString() + ":" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(3).hora_inici.Minutes.ToString();
+
 
                 bindingSourceEspaciosInstalacion.DataSource = instalacionModif.ESPAIS.ToList();
                 buttonAñadirInstalacion.Enabled = false;
@@ -394,7 +397,7 @@ namespace Proyecto2
 
         private void buttonGuardarModificacion_Click(object sender, EventArgs e)
         {
-            
+            BD.ORM_INSTALACION.UpdateINSTALACION(instalacionModif.id, instalacionModif);
         }
     }
 }
