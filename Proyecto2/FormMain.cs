@@ -421,23 +421,8 @@ namespace Proyecto2
 
             comboBoxActivitats.SelectedIndex = -1;
 
-            List<ACTIVITATS_DEMANADES> _activitats_dem = BD.ORM_ACTIVITATS_DEMANADES.SelectAllACTIVITATS(ref mensaje);
-            List<ACTIVITATS_DEMANADES> _activitats_dem_BUENAS = new List<ACTIVITATS_DEMANADES>();
-
-            ESPAIS _espai = (ESPAIS)comboBoxEspaciosHome.SelectedItem;
-
-            foreach (var activitat in _activitats_dem)
-            {
-                if(activitat.assignada == false && activitat.ESPAIS.id_instalacio == _espai.id_instalacio)
-                {
-                    _activitats_dem_BUENAS.Add(activitat);
-                }
-            }
-
-            bindingSourceEspaisActivitats.DataSource = _activitats_dem_BUENAS;
-
-            setCalendarioWithActividades();
-
+            //TODO LO DEL CALENDARIO
+            HACERTODOCALENDARIOPORESPAI();
         }
 
         private void FormMain_Activated(object sender, EventArgs e)
@@ -783,6 +768,41 @@ namespace Proyecto2
 
             textBoxActivitatNombre.Text = act_dem.nom;
             comboBoxDurada.SelectedItem = act_dem.durada.ToString();
+            textBoxEquipoActividadMain.Text = act_dem.EQUIPS.nom;
+            textBoxDiasActividadMain.Text = act_dem.num_dies.ToString();
+
+        }
+
+        private void HACERTODOCALENDARIOPORESPAI()
+        {
+            List<ACTIVITATS_DEMANADES> _activitats_dem = BD.ORM_ACTIVITATS_DEMANADES.SelectAllACTIVITATS(ref mensaje);
+            List<ACTIVITATS_DEMANADES> _activitats_dem_BUENAS = new List<ACTIVITATS_DEMANADES>();
+
+            ESPAIS _espai = (ESPAIS)comboBoxEspaciosHome.SelectedItem;
+
+            foreach (var activitat in _activitats_dem)
+            {
+                if (activitat.assignada == false && activitat.ESPAIS.id_instalacio == _espai.id_instalacio)
+                {
+                    _activitats_dem_BUENAS.Add(activitat);
+                }
+            }
+
+            bindingSourceEspaisActivitats.DataSource = _activitats_dem_BUENAS;
+
+            setCalendarioWithActividades();
+        }
+
+        private void comboBoxEspaciosHome_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HACERTODOCALENDARIOPORESPAI();
+        }
+
+
+
+        //PARTE DE ASIGNAR HORARIOS Y COMPROBACIONES A TOPE
+        private void comboBoxLUNESActINI_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
