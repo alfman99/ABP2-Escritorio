@@ -801,7 +801,7 @@ namespace Proyecto2
 
 
         //PARTE DE ASIGNAR HORARIOS Y COMPROBACIONES A TOPE
-        private void comboBoxLUNESActINI_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonAsignarActividad_Click(object sender, EventArgs e)
         {
 
         }

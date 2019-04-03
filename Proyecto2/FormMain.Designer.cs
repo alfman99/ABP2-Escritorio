@@ -315,6 +315,8 @@
             // 
             this.comboBoxLUNESActFIN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLUNESActFIN.FormattingEnabled = true;
+            this.comboBoxLUNESActFIN.Items.AddRange(new object[] {
+            "No hay actividad"});
             this.comboBoxLUNESActFIN.Location = new System.Drawing.Point(44, 51);
             this.comboBoxLUNESActFIN.Name = "comboBoxLUNESActFIN";
             this.comboBoxLUNESActFIN.Size = new System.Drawing.Size(107, 21);
@@ -330,7 +332,6 @@
             this.comboBoxLUNESActINI.Name = "comboBoxLUNESActINI";
             this.comboBoxLUNESActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxLUNESActINI.TabIndex = 2;
-            this.comboBoxLUNESActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label21
             // 
@@ -359,6 +360,7 @@
             this.buttonAsignarActividad.TabIndex = 11;
             this.buttonAsignarActividad.Text = "Asignar";
             this.buttonAsignarActividad.UseVisualStyleBackColor = true;
+            this.buttonAsignarActividad.Click += new System.EventHandler(this.buttonAsignarActividad_Click);
             // 
             // groupBoxMartes
             // 
