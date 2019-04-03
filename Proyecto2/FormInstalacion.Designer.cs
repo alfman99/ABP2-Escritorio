@@ -1137,6 +1137,7 @@
             this.buttonGuardarModificacion.TabIndex = 62;
             this.buttonGuardarModificacion.Text = "Guardar Modificacion";
             this.buttonGuardarModificacion.UseVisualStyleBackColor = true;
+            this.buttonGuardarModificacion.Click += new System.EventHandler(this.buttonGuardarModificacion_Click);
             // 
             // buttonCancelar
             // 
