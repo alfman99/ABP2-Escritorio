@@ -463,7 +463,11 @@ namespace Proyecto2
 
         private void buttonGuardarModificacion_Click(object sender, EventArgs e)
         {
+
+            inputHorarios();
             BD.ORM_INSTALACION.UpdateINSTALACION(instalacionModif.id, instalacionModif);
+            MessageBox.Show("Se han guardado las modificaciones satisfactoriamente.");
+            this.Close();
         }
     }
 }
