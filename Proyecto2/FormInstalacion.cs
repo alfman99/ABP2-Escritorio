@@ -463,11 +463,29 @@ namespace Proyecto2
 
         private void buttonGuardarModificacion_Click(object sender, EventArgs e)
         {
+            if(textBoxNombreInstalacion.Text == "")
+            {
+                MessageBox.Show("Falta poner el nombre.");
+            }else
+            {
+                if(textBoxDireccionInstalacion.Text == "")
+                {
+                    MessageBox.Show("Falta poner la direccion de la instalacion.");
+                }else
+                {
+                    instalacionModif.nom = textBoxNombreInstalacion.Text;
+                    instalacionModif.adreca = textBoxDireccionInstalacion.Text;
 
-            inputHorarios();
-            BD.ORM_INSTALACION.UpdateINSTALACION(instalacionModif.id, instalacionModif);
-            MessageBox.Show("Se han guardado las modificaciones satisfactoriamente.");
-            this.Close();
+                    if (comboBoxGestionExterna.SelectedItem.Equals("Si")){  instalacionModif.gestioExterna = true; }
+                    else{   instalacionModif.gestioExterna = false; }
+
+                    inputHorarios();
+                    BD.ORM_INSTALACION.UpdateINSTALACION(instalacionModif.id, instalacionModif);
+                    MessageBox.Show("Se han guardado las modificaciones satisfactoriamente.");
+                    this.Close();
+                }
+            }
+            
         }
     }
 }
