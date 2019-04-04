@@ -53,9 +53,7 @@ namespace Proyecto2
                 }
 
                 //se ha de insertar los horarios
-                //comboBoxLunesIni.Text = instalacionModif.HORARIS_INSTALACIONS.ElementAt(0).hora_inici.Hours.ToString() + ":"+ instalacionModif.HORARIS_INSTALACIONS.ElementAt(1).hora_inici.Minutes.ToString();
-                //textBoxNombreEspacio.Text = instalacionModif.HORARIS_INSTALACIONS.ElementAt(3).hora_inici.Hours.ToString() + ":" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(3).hora_inici.Minutes.ToString();
-
+                insertarhorarios();
 
                 bindingSourceEspaciosInstalacion.DataSource = instalacionModif.ESPAIS.ToList();
                 buttonAñadirInstalacion.Enabled = false;
@@ -73,6 +71,74 @@ namespace Proyecto2
                 checkHorariosCorrecto();
             }
 
+        }
+
+        private void insertarhorarios()
+        {
+            comboBoxLunesIni.SelectedItem = insertarhorariosIni(0);
+            comboBoxLunesFin.SelectedItem = insertarhorariosFin(0);
+            comboBoxMartesIni.SelectedItem = insertarhorariosIni(1);
+            comboBoxMartesFin.SelectedItem = insertarhorariosFin(1);
+            comboBoxMiercolesIni.SelectedItem = insertarhorariosIni(2);
+            comboBoxMiercolesFin.SelectedItem = insertarhorariosFin(2);
+            comboBoxJuevesIni.SelectedItem = insertarhorariosIni(3);
+            comboBoxJuevesFin.SelectedItem = insertarhorariosFin(3);
+            comboBoxViernesIni.SelectedItem = insertarhorariosIni(4);
+            comboBoxViernesFin.SelectedItem = insertarhorariosFin(4);
+            comboBoxSabadoIni.SelectedItem = insertarhorariosIni(5);
+            comboBoxSabadoFin.SelectedItem = insertarhorariosFin(5);
+            comboBoxDomingoIni.SelectedItem = insertarhorariosIni(6);
+            comboBoxDomingoFin.SelectedItem = insertarhorariosFin(6);
+
+        }
+
+        private String insertarhorariosIni(int id)
+        {
+            String hora="";
+            //retorna las horas
+            if (instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Hours < 10)
+            {
+                hora = "0" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Hours.ToString()+":";
+            }else
+            {
+                hora = instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Hours.ToString() + ":";
+            }
+            //retorna los minutos
+            if (instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Minutes != 30)
+            {
+                hora = hora + "0" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Minutes.ToString();
+            }
+            else
+            {
+                hora = hora + instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Minutes.ToString();
+            }
+
+            return hora;
+            
+        }
+
+        private String insertarhorariosFin(int v)
+        {
+            String hora = "";
+
+            if (instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Hours < 10)
+            {
+                hora = "0" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Hours.ToString() + ":";
+            }
+            else
+            {
+                hora = instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Hours.ToString() + ":";
+            }
+
+            if (instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Minutes != 30)
+            {
+                hora = hora + "0" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Minutes.ToString();
+            }
+            else
+            {
+                hora = hora + instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Minutes.ToString();
+            }
+            return hora;
         }
 
         private void buttonClose_Click(object sender, EventArgs e)

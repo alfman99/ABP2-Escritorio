@@ -733,13 +733,16 @@ namespace Proyecto2
 
             foreach (var hora in _espai.INSTALACIONS.HORARIS_INSTALACIONS)
             {
-                if (horaMINSEMANA > hora.hora_inici)
+                if (hora.hora_inici != hora.hora_fi)
                 {
-                    horaMINSEMANA = hora.hora_inici;
-                }
-                if (horaMAXSEMANA < hora.hora_fi)
-                {
-                    horaMAXSEMANA = hora.hora_fi;
+                    if (horaMINSEMANA > hora.hora_inici)
+                    {
+                        horaMINSEMANA = hora.hora_inici;
+                    }
+                    if (horaMAXSEMANA < hora.hora_fi)
+                    {
+                        horaMAXSEMANA = hora.hora_fi;
+                    }
                 }
             }
 
@@ -765,11 +768,18 @@ namespace Proyecto2
         private void comboBoxActivitats_SelectedIndexChanged(object sender, EventArgs e)
         {
             ACTIVITATS_DEMANADES act_dem = (ACTIVITATS_DEMANADES)comboBoxActivitats.SelectedItem;
+            try
+            {
+                textBoxActivitatNombre.Text = act_dem.nom;
+                comboBoxDurada.SelectedItem = act_dem.durada.ToString();
+                textBoxEquipoActividadMain.Text = act_dem.EQUIPS.nom;
+                textBoxDiasActividadMain.Text = act_dem.num_dies.ToString();
 
-            textBoxActivitatNombre.Text = act_dem.nom;
-            comboBoxDurada.SelectedItem = act_dem.durada.ToString();
-            textBoxEquipoActividadMain.Text = act_dem.EQUIPS.nom;
-            textBoxDiasActividadMain.Text = act_dem.num_dies.ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
 
         }
 
