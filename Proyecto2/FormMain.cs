@@ -79,18 +79,6 @@ namespace Proyecto2
             buttonEditarEquipos.Enabled = false;
         }
 
-        private void radioButtonCalendario_CheckedChanged(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tabPage5;
-            dataGridViewTelefonos.Hide();
-
-            labeltelefonos.Hide();
-            buttonAñadirTel.Hide();
-            buttonEliminarTel.Hide();
-            buttonGuardarEntidad.Enabled = false;
-            buttonEditarEquipos.Enabled = false;
-        }
-
         #endregion
 
         #region botones de ventana

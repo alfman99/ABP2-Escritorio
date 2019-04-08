@@ -179,7 +179,6 @@
             this.bindingSourceListaInstalaciones = new System.Windows.Forms.BindingSource(this.components);
             this.buttonEliminarInstalacion = new System.Windows.Forms.Button();
             this.buttonAñadirInstalacion = new System.Windows.Forms.Button();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.pasarACalendarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.calendarioGRIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label12 = new System.Windows.Forms.Label();
@@ -193,7 +192,6 @@
             this.labelHora = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
             this.labelFecha = new System.Windows.Forms.Label();
-            this.radioButtonCalendario = new System.Windows.Forms.RadioButton();
             this.radioButtonInstalaciones = new System.Windows.Forms.RadioButton();
             this.radioButtonActividades = new System.Windows.Forms.RadioButton();
             this.radioButtonEntidades = new System.Windows.Forms.RadioButton();
@@ -248,7 +246,6 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -927,7 +924,7 @@
             this.panel4.Controls.Add(this.dataGridViewListaEntidad);
             this.panel4.Location = new System.Drawing.Point(9, 48);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(589, 490);
+            this.panel4.Size = new System.Drawing.Size(663, 521);
             this.panel4.TabIndex = 8;
             // 
             // label10
@@ -966,7 +963,7 @@
             this.dataGridViewListaEntidad.Name = "dataGridViewListaEntidad";
             this.dataGridViewListaEntidad.ReadOnly = true;
             this.dataGridViewListaEntidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewListaEntidad.Size = new System.Drawing.Size(551, 418);
+            this.dataGridViewListaEntidad.Size = new System.Drawing.Size(625, 449);
             this.dataGridViewListaEntidad.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn
@@ -1046,9 +1043,9 @@
             this.panel5.Controls.Add(this.buttonEliminarEntidad);
             this.panel5.Controls.Add(this.labelNombreEntidad);
             this.panel5.Controls.Add(this.buttonEditarEntidad);
-            this.panel5.Location = new System.Drawing.Point(604, 48);
+            this.panel5.Location = new System.Drawing.Point(678, 48);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(292, 490);
+            this.panel5.Size = new System.Drawing.Size(292, 519);
             this.panel5.TabIndex = 7;
             // 
             // textBoxContraseñaEntidad
@@ -1073,7 +1070,7 @@
             this.buttonEditarEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEditarEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditarEquipos.Location = new System.Drawing.Point(149, 408);
+            this.buttonEditarEquipos.Location = new System.Drawing.Point(149, 437);
             this.buttonEditarEquipos.Name = "buttonEditarEquipos";
             this.buttonEditarEquipos.Size = new System.Drawing.Size(129, 30);
             this.buttonEditarEquipos.TabIndex = 24;
@@ -1226,7 +1223,7 @@
             this.buttonAñadirEntidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAñadirEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAñadirEntidad.Location = new System.Drawing.Point(100, 444);
+            this.buttonAñadirEntidad.Location = new System.Drawing.Point(100, 473);
             this.buttonAñadirEntidad.Name = "buttonAñadirEntidad";
             this.buttonAñadirEntidad.Size = new System.Drawing.Size(86, 30);
             this.buttonAñadirEntidad.TabIndex = 10;
@@ -1249,7 +1246,7 @@
             this.buttonGuardarEntidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonGuardarEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardarEntidad.Location = new System.Drawing.Point(14, 444);
+            this.buttonGuardarEntidad.Location = new System.Drawing.Point(14, 473);
             this.buttonGuardarEntidad.Name = "buttonGuardarEntidad";
             this.buttonGuardarEntidad.Size = new System.Drawing.Size(84, 30);
             this.buttonGuardarEntidad.TabIndex = 9;
@@ -1272,7 +1269,7 @@
             this.buttonEliminarEntidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEliminarEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminarEntidad.Location = new System.Drawing.Point(188, 444);
+            this.buttonEliminarEntidad.Location = new System.Drawing.Point(188, 473);
             this.buttonEliminarEntidad.Name = "buttonEliminarEntidad";
             this.buttonEliminarEntidad.Size = new System.Drawing.Size(90, 30);
             this.buttonEliminarEntidad.TabIndex = 8;
@@ -1295,7 +1292,7 @@
             this.buttonEditarEntidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEditarEntidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditarEntidad.Location = new System.Drawing.Point(13, 408);
+            this.buttonEditarEntidad.Location = new System.Drawing.Point(13, 437);
             this.buttonEditarEntidad.Name = "buttonEditarEntidad";
             this.buttonEditarEntidad.Size = new System.Drawing.Size(134, 30);
             this.buttonEditarEntidad.TabIndex = 7;
@@ -1326,7 +1323,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(9, 48);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(604, 490);
+            this.panel3.Size = new System.Drawing.Size(663, 519);
             this.panel3.TabIndex = 6;
             // 
             // dataGridView1
@@ -1353,7 +1350,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(570, 407);
+            this.dataGridView1.Size = new System.Drawing.Size(629, 436);
             this.dataGridView1.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn1
@@ -1494,9 +1491,9 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.buttonEditar);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(619, 48);
+            this.panel2.Location = new System.Drawing.Point(678, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(292, 490);
+            this.panel2.Size = new System.Drawing.Size(292, 519);
             this.panel2.TabIndex = 5;
             // 
             // comboBoxDuracionActividad
@@ -1631,7 +1628,7 @@
             this.buttonAñadir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAñadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAñadir.Location = new System.Drawing.Point(16, 409);
+            this.buttonAñadir.Location = new System.Drawing.Point(16, 438);
             this.buttonAñadir.Name = "buttonAñadir";
             this.buttonAñadir.Size = new System.Drawing.Size(84, 30);
             this.buttonAñadir.TabIndex = 10;
@@ -1655,7 +1652,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonGuardar.Enabled = false;
             this.buttonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardar.Location = new System.Drawing.Point(14, 445);
+            this.buttonGuardar.Location = new System.Drawing.Point(14, 474);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(264, 30);
             this.buttonGuardar.TabIndex = 9;
@@ -1679,7 +1676,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEliminar.BackColor = System.Drawing.Color.Red;
             this.buttonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminar.Location = new System.Drawing.Point(193, 409);
+            this.buttonEliminar.Location = new System.Drawing.Point(193, 438);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(86, 30);
             this.buttonEliminar.TabIndex = 8;
@@ -1702,7 +1699,7 @@
             this.buttonEditar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(106, 409);
+            this.buttonEditar.Location = new System.Drawing.Point(106, 438);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(80, 30);
             this.buttonEditar.TabIndex = 7;
@@ -1752,13 +1749,14 @@
             this.panel7.Controls.Add(this.buttonAñadirInstalacion);
             this.panel7.Location = new System.Drawing.Point(9, 48);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(914, 505);
+            this.panel7.Size = new System.Drawing.Size(961, 519);
             this.panel7.TabIndex = 7;
             // 
             // buttonMofificarInstalacion
             // 
+            this.buttonMofificarInstalacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonMofificarInstalacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonMofificarInstalacion.Location = new System.Drawing.Point(396, 453);
+            this.buttonMofificarInstalacion.Location = new System.Drawing.Point(458, 467);
             this.buttonMofificarInstalacion.Name = "buttonMofificarInstalacion";
             this.buttonMofificarInstalacion.Size = new System.Drawing.Size(162, 39);
             this.buttonMofificarInstalacion.TabIndex = 7;
@@ -1786,7 +1784,7 @@
             this.dataGridViewInstalaciones.Name = "dataGridViewInstalaciones";
             this.dataGridViewInstalaciones.ReadOnly = true;
             this.dataGridViewInstalaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(884, 424);
+            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(931, 438);
             this.dataGridViewInstalaciones.TabIndex = 2;
             this.dataGridViewInstalaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInstalaciones_CellDoubleClick);
             // 
@@ -1830,7 +1828,7 @@
             // 
             this.buttonEliminarInstalacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEliminarInstalacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminarInstalacion.Location = new System.Drawing.Point(737, 453);
+            this.buttonEliminarInstalacion.Location = new System.Drawing.Point(784, 467);
             this.buttonEliminarInstalacion.Name = "buttonEliminarInstalacion";
             this.buttonEliminarInstalacion.Size = new System.Drawing.Size(161, 39);
             this.buttonEliminarInstalacion.TabIndex = 6;
@@ -1842,23 +1840,13 @@
             // 
             this.buttonAñadirInstalacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAñadirInstalacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAñadirInstalacion.Location = new System.Drawing.Point(579, 453);
+            this.buttonAñadirInstalacion.Location = new System.Drawing.Point(626, 467);
             this.buttonAñadirInstalacion.Name = "buttonAñadirInstalacion";
             this.buttonAñadirInstalacion.Size = new System.Drawing.Size(152, 39);
             this.buttonAñadirInstalacion.TabIndex = 5;
             this.buttonAñadirInstalacion.Text = "Añadir Instalacion";
             this.buttonAñadirInstalacion.UseVisualStyleBackColor = true;
             this.buttonAñadirInstalacion.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(978, 575);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // pasarACalendarioBindingSource
             // 
@@ -1894,12 +1882,11 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.radioButtonCalendario);
             this.panel1.Controls.Add(this.radioButtonInstalaciones);
             this.panel1.Controls.Add(this.radioButtonActividades);
             this.panel1.Controls.Add(this.radioButtonEntidades);
             this.panel1.Controls.Add(this.radioButtonHome);
-            this.panel1.Location = new System.Drawing.Point(-3, 9);
+            this.panel1.Location = new System.Drawing.Point(-3, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(994, 65);
             this.panel1.TabIndex = 1;
@@ -2014,23 +2001,6 @@
             this.labelFecha.TabIndex = 11;
             this.labelFecha.Text = "Fecha";
             this.labelFecha.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelFecha_MouseDown);
-            // 
-            // radioButtonCalendario
-            // 
-            this.radioButtonCalendario.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButtonCalendario.AutoSize = true;
-            this.radioButtonCalendario.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.radioButtonCalendario.FlatAppearance.BorderSize = 0;
-            this.radioButtonCalendario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.radioButtonCalendario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButtonCalendario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonCalendario.Location = new System.Drawing.Point(431, 29);
-            this.radioButtonCalendario.Name = "radioButtonCalendario";
-            this.radioButtonCalendario.Size = new System.Drawing.Size(95, 30);
-            this.radioButtonCalendario.TabIndex = 6;
-            this.radioButtonCalendario.Text = "Calendario";
-            this.radioButtonCalendario.UseVisualStyleBackColor = false;
-            this.radioButtonCalendario.CheckedChanged += new System.EventHandler(this.radioButtonCalendario_CheckedChanged);
             // 
             // radioButtonInstalaciones
             // 
@@ -2192,13 +2162,11 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton radioButtonInstalaciones;
         private System.Windows.Forms.RadioButton radioButtonActividades;
         private System.Windows.Forms.RadioButton radioButtonEntidades;
         private System.Windows.Forms.RadioButton radioButtonHome;
-        private System.Windows.Forms.RadioButton radioButtonCalendario;
         private System.Windows.Forms.Button buttonMinimizar;
         private System.Windows.Forms.Button buttonMax;
         private System.Windows.Forms.Button buttonClose;
