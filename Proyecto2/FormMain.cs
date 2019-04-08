@@ -29,6 +29,8 @@ namespace Proyecto2
         private int idActDem = 0;
         String mensaje = "";
 
+        private TimeSpan spanTIME = TimeSpan.Parse("00:00:00");
+
         #region control de tabs
 
         private void radioButtonHome_CheckedChanged(object sender, EventArgs e)
@@ -409,6 +411,7 @@ namespace Proyecto2
             comboBoxEspaciosHome.SelectedIndex = -1;
 
             comboBoxActivitats.SelectedIndex = -1;
+            comboBoxEspaciosHome.SelectedIndex = -1;
         }
 
         private void FormMain_Activated(object sender, EventArgs e)
@@ -416,9 +419,16 @@ namespace Proyecto2
             String mensaje = "";
 
             dataGridViewInstalaciones.DataSource = null;
-            dataGridViewInstalaciones.DataSource = BD.ORM_INSTALACION.SelectAllINSTALACION(ref mensaje);
+            bindingSourceListaInstalaciones.DataSource = BD.ORM_INSTALACION.SelectAllINSTALACION(ref mensaje);
+            dataGridViewInstalaciones.DataSource = bindingSourceListaInstalaciones;
+
+            dataGridView1.DataSource = null;
+            bindingSourceActivitatsDemandades.DataSource = BD.ORM_ACTIVITATS_DEMANADES.SelectAllACTIVITATS(ref mensaje);
+            dataGridView1.DataSource = bindingSourceActivitatsDemandades;
 
             bindingSourceEspais.DataSource = BD.ORM_ESPAIS.SelectAllESPAIS(ref mensaje);
+
+            comboBoxEspacioActividad.DataSource = BD.ORM_ESPAIS.SelectAllESPAIS(ref mensaje);
 
             if (!mensaje.Equals(""))
             {
@@ -509,6 +519,20 @@ namespace Proyecto2
                      ((ESPAIS)comboBoxEspacioActividad.SelectedItem).id,
                      ((TIPUS_ACTIVITAT)comboBoxTiposActividad.SelectedItem).id, int.Parse(textBoxDiasActividad.Text),
                      asignada);
+
+                List<ACTIVITATS_DEMANADES> a = BD.ORM_ACTIVITATS_DEMANADES.SelectAllACTIVITATS(ref mensaje);
+                List<ACTIVITATS_DEMANADES> buena = new List<ACTIVITATS_DEMANADES>();
+
+                foreach (var actividad_dem in a)
+                {
+                    if (actividad_dem.assignada == false)
+                    {
+                        buena.Add(actividad_dem);
+                    }
+                }
+
+                comboBoxActivitats.DataSource = buena;
+
 
                 if (!mensaje.Equals(""))
                 {
@@ -753,7 +777,7 @@ namespace Proyecto2
                 filaCalendario.HacerTodo();
             }
 
-            bindingSourcePasarActividades.DataSource = listaCalendario;
+            dataGridViewCalendario.DataSource = listaCalendario;
         }
 
         private void comboBoxActivitats_SelectedIndexChanged(object sender, EventArgs e)
@@ -765,6 +789,8 @@ namespace Proyecto2
                 comboBoxDurada.SelectedItem = act_dem.durada.ToString();
                 textBoxEquipoActividadMain.Text = act_dem.EQUIPS.nom;
                 textBoxDiasActividadMain.Text = act_dem.num_dies.ToString();
+
+                setHorariosComboBoxesACT();
 
             }
             catch (Exception ex)
@@ -796,14 +822,11 @@ namespace Proyecto2
 
         private void comboBoxEspaciosHome_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBoxEspaciosHome.SelectedIndex != -1)
+            if (comboBoxEspaciosHome.SelectedIndex != -1)
             {
                 HACERTODOCALENDARIOPORESPAI();
                 borrarComboBoxesACT();
-                setHorariosComboBoxesACT();
             }
-            
-            
         }
 
         private void borrarComboBoxesACT()
@@ -829,21 +852,35 @@ namespace Proyecto2
                 {
                     if (hora.DIES_SETMANA.nom.ToLower() == item.Text.ToLower())
                     {
-                        List<TimeSpan> horarioDIA = new List<TimeSpan>();
-
-                        TimeSpan horaConcreta = hora.hora_inici;
-
-                        horarioDIA.Add(horaConcreta);
-
-                        do
+                        if (hora.hora_inici != hora.hora_fi)
                         {
-                            horaConcreta += TimeSpan.Parse("00:30:00");
-                            horarioDIA.Add(horaConcreta);
-                        } while (horaConcreta <= hora.hora_fi);
+                            List<String> horarioDIA = new List<String>();
 
-                        foreach (var comboboX in item.Controls.OfType<ComboBox>())
+                            TimeSpan auxTime = hora.hora_inici;
+
+                            horarioDIA.Add("---------");
+                            horarioDIA.Add(auxTime.ToString());
+
+
+                            while (auxTime <= hora.hora_fi)
+                            {
+                                auxTime += TimeSpan.Parse("00:30:00");
+                                horarioDIA.Add(auxTime.ToString());
+                            };
+
+                            foreach (var comboboX in item.Controls.OfType<ComboBox>())
+                            {
+                                comboboX.DataSource = horarioDIA.ToList();
+                            }
+                        }
+                        else
                         {
-                            comboboX.DataSource = horarioDIA.ToList();
+                            foreach (var comboboX in item.Controls.OfType<ComboBox>())
+                            {
+                                List<String> cerrado = new List<String>();
+                                cerrado.Add("CERRADO");
+                                comboboX.DataSource = cerrado;
+                            }
                         }
                     }
                 }
@@ -854,7 +891,142 @@ namespace Proyecto2
         //PARTE DE ASIGNAR HORARIOS Y COMPROBACIONES A TOPE
         private void buttonAsignarActividad_Click(object sender, EventArgs e)
         {
+            ACTIVITATS_DEMANADES act_dem = (ACTIVITATS_DEMANADES)comboBoxActivitats.SelectedItem;
 
+            String hora1 = "";
+            String hora2 = "";
+
+            if (act_dem != null)
+            {
+                if (spanTIME.Duration() == act_dem.durada)
+                {
+                    List<DIES_SETMANA> diesSetmana = BD.ORM_DIES_SETMANA.SelectAllDIES_SETMANA(ref mensaje);
+
+                    foreach (var groupBox in groupBoxAsignarHorarios.Controls.OfType<GroupBox>())
+                    {
+                        hora1 = "";
+                        hora2 = "";
+                        foreach (var comboBox in groupBox.Controls.OfType<ComboBox>())
+                        {
+                            if (hora1.Equals(""))
+                            {
+                                hora1 = comboBox.SelectedItem.ToString();
+                            }
+                            else
+                            {
+                                hora2 = comboBox.SelectedItem.ToString();
+                            }
+                        }
+                        if (!hora1.Equals("---------") && !hora2.Equals("---------"))
+                        {
+
+                            foreach (var diaSemana in diesSetmana)
+                            {
+                                if (diaSemana.nom.ToLower() == groupBox.Text.ToLower())
+                                {
+                                    BD.ORM_ACTIVITATS.InsertACTIVITAT(act_dem.nom, act_dem.id_equip, act_dem.id_tipus_activitat, act_dem.id, act_dem.EQUIPS.id_entitat, default(DateTime), act_dem.id_espai);
+                                    BD.ORM_ACTIVITATS_DEMANADES.UpdateACTIVITATS_DEMANADES(act_dem.id, act_dem.nom, act_dem.durada, act_dem.id_equip, act_dem.id_espai, act_dem.id_tipus_activitat, act_dem.num_dies, true);
+
+                                    List<ACTIVITATS> actividades = BD.ORM_ACTIVITATS.SelectAllACTIVITATS(ref mensaje);
+
+                                    foreach (var actividad in actividades)
+                                    {
+                                        if( actividad.id_activitat_demanada == act_dem.id)
+                                        {
+                                            if(TimeSpan.Parse(hora1) < TimeSpan.Parse(hora2))
+                                            {
+                                                BD.ORM_HORARIS_ACTIVITAT.InsertHORARIS_ACTIVITAT(TimeSpan.Parse(hora1), TimeSpan.Parse(hora1), actividad.id, diaSemana.id);
+                                            }
+                                            else
+                                            {
+                                                BD.ORM_HORARIS_ACTIVITAT.InsertHORARIS_ACTIVITAT(TimeSpan.Parse(hora2), TimeSpan.Parse(hora1), actividad.id, diaSemana.id);
+                                            }
+                                        }
+                                    }
+                                    textBoxActivitatNombre.Text = "";
+                                    textBoxEquipoActividadMain.Text = "";
+                                    comboBoxDurada.DataSource = null;
+                                    comboBoxDurada.SelectedIndex = -1;
+                                    textBoxDiasActividadMain.Text = "";
+
+                                    List<ACTIVITATS_DEMANADES> a = BD.ORM_ACTIVITATS_DEMANADES.SelectAllACTIVITATS(ref mensaje);
+                                    List<ACTIVITATS_DEMANADES> buena = new List<ACTIVITATS_DEMANADES>();
+
+                                    foreach (var actividad_dem in a)
+                                    {
+                                        if (actividad_dem.assignada == false)
+                                        {
+                                            buena.Add(actividad_dem);
+                                        }
+                                    }
+
+                                    comboBoxActivitats.DataSource = buena;
+                                }
+                            }
+                            labelHORASUSADASHORASDISPONIBLES.Text = "00:00 / 00:00 H";
+                        }
+                    }
+
+
+                    HACERTODOCALENDARIOPORESPAI();
+                    borrarComboBoxesACT();
+                    setCalendarioWithActividades();
+                }
+                else
+                {
+                    MessageBox.Show("Insuficientes horas!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tienes que seleccionar una actividad primero!");
+            }
+
+        }
+
+        private void comboBoxLUNESActINI_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ACTIVITATS_DEMANADES act_dem = (ACTIVITATS_DEMANADES)comboBoxActivitats.SelectedItem;
+
+            spanTIME = TimeSpan.Parse("00:00:00");
+
+            foreach (var groupBox in groupBoxAsignarHorarios.Controls.OfType<GroupBox>())
+            {
+                String hora1 = "";
+                String hora2 = "";
+
+                try
+                {
+                    foreach (var item in groupBox.Controls.OfType<ComboBox>())
+                    {
+
+                        if (hora1.Equals(""))
+                        {
+                            hora1 = item.SelectedItem.ToString();
+                        }
+                        else
+                        {
+                            hora2 = item.SelectedItem.ToString();
+                        }
+                    }
+
+                    if (!hora1.Equals("---------") && !hora2.Equals("---------"))
+                    {
+                        if (TimeSpan.Parse(hora1) > TimeSpan.Parse(hora2))
+                        {
+                            spanTIME += (TimeSpan.Parse(hora2) - TimeSpan.Parse(hora1));
+                            labelHORASUSADASHORASDISPONIBLES.Text = spanTIME.Duration().ToString(@"hh\:mm") + " / " + act_dem.durada.ToString(@"hh\:mm") + " H";
+                        }
+                        else
+                        {
+                            MessageBox.Show("La hora inicial no puede ser mayor a la final");
+                        }
+                    }
+                }
+                catch (NullReferenceException ex)
+                {
+                }
+            }
         }
     }
 }

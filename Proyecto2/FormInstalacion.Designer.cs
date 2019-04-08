@@ -1081,6 +1081,7 @@
             this.textBoxPrecioEspacio.Name = "textBoxPrecioEspacio";
             this.textBoxPrecioEspacio.Size = new System.Drawing.Size(167, 20);
             this.textBoxPrecioEspacio.TabIndex = 56;
+            this.textBoxPrecioEspacio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrecioEspacio_KeyPress);
             // 
             // textBoxNombreEspacio
             // 

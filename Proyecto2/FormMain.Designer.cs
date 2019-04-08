@@ -71,6 +71,8 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.labelHORASUSADASHORASDISPONIBLES = new System.Windows.Forms.Label();
             this.textBoxDiasActividadMain = new System.Windows.Forms.TextBox();
             this.labelActDias = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -316,6 +318,7 @@
             this.comboBoxLUNESActFIN.Name = "comboBoxLUNESActFIN";
             this.comboBoxLUNESActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxLUNESActFIN.TabIndex = 3;
+            this.comboBoxLUNESActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxLUNESActINI
             // 
@@ -325,6 +328,7 @@
             this.comboBoxLUNESActINI.Name = "comboBoxLUNESActINI";
             this.comboBoxLUNESActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxLUNESActINI.TabIndex = 2;
+            this.comboBoxLUNESActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label21
             // 
@@ -376,6 +380,7 @@
             this.comboBoxMARTESActFIN.Name = "comboBoxMARTESActFIN";
             this.comboBoxMARTESActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxMARTESActFIN.TabIndex = 3;
+            this.comboBoxMARTESActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxMARTESActINI
             // 
@@ -385,6 +390,7 @@
             this.comboBoxMARTESActINI.Name = "comboBoxMARTESActINI";
             this.comboBoxMARTESActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxMARTESActINI.TabIndex = 2;
+            this.comboBoxMARTESActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -425,6 +431,7 @@
             this.comboBoxJUEVESActFIN.Name = "comboBoxJUEVESActFIN";
             this.comboBoxJUEVESActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxJUEVESActFIN.TabIndex = 3;
+            this.comboBoxJUEVESActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxJUEVESActINI
             // 
@@ -434,6 +441,7 @@
             this.comboBoxJUEVESActINI.Name = "comboBoxJUEVESActINI";
             this.comboBoxJUEVESActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxJUEVESActINI.TabIndex = 2;
+            this.comboBoxJUEVESActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label19
             // 
@@ -474,6 +482,7 @@
             this.comboBoxMIERCOLESActFIN.Name = "comboBoxMIERCOLESActFIN";
             this.comboBoxMIERCOLESActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxMIERCOLESActFIN.TabIndex = 3;
+            this.comboBoxMIERCOLESActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxMIERCOLESActINI
             // 
@@ -483,6 +492,7 @@
             this.comboBoxMIERCOLESActINI.Name = "comboBoxMIERCOLESActINI";
             this.comboBoxMIERCOLESActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxMIERCOLESActINI.TabIndex = 2;
+            this.comboBoxMIERCOLESActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label24
             // 
@@ -523,6 +533,7 @@
             this.comboBoxVIERNESActFIN.Name = "comboBoxVIERNESActFIN";
             this.comboBoxVIERNESActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxVIERNESActFIN.TabIndex = 3;
+            this.comboBoxVIERNESActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxVIERNESActINI
             // 
@@ -532,6 +543,7 @@
             this.comboBoxVIERNESActINI.Name = "comboBoxVIERNESActINI";
             this.comboBoxVIERNESActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxVIERNESActINI.TabIndex = 2;
+            this.comboBoxVIERNESActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label26
             // 
@@ -572,6 +584,7 @@
             this.comboBoxDOMINGOActFIN.Name = "comboBoxDOMINGOActFIN";
             this.comboBoxDOMINGOActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxDOMINGOActFIN.TabIndex = 3;
+            this.comboBoxDOMINGOActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxDOMINGOActINI
             // 
@@ -581,6 +594,7 @@
             this.comboBoxDOMINGOActINI.Name = "comboBoxDOMINGOActINI";
             this.comboBoxDOMINGOActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxDOMINGOActINI.TabIndex = 2;
+            this.comboBoxDOMINGOActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label30
             // 
@@ -621,6 +635,7 @@
             this.comboBoxSABADOActFIN.Name = "comboBoxSABADOActFIN";
             this.comboBoxSABADOActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxSABADOActFIN.TabIndex = 3;
+            this.comboBoxSABADOActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxSABADOActINI
             // 
@@ -630,6 +645,7 @@
             this.comboBoxSABADOActINI.Name = "comboBoxSABADOActINI";
             this.comboBoxSABADOActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxSABADOActINI.TabIndex = 2;
+            this.comboBoxSABADOActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label28
             // 
@@ -651,6 +667,8 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.label34);
+            this.groupBox7.Controls.Add(this.labelHORASUSADASHORASDISPONIBLES);
             this.groupBox7.Controls.Add(this.textBoxDiasActividadMain);
             this.groupBox7.Controls.Add(this.labelActDias);
             this.groupBox7.Controls.Add(this.label33);
@@ -668,10 +686,29 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Asignar actividades";
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(16, 154);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(38, 13);
+            this.label34.TabIndex = 14;
+            this.label34.Text = "Horas:";
+            // 
+            // labelHORASUSADASHORASDISPONIBLES
+            // 
+            this.labelHORASUSADASHORASDISPONIBLES.AutoSize = true;
+            this.labelHORASUSADASHORASDISPONIBLES.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHORASUSADASHORASDISPONIBLES.Location = new System.Drawing.Point(130, 154);
+            this.labelHORASUSADASHORASDISPONIBLES.Name = "labelHORASUSADASHORASDISPONIBLES";
+            this.labelHORASUSADASHORASDISPONIBLES.Size = new System.Drawing.Size(98, 13);
+            this.labelHORASUSADASHORASDISPONIBLES.TabIndex = 13;
+            this.labelHORASUSADASHORASDISPONIBLES.Text = "00:00 / 00:00 H";
+            // 
             // textBoxDiasActividadMain
             // 
             this.textBoxDiasActividadMain.Enabled = false;
-            this.textBoxDiasActividadMain.Location = new System.Drawing.Point(132, 143);
+            this.textBoxDiasActividadMain.Location = new System.Drawing.Point(133, 125);
             this.textBoxDiasActividadMain.Name = "textBoxDiasActividadMain";
             this.textBoxDiasActividadMain.Size = new System.Drawing.Size(121, 20);
             this.textBoxDiasActividadMain.TabIndex = 12;
@@ -679,7 +716,7 @@
             // labelActDias
             // 
             this.labelActDias.AutoSize = true;
-            this.labelActDias.Location = new System.Drawing.Point(15, 146);
+            this.labelActDias.Location = new System.Drawing.Point(16, 128);
             this.labelActDias.Name = "labelActDias";
             this.labelActDias.Size = new System.Drawing.Size(31, 13);
             this.labelActDias.TabIndex = 11;
@@ -688,7 +725,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(15, 93);
+            this.label33.Location = new System.Drawing.Point(16, 75);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(43, 13);
             this.label33.TabIndex = 9;
@@ -697,7 +734,7 @@
             // textBoxEquipoActividadMain
             // 
             this.textBoxEquipoActividadMain.Enabled = false;
-            this.textBoxEquipoActividadMain.Location = new System.Drawing.Point(132, 90);
+            this.textBoxEquipoActividadMain.Location = new System.Drawing.Point(133, 72);
             this.textBoxEquipoActividadMain.Name = "textBoxEquipoActividadMain";
             this.textBoxEquipoActividadMain.Size = new System.Drawing.Size(121, 20);
             this.textBoxEquipoActividadMain.TabIndex = 10;
@@ -705,7 +742,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(15, 40);
+            this.label18.Location = new System.Drawing.Point(16, 22);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(111, 13);
             this.label18.TabIndex = 4;
@@ -717,7 +754,7 @@
             this.comboBoxActivitats.DisplayMember = "nom";
             this.comboBoxActivitats.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxActivitats.FormattingEnabled = true;
-            this.comboBoxActivitats.Location = new System.Drawing.Point(132, 37);
+            this.comboBoxActivitats.Location = new System.Drawing.Point(133, 19);
             this.comboBoxActivitats.Name = "comboBoxActivitats";
             this.comboBoxActivitats.Size = new System.Drawing.Size(121, 21);
             this.comboBoxActivitats.TabIndex = 3;
@@ -726,7 +763,7 @@
             // labelActNombre
             // 
             this.labelActNombre.AutoSize = true;
-            this.labelActNombre.Location = new System.Drawing.Point(15, 67);
+            this.labelActNombre.Location = new System.Drawing.Point(16, 49);
             this.labelActNombre.Name = "labelActNombre";
             this.labelActNombre.Size = new System.Drawing.Size(47, 13);
             this.labelActNombre.TabIndex = 5;
@@ -735,7 +772,7 @@
             // textBoxActivitatNombre
             // 
             this.textBoxActivitatNombre.Enabled = false;
-            this.textBoxActivitatNombre.Location = new System.Drawing.Point(132, 64);
+            this.textBoxActivitatNombre.Location = new System.Drawing.Point(133, 46);
             this.textBoxActivitatNombre.Name = "textBoxActivitatNombre";
             this.textBoxActivitatNombre.Size = new System.Drawing.Size(121, 20);
             this.textBoxActivitatNombre.TabIndex = 6;
@@ -743,7 +780,7 @@
             // labelActDurada
             // 
             this.labelActDurada.AutoSize = true;
-            this.labelActDurada.Location = new System.Drawing.Point(15, 119);
+            this.labelActDurada.Location = new System.Drawing.Point(16, 101);
             this.labelActDurada.Name = "labelActDurada";
             this.labelActDurada.Size = new System.Drawing.Size(45, 13);
             this.labelActDurada.TabIndex = 7;
@@ -778,7 +815,7 @@
             "11:30:00",
             "12:00:00",
             "12:30:00"});
-            this.comboBoxDurada.Location = new System.Drawing.Point(132, 116);
+            this.comboBoxDurada.Location = new System.Drawing.Point(133, 98);
             this.comboBoxDurada.Name = "comboBoxDurada";
             this.comboBoxDurada.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDurada.TabIndex = 8;
@@ -1961,7 +1998,7 @@
             this.labelHora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHora.ForeColor = System.Drawing.Color.White;
-            this.labelHora.Location = new System.Drawing.Point(636, 8);
+            this.labelHora.Location = new System.Drawing.Point(556, 8);
             this.labelHora.Name = "labelHora";
             this.labelHora.Size = new System.Drawing.Size(46, 16);
             this.labelHora.TabIndex = 12;
@@ -1991,7 +2028,7 @@
             this.labelFecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFecha.ForeColor = System.Drawing.Color.White;
-            this.labelFecha.Location = new System.Drawing.Point(565, 8);
+            this.labelFecha.Location = new System.Drawing.Point(485, 8);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(46, 16);
             this.labelFecha.TabIndex = 11;
@@ -2323,6 +2360,8 @@
         private System.Windows.Forms.GroupBox groupBoxAsignarHorarios;
         private System.Windows.Forms.TextBox textBoxDiasActividadMain;
         private System.Windows.Forms.Label labelActDias;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label labelHORASUSADASHORASDISPONIBLES;
     }
 }
 

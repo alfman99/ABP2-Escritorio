@@ -64,6 +64,11 @@ namespace Proyecto2
             else
             {
                 buttonGuardarModificacion.Enabled = false;
+                textBoxNombreEspacio.Enabled = false;
+                textBoxPrecioEspacio.Enabled = false;
+                comboBoxExteriorEspacio.Enabled = false;
+                buttonAñadirEspacio.Enabled = false;
+                buttonEliminarEspacio.Enabled = false;
             }
 
             foreach (var item in panel2.Controls.OfType<ComboBox>())
@@ -94,7 +99,7 @@ namespace Proyecto2
 
         private String insertarhorariosIni(int id)
         {
-            String hora="";
+            String hora = "";
             try
             {
                 //retorna las horas
@@ -116,14 +121,14 @@ namespace Proyecto2
                     hora = hora + instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Minutes.ToString();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Esta instalacion no tiene horarios");
             }
-            
+
 
             return hora;
-            
+
         }
 
         private String insertarhorariosFin(int v)
@@ -148,11 +153,12 @@ namespace Proyecto2
                 {
                     hora = hora + instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Minutes.ToString();
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Esta instalacion no tiene horarios");
             }
-           
+
             return hora;
         }
 
@@ -197,9 +203,15 @@ namespace Proyecto2
                         {
                             exterior = false;
                         }
-
-                        BD.ORM_ESPAIS.InsertESPAI(textBoxNombreEspacio.Text, Double.Parse(textBoxPrecioEspacio.Text), exterior, instalacionModif.id);
-                        refresGridEspais();
+                        try
+                        {
+                            BD.ORM_ESPAIS.InsertESPAI(textBoxNombreEspacio.Text, Double.Parse(textBoxPrecioEspacio.Text), exterior, instalacionModif.id);
+                            refresGridEspais();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Se ha producido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
@@ -361,9 +373,9 @@ namespace Proyecto2
                     MessageBox.Show("Tienes que completar todos horarios");
                     item.Focus();
                 }
-                
+
             }
-            
+
             return vacio;
         }
 
@@ -478,21 +490,23 @@ namespace Proyecto2
 
         private void buttonGuardarModificacion_Click(object sender, EventArgs e)
         {
-            if(textBoxNombreInstalacion.Text == "")
+            if (textBoxNombreInstalacion.Text == "")
             {
                 MessageBox.Show("Falta poner el nombre.");
-            }else
+            }
+            else
             {
-                if(textBoxDireccionInstalacion.Text == "")
+                if (textBoxDireccionInstalacion.Text == "")
                 {
                     MessageBox.Show("Falta poner la direccion de la instalacion.");
-                }else
+                }
+                else
                 {
                     instalacionModif.nom = textBoxNombreInstalacion.Text;
                     instalacionModif.adreca = textBoxDireccionInstalacion.Text;
 
-                    if (comboBoxGestionExterna.SelectedItem.Equals("Si")){  instalacionModif.gestioExterna = true; }
-                    else{   instalacionModif.gestioExterna = false; }
+                    if (comboBoxGestionExterna.SelectedItem.Equals("Si")) { instalacionModif.gestioExterna = true; }
+                    else { instalacionModif.gestioExterna = false; }
 
                     inputHorarios();
                     BD.ORM_INSTALACION.UpdateINSTALACION(instalacionModif.id, instalacionModif);
@@ -500,7 +514,21 @@ namespace Proyecto2
                     this.Close();
                 }
             }
-            
+
+        }
+
+        private void textBoxPrecioEspacio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
