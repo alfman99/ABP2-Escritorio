@@ -312,8 +312,6 @@
             // 
             this.comboBoxLUNESActFIN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLUNESActFIN.FormattingEnabled = true;
-            this.comboBoxLUNESActFIN.Items.AddRange(new object[] {
-            "No hay actividad"});
             this.comboBoxLUNESActFIN.Location = new System.Drawing.Point(44, 51);
             this.comboBoxLUNESActFIN.Name = "comboBoxLUNESActFIN";
             this.comboBoxLUNESActFIN.Size = new System.Drawing.Size(107, 21);
@@ -323,8 +321,6 @@
             // 
             this.comboBoxLUNESActINI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLUNESActINI.FormattingEnabled = true;
-            this.comboBoxLUNESActINI.Items.AddRange(new object[] {
-            "No hay actividad"});
             this.comboBoxLUNESActINI.Location = new System.Drawing.Point(44, 19);
             this.comboBoxLUNESActINI.Name = "comboBoxLUNESActINI";
             this.comboBoxLUNESActINI.Size = new System.Drawing.Size(107, 21);
@@ -674,6 +670,7 @@
             // 
             // textBoxDiasActividadMain
             // 
+            this.textBoxDiasActividadMain.Enabled = false;
             this.textBoxDiasActividadMain.Location = new System.Drawing.Point(132, 143);
             this.textBoxDiasActividadMain.Name = "textBoxDiasActividadMain";
             this.textBoxDiasActividadMain.Size = new System.Drawing.Size(121, 20);
@@ -699,6 +696,7 @@
             // 
             // textBoxEquipoActividadMain
             // 
+            this.textBoxEquipoActividadMain.Enabled = false;
             this.textBoxEquipoActividadMain.Location = new System.Drawing.Point(132, 90);
             this.textBoxEquipoActividadMain.Name = "textBoxEquipoActividadMain";
             this.textBoxEquipoActividadMain.Size = new System.Drawing.Size(121, 20);
@@ -725,10 +723,6 @@
             this.comboBoxActivitats.TabIndex = 3;
             this.comboBoxActivitats.SelectedIndexChanged += new System.EventHandler(this.comboBoxActivitats_SelectedIndexChanged);
             // 
-            // bindingSourceEspaisActivitats
-            // 
-            this.bindingSourceEspaisActivitats.DataSource = typeof(Proyecto2.ACTIVITATS_DEMANADES);
-            // 
             // labelActNombre
             // 
             this.labelActNombre.AutoSize = true;
@@ -740,6 +734,7 @@
             // 
             // textBoxActivitatNombre
             // 
+            this.textBoxActivitatNombre.Enabled = false;
             this.textBoxActivitatNombre.Location = new System.Drawing.Point(132, 64);
             this.textBoxActivitatNombre.Name = "textBoxActivitatNombre";
             this.textBoxActivitatNombre.Size = new System.Drawing.Size(121, 20);
@@ -757,6 +752,7 @@
             // comboBoxDurada
             // 
             this.comboBoxDurada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDurada.Enabled = false;
             this.comboBoxDurada.FormattingEnabled = true;
             this.comboBoxDurada.Items.AddRange(new object[] {
             "00:30:00",

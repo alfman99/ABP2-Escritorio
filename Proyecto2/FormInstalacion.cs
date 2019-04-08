@@ -95,23 +95,32 @@ namespace Proyecto2
         private String insertarhorariosIni(int id)
         {
             String hora="";
-            //retorna las horas
-            if (instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Hours < 10)
+            try
             {
-                hora = "0" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Hours.ToString()+":";
-            }else
-            {
-                hora = instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Hours.ToString() + ":";
+                //retorna las horas
+                if (instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Hours < 10)
+                {
+                    hora = "0" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Hours.ToString() + ":";
+                }
+                else
+                {
+                    hora = instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Hours.ToString() + ":";
+                }
+                //retorna los minutos
+                if (instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Minutes != 30)
+                {
+                    hora = hora + "0" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Minutes.ToString();
+                }
+                else
+                {
+                    hora = hora + instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Minutes.ToString();
+                }
             }
-            //retorna los minutos
-            if (instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Minutes != 30)
+            catch(Exception ex)
             {
-                hora = hora + "0" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Minutes.ToString();
+                MessageBox.Show("Esta instalacion no tiene horarios");
             }
-            else
-            {
-                hora = hora + instalacionModif.HORARIS_INSTALACIONS.ElementAt(id).hora_inici.Minutes.ToString();
-            }
+            
 
             return hora;
             
@@ -120,24 +129,30 @@ namespace Proyecto2
         private String insertarhorariosFin(int v)
         {
             String hora = "";
+            try
+            {
+                if (instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Hours < 10)
+                {
+                    hora = "0" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Hours.ToString() + ":";
+                }
+                else
+                {
+                    hora = instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Hours.ToString() + ":";
+                }
 
-            if (instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Hours < 10)
+                if (instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Minutes != 30)
+                {
+                    hora = hora + "0" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Minutes.ToString();
+                }
+                else
+                {
+                    hora = hora + instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Minutes.ToString();
+                }
+            }catch(Exception ex)
             {
-                hora = "0" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Hours.ToString() + ":";
+                MessageBox.Show("Esta instalacion no tiene horarios");
             }
-            else
-            {
-                hora = instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Hours.ToString() + ":";
-            }
-
-            if (instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Minutes != 30)
-            {
-                hora = hora + "0" + instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Minutes.ToString();
-            }
-            else
-            {
-                hora = hora + instalacionModif.HORARIS_INSTALACIONS.ElementAt(v).hora_fi.Minutes.ToString();
-            }
+           
             return hora;
         }
 

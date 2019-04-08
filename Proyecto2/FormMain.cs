@@ -406,17 +406,24 @@ namespace Proyecto2
             comboBoxEspacioActividad.SelectedIndex = -1;
             comboBoxTiposActividad.SelectedIndex = -1;
             textBoxDiasActividad.Text = "";
+            comboBoxEspaciosHome.SelectedIndex = -1;
 
             comboBoxActivitats.SelectedIndex = -1;
-
-            //TODO LO DEL CALENDARIO
-            HACERTODOCALENDARIOPORESPAI();
         }
 
         private void FormMain_Activated(object sender, EventArgs e)
         {
+            String mensaje = "";
+
             dataGridViewInstalaciones.DataSource = null;
             dataGridViewInstalaciones.DataSource = BD.ORM_INSTALACION.SelectAllINSTALACION(ref mensaje);
+
+            bindingSourceEspais.DataSource = BD.ORM_ESPAIS.SelectAllESPAIS(ref mensaje);
+
+            if (!mensaje.Equals(""))
+            {
+                MessageBox.Show(mensaje);
+            }
         }
 
         #endregion
@@ -596,12 +603,8 @@ namespace Proyecto2
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-
-
             try
             {
-                ACTIVITATS_DEMANADES _actDemanades = (ACTIVITATS_DEMANADES)dataGridView1.CurrentRow.DataBoundItem;
-
                 String nombre = textBoxNombreActividad.Text;
                 TimeSpan duracion = TimeSpan.Parse(comboBoxDuracionActividad.SelectedItem.ToString());
                 int idEquipo = ((EQUIPS)comboBoxEquipoActividad.SelectedItem).id;
@@ -793,9 +796,59 @@ namespace Proyecto2
 
         private void comboBoxEspaciosHome_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HACERTODOCALENDARIOPORESPAI();
+            if(comboBoxEspaciosHome.SelectedIndex != -1)
+            {
+                HACERTODOCALENDARIOPORESPAI();
+                borrarComboBoxesACT();
+                setHorariosComboBoxesACT();
+            }
+            
+            
         }
 
+        private void borrarComboBoxesACT()
+        {
+            foreach (var groupBox in groupBoxAsignarHorarios.Controls.OfType<GroupBox>())
+            {
+                foreach (var comboBox in groupBox.Controls.OfType<ComboBox>())
+                {
+                    comboBox.DataSource = null;
+                    comboBox.SelectedIndex = -1;
+                }
+            }
+        }
+
+        private void setHorariosComboBoxesACT()
+        {
+
+            ESPAIS espacio = (ESPAIS)comboBoxEspaciosHome.SelectedItem;
+
+            foreach (var item in groupBoxAsignarHorarios.Controls.OfType<GroupBox>())
+            {
+                foreach (var hora in espacio.INSTALACIONS.HORARIS_INSTALACIONS)
+                {
+                    if (hora.DIES_SETMANA.nom.ToLower() == item.Text.ToLower())
+                    {
+                        List<TimeSpan> horarioDIA = new List<TimeSpan>();
+
+                        TimeSpan horaConcreta = hora.hora_inici;
+
+                        horarioDIA.Add(horaConcreta);
+
+                        do
+                        {
+                            horaConcreta += TimeSpan.Parse("00:30:00");
+                            horarioDIA.Add(horaConcreta);
+                        } while (horaConcreta <= hora.hora_fi);
+
+                        foreach (var comboboX in item.Controls.OfType<ComboBox>())
+                        {
+                            comboboX.DataSource = horarioDIA.ToList();
+                        }
+                    }
+                }
+            }
+        }
 
 
         //PARTE DE ASIGNAR HORARIOS Y COMPROBACIONES A TOPE
