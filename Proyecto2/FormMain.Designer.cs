@@ -255,7 +255,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
             this.tabPage1.Controls.Add(this.groupBoxActivitats);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -665,16 +665,16 @@
             this.groupBox7.Controls.Add(this.textBoxActivitatNombre);
             this.groupBox7.Controls.Add(this.labelActDurada);
             this.groupBox7.Controls.Add(this.comboBoxDurada);
-            this.groupBox7.Location = new System.Drawing.Point(6, 322);
+            this.groupBox7.Location = new System.Drawing.Point(6, 320);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(278, 183);
+            this.groupBox7.Size = new System.Drawing.Size(278, 185);
             this.groupBox7.TabIndex = 10;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Asignar actividades";
             // 
             // textBoxDiasActividadMain
             // 
-            this.textBoxDiasActividadMain.Location = new System.Drawing.Point(132, 125);
+            this.textBoxDiasActividadMain.Location = new System.Drawing.Point(132, 143);
             this.textBoxDiasActividadMain.Name = "textBoxDiasActividadMain";
             this.textBoxDiasActividadMain.Size = new System.Drawing.Size(121, 20);
             this.textBoxDiasActividadMain.TabIndex = 12;
@@ -682,7 +682,7 @@
             // labelActDias
             // 
             this.labelActDias.AutoSize = true;
-            this.labelActDias.Location = new System.Drawing.Point(15, 128);
+            this.labelActDias.Location = new System.Drawing.Point(15, 146);
             this.labelActDias.Name = "labelActDias";
             this.labelActDias.Size = new System.Drawing.Size(31, 13);
             this.labelActDias.TabIndex = 11;
@@ -691,7 +691,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(15, 75);
+            this.label33.Location = new System.Drawing.Point(15, 93);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(43, 13);
             this.label33.TabIndex = 9;
@@ -699,7 +699,7 @@
             // 
             // textBoxEquipoActividadMain
             // 
-            this.textBoxEquipoActividadMain.Location = new System.Drawing.Point(132, 72);
+            this.textBoxEquipoActividadMain.Location = new System.Drawing.Point(132, 90);
             this.textBoxEquipoActividadMain.Name = "textBoxEquipoActividadMain";
             this.textBoxEquipoActividadMain.Size = new System.Drawing.Size(121, 20);
             this.textBoxEquipoActividadMain.TabIndex = 10;
@@ -707,7 +707,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(15, 22);
+            this.label18.Location = new System.Drawing.Point(15, 40);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(111, 13);
             this.label18.TabIndex = 4;
@@ -719,7 +719,7 @@
             this.comboBoxActivitats.DisplayMember = "nom";
             this.comboBoxActivitats.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxActivitats.FormattingEnabled = true;
-            this.comboBoxActivitats.Location = new System.Drawing.Point(132, 19);
+            this.comboBoxActivitats.Location = new System.Drawing.Point(132, 37);
             this.comboBoxActivitats.Name = "comboBoxActivitats";
             this.comboBoxActivitats.Size = new System.Drawing.Size(121, 21);
             this.comboBoxActivitats.TabIndex = 3;
@@ -732,7 +732,7 @@
             // labelActNombre
             // 
             this.labelActNombre.AutoSize = true;
-            this.labelActNombre.Location = new System.Drawing.Point(15, 49);
+            this.labelActNombre.Location = new System.Drawing.Point(15, 67);
             this.labelActNombre.Name = "labelActNombre";
             this.labelActNombre.Size = new System.Drawing.Size(47, 13);
             this.labelActNombre.TabIndex = 5;
@@ -740,7 +740,7 @@
             // 
             // textBoxActivitatNombre
             // 
-            this.textBoxActivitatNombre.Location = new System.Drawing.Point(132, 46);
+            this.textBoxActivitatNombre.Location = new System.Drawing.Point(132, 64);
             this.textBoxActivitatNombre.Name = "textBoxActivitatNombre";
             this.textBoxActivitatNombre.Size = new System.Drawing.Size(121, 20);
             this.textBoxActivitatNombre.TabIndex = 6;
@@ -748,7 +748,7 @@
             // labelActDurada
             // 
             this.labelActDurada.AutoSize = true;
-            this.labelActDurada.Location = new System.Drawing.Point(15, 101);
+            this.labelActDurada.Location = new System.Drawing.Point(15, 119);
             this.labelActDurada.Name = "labelActDurada";
             this.labelActDurada.Size = new System.Drawing.Size(45, 13);
             this.labelActDurada.TabIndex = 7;
@@ -782,7 +782,7 @@
             "11:30:00",
             "12:00:00",
             "12:30:00"});
-            this.comboBoxDurada.Location = new System.Drawing.Point(132, 98);
+            this.comboBoxDurada.Location = new System.Drawing.Point(132, 116);
             this.comboBoxDurada.Name = "comboBoxDurada";
             this.comboBoxDurada.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDurada.TabIndex = 8;
