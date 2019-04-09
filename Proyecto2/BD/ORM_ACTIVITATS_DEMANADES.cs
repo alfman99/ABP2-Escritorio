@@ -30,8 +30,6 @@ namespace Proyecto2.BD
                 SqlException sqlEx = (SqlException)ex.InnerException;
                 mensaje = BD.ORM.MensajeError(sqlEx);
             }
-
-
             return _activitats_demanades;
         }
 

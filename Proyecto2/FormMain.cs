@@ -376,7 +376,9 @@ namespace Proyecto2
             bindingSourceListaEntidades.DataSource = BD.ORM_ENTITATS.SelectAllENTITATS(ref mensaje);
             bindingSourceListaInstalaciones.DataSource = BD.ORM_INSTALACION.SelectAllINSTALACION(ref mensaje);
             bindingSourceListaActividades.DataSource = BD.ORM_ACTIVITATS.SelectAllACTIVITATS(ref mensaje);
+
             bindingSourceActivitatsDemandades.DataSource = BD.ORM_ACTIVITATS_DEMANADES.SelectAllACTIVITATS(ref mensaje);
+
             bindingSourceEquips.DataSource = BD.ORM_EQUIPS.SelectAllEQUIPS(ref mensaje);
             bindingSourceEspais.DataSource = BD.ORM_ESPAIS.SelectAllESPAIS(ref mensaje);
             bindingSourceTipusActivitat.DataSource = BD.ORM_TIPUS_ACTIVITAT.SelectAllTIPUS_ACTIVITAT(ref mensaje);
@@ -429,6 +431,8 @@ namespace Proyecto2
             bindingSourceEspais.DataSource = BD.ORM_ESPAIS.SelectAllESPAIS(ref mensaje);
 
             comboBoxEspacioActividad.DataSource = BD.ORM_ESPAIS.SelectAllESPAIS(ref mensaje);
+
+            comboBoxEquipoActividad.DataSource = BD.ORM_EQUIPS.SelectAllEQUIPS(ref mensaje);
 
             if (!mensaje.Equals(""))
             {
@@ -790,6 +794,8 @@ namespace Proyecto2
                 textBoxEquipoActividadMain.Text = act_dem.EQUIPS.nom;
                 textBoxDiasActividadMain.Text = act_dem.num_dies.ToString();
 
+                labelHORASUSADASHORASDISPONIBLES.Text = "00:00 / " + act_dem.durada + " h";
+
                 setHorariosComboBoxesACT();
 
             }
@@ -931,7 +937,7 @@ namespace Proyecto2
 
                                     foreach (var actividad in actividades)
                                     {
-                                        if( actividad.id_activitat_demanada == act_dem.id)
+                                        if( actividad.id_activitat_demanada == act_dem.id && hora1 != "CERRADO" && hora2 != "CERRADO")
                                         {
                                             if(TimeSpan.Parse(hora1) < TimeSpan.Parse(hora2))
                                             {
@@ -1012,14 +1018,20 @@ namespace Proyecto2
 
                     if (!hora1.Equals("---------") && !hora2.Equals("---------"))
                     {
-                        if (TimeSpan.Parse(hora1) > TimeSpan.Parse(hora2))
+                        try
                         {
-                            spanTIME += (TimeSpan.Parse(hora2) - TimeSpan.Parse(hora1));
-                            labelHORASUSADASHORASDISPONIBLES.Text = spanTIME.Duration().ToString(@"hh\:mm") + " / " + act_dem.durada.ToString(@"hh\:mm") + " H";
+                            if (TimeSpan.Parse(hora1) > TimeSpan.Parse(hora2))
+                            {
+                                spanTIME += (TimeSpan.Parse(hora2) - TimeSpan.Parse(hora1));
+                                labelHORASUSADASHORASDISPONIBLES.Text = spanTIME.Duration().ToString(@"hh\:mm") + " / " + act_dem.durada.ToString(@"hh\:mm") + " H";
+                            }
+                            else
+                            {
+                                MessageBox.Show("La hora inicial no puede ser mayor a la final");
+                            }
                         }
-                        else
+                        catch(Exception ex)
                         {
-                            MessageBox.Show("La hora inicial no puede ser mayor a la final");
                         }
                     }
                 }
