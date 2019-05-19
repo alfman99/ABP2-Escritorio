@@ -71,6 +71,8 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.labelHORASUSADASHORASDISPONIBLES = new System.Windows.Forms.Label();
             this.textBoxDiasActividadMain = new System.Windows.Forms.TextBox();
             this.labelActDias = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -83,15 +85,15 @@
             this.labelActDurada = new System.Windows.Forms.Label();
             this.comboBoxDurada = new System.Windows.Forms.ComboBox();
             this.dataGridViewCalendario = new System.Windows.Forms.DataGridView();
-            this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lunesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.martesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miercolesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.juevesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viernesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sabadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domingoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSourcePasarActividades = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pasarACalendarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxEspaciosHome = new System.Windows.Forms.ComboBox();
             this.bindingSourceEspais = new System.Windows.Forms.BindingSource(this.components);
             this.label16 = new System.Windows.Forms.Label();
@@ -99,12 +101,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridViewListaEntidad = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.temporadaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adrecaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nIFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceListaEntidades = new System.Windows.Forms.BindingSource(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBoxContraseñaEntidad = new System.Windows.Forms.TextBox();
@@ -113,8 +109,6 @@
             this.buttonEliminarTel = new System.Windows.Forms.Button();
             this.buttonAñadirTel = new System.Windows.Forms.Button();
             this.dataGridViewTelefonos = new System.Windows.Forms.DataGridView();
-            this.raoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceListaTelefonos = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxNifEntidad = new System.Windows.Forms.TextBox();
             this.textBoxDireccionEntidad = new System.Windows.Forms.TextBox();
@@ -135,16 +129,14 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idequipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.bindingSourceEquips = new System.Windows.Forms.BindingSource(this.components);
-            this.idespaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.idtipusactivitatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.bindingSourceTipusActivitat = new System.Windows.Forms.BindingSource(this.components);
-            this.numdiesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assignadaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bindingSourceActivitatsDemandades = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -179,7 +171,9 @@
             this.bindingSourceListaInstalaciones = new System.Windows.Forms.BindingSource(this.components);
             this.buttonEliminarInstalacion = new System.Windows.Forms.Button();
             this.buttonAñadirInstalacion = new System.Windows.Forms.Button();
-            this.pasarACalendarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourcePasarActividades = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceEquips = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceTipusActivitat = new System.Windows.Forms.BindingSource(this.components);
             this.calendarioGRIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label12 = new System.Windows.Forms.Label();
             this.comboBoxHorariosEspais = new System.Windows.Forms.ComboBox();
@@ -198,6 +192,12 @@
             this.radioButtonHome = new System.Windows.Forms.RadioButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bindingSourceListaActividades = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxActivitats.SuspendLayout();
@@ -212,7 +212,7 @@
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaisActivitats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCalendario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePasarActividades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pasarACalendarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspais)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -224,15 +224,15 @@
             this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEquips)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipusActivitat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceActivitatsDemandades)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInstalaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceListaInstalaciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pasarACalendarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePasarActividades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEquips)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipusActivitat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calendarioGRIDBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -266,6 +266,9 @@
             // 
             // groupBoxActivitats
             // 
+            this.groupBoxActivitats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxActivitats.Controls.Add(this.groupBoxAsignarHorarios);
             this.groupBoxActivitats.Controls.Add(this.groupBox7);
             this.groupBoxActivitats.Controls.Add(this.dataGridViewCalendario);
@@ -280,6 +283,8 @@
             // 
             // groupBoxAsignarHorarios
             // 
+            this.groupBoxAsignarHorarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxAsignarHorarios.Controls.Add(this.groupBoxLunes);
             this.groupBoxAsignarHorarios.Controls.Add(this.buttonAsignarActividad);
             this.groupBoxAsignarHorarios.Controls.Add(this.groupBoxMartes);
@@ -316,6 +321,7 @@
             this.comboBoxLUNESActFIN.Name = "comboBoxLUNESActFIN";
             this.comboBoxLUNESActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxLUNESActFIN.TabIndex = 3;
+            this.comboBoxLUNESActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxLUNESActINI
             // 
@@ -325,6 +331,7 @@
             this.comboBoxLUNESActINI.Name = "comboBoxLUNESActINI";
             this.comboBoxLUNESActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxLUNESActINI.TabIndex = 2;
+            this.comboBoxLUNESActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label21
             // 
@@ -376,6 +383,7 @@
             this.comboBoxMARTESActFIN.Name = "comboBoxMARTESActFIN";
             this.comboBoxMARTESActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxMARTESActFIN.TabIndex = 3;
+            this.comboBoxMARTESActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxMARTESActINI
             // 
@@ -385,6 +393,7 @@
             this.comboBoxMARTESActINI.Name = "comboBoxMARTESActINI";
             this.comboBoxMARTESActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxMARTESActINI.TabIndex = 2;
+            this.comboBoxMARTESActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -425,6 +434,7 @@
             this.comboBoxJUEVESActFIN.Name = "comboBoxJUEVESActFIN";
             this.comboBoxJUEVESActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxJUEVESActFIN.TabIndex = 3;
+            this.comboBoxJUEVESActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxJUEVESActINI
             // 
@@ -434,6 +444,7 @@
             this.comboBoxJUEVESActINI.Name = "comboBoxJUEVESActINI";
             this.comboBoxJUEVESActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxJUEVESActINI.TabIndex = 2;
+            this.comboBoxJUEVESActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label19
             // 
@@ -474,6 +485,7 @@
             this.comboBoxMIERCOLESActFIN.Name = "comboBoxMIERCOLESActFIN";
             this.comboBoxMIERCOLESActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxMIERCOLESActFIN.TabIndex = 3;
+            this.comboBoxMIERCOLESActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxMIERCOLESActINI
             // 
@@ -483,6 +495,7 @@
             this.comboBoxMIERCOLESActINI.Name = "comboBoxMIERCOLESActINI";
             this.comboBoxMIERCOLESActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxMIERCOLESActINI.TabIndex = 2;
+            this.comboBoxMIERCOLESActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label24
             // 
@@ -523,6 +536,7 @@
             this.comboBoxVIERNESActFIN.Name = "comboBoxVIERNESActFIN";
             this.comboBoxVIERNESActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxVIERNESActFIN.TabIndex = 3;
+            this.comboBoxVIERNESActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxVIERNESActINI
             // 
@@ -532,6 +546,7 @@
             this.comboBoxVIERNESActINI.Name = "comboBoxVIERNESActINI";
             this.comboBoxVIERNESActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxVIERNESActINI.TabIndex = 2;
+            this.comboBoxVIERNESActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label26
             // 
@@ -572,6 +587,7 @@
             this.comboBoxDOMINGOActFIN.Name = "comboBoxDOMINGOActFIN";
             this.comboBoxDOMINGOActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxDOMINGOActFIN.TabIndex = 3;
+            this.comboBoxDOMINGOActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxDOMINGOActINI
             // 
@@ -581,6 +597,7 @@
             this.comboBoxDOMINGOActINI.Name = "comboBoxDOMINGOActINI";
             this.comboBoxDOMINGOActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxDOMINGOActINI.TabIndex = 2;
+            this.comboBoxDOMINGOActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label30
             // 
@@ -621,6 +638,7 @@
             this.comboBoxSABADOActFIN.Name = "comboBoxSABADOActFIN";
             this.comboBoxSABADOActFIN.Size = new System.Drawing.Size(107, 21);
             this.comboBoxSABADOActFIN.TabIndex = 3;
+            this.comboBoxSABADOActFIN.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // comboBoxSABADOActINI
             // 
@@ -630,6 +648,7 @@
             this.comboBoxSABADOActINI.Name = "comboBoxSABADOActINI";
             this.comboBoxSABADOActINI.Size = new System.Drawing.Size(107, 21);
             this.comboBoxSABADOActINI.TabIndex = 2;
+            this.comboBoxSABADOActINI.SelectedIndexChanged += new System.EventHandler(this.comboBoxLUNESActINI_SelectedIndexChanged);
             // 
             // label28
             // 
@@ -651,6 +670,10 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Controls.Add(this.label34);
+            this.groupBox7.Controls.Add(this.labelHORASUSADASHORASDISPONIBLES);
             this.groupBox7.Controls.Add(this.textBoxDiasActividadMain);
             this.groupBox7.Controls.Add(this.labelActDias);
             this.groupBox7.Controls.Add(this.label33);
@@ -668,10 +691,29 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Asignar actividades";
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(16, 154);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(38, 13);
+            this.label34.TabIndex = 14;
+            this.label34.Text = "Horas:";
+            // 
+            // labelHORASUSADASHORASDISPONIBLES
+            // 
+            this.labelHORASUSADASHORASDISPONIBLES.AutoSize = true;
+            this.labelHORASUSADASHORASDISPONIBLES.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHORASUSADASHORASDISPONIBLES.Location = new System.Drawing.Point(130, 154);
+            this.labelHORASUSADASHORASDISPONIBLES.Name = "labelHORASUSADASHORASDISPONIBLES";
+            this.labelHORASUSADASHORASDISPONIBLES.Size = new System.Drawing.Size(98, 13);
+            this.labelHORASUSADASHORASDISPONIBLES.TabIndex = 13;
+            this.labelHORASUSADASHORASDISPONIBLES.Text = "00:00 / 00:00 H";
+            // 
             // textBoxDiasActividadMain
             // 
             this.textBoxDiasActividadMain.Enabled = false;
-            this.textBoxDiasActividadMain.Location = new System.Drawing.Point(132, 143);
+            this.textBoxDiasActividadMain.Location = new System.Drawing.Point(133, 125);
             this.textBoxDiasActividadMain.Name = "textBoxDiasActividadMain";
             this.textBoxDiasActividadMain.Size = new System.Drawing.Size(121, 20);
             this.textBoxDiasActividadMain.TabIndex = 12;
@@ -679,7 +721,7 @@
             // labelActDias
             // 
             this.labelActDias.AutoSize = true;
-            this.labelActDias.Location = new System.Drawing.Point(15, 146);
+            this.labelActDias.Location = new System.Drawing.Point(16, 128);
             this.labelActDias.Name = "labelActDias";
             this.labelActDias.Size = new System.Drawing.Size(31, 13);
             this.labelActDias.TabIndex = 11;
@@ -688,7 +730,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(15, 93);
+            this.label33.Location = new System.Drawing.Point(16, 75);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(43, 13);
             this.label33.TabIndex = 9;
@@ -697,7 +739,7 @@
             // textBoxEquipoActividadMain
             // 
             this.textBoxEquipoActividadMain.Enabled = false;
-            this.textBoxEquipoActividadMain.Location = new System.Drawing.Point(132, 90);
+            this.textBoxEquipoActividadMain.Location = new System.Drawing.Point(133, 72);
             this.textBoxEquipoActividadMain.Name = "textBoxEquipoActividadMain";
             this.textBoxEquipoActividadMain.Size = new System.Drawing.Size(121, 20);
             this.textBoxEquipoActividadMain.TabIndex = 10;
@@ -705,7 +747,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(15, 40);
+            this.label18.Location = new System.Drawing.Point(16, 22);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(111, 13);
             this.label18.TabIndex = 4;
@@ -717,7 +759,7 @@
             this.comboBoxActivitats.DisplayMember = "nom";
             this.comboBoxActivitats.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxActivitats.FormattingEnabled = true;
-            this.comboBoxActivitats.Location = new System.Drawing.Point(132, 37);
+            this.comboBoxActivitats.Location = new System.Drawing.Point(133, 19);
             this.comboBoxActivitats.Name = "comboBoxActivitats";
             this.comboBoxActivitats.Size = new System.Drawing.Size(121, 21);
             this.comboBoxActivitats.TabIndex = 3;
@@ -726,7 +768,7 @@
             // labelActNombre
             // 
             this.labelActNombre.AutoSize = true;
-            this.labelActNombre.Location = new System.Drawing.Point(15, 67);
+            this.labelActNombre.Location = new System.Drawing.Point(16, 49);
             this.labelActNombre.Name = "labelActNombre";
             this.labelActNombre.Size = new System.Drawing.Size(47, 13);
             this.labelActNombre.TabIndex = 5;
@@ -735,7 +777,7 @@
             // textBoxActivitatNombre
             // 
             this.textBoxActivitatNombre.Enabled = false;
-            this.textBoxActivitatNombre.Location = new System.Drawing.Point(132, 64);
+            this.textBoxActivitatNombre.Location = new System.Drawing.Point(133, 46);
             this.textBoxActivitatNombre.Name = "textBoxActivitatNombre";
             this.textBoxActivitatNombre.Size = new System.Drawing.Size(121, 20);
             this.textBoxActivitatNombre.TabIndex = 6;
@@ -743,7 +785,7 @@
             // labelActDurada
             // 
             this.labelActDurada.AutoSize = true;
-            this.labelActDurada.Location = new System.Drawing.Point(15, 119);
+            this.labelActDurada.Location = new System.Drawing.Point(16, 101);
             this.labelActDurada.Name = "labelActDurada";
             this.labelActDurada.Size = new System.Drawing.Size(45, 13);
             this.labelActDurada.TabIndex = 7;
@@ -778,7 +820,7 @@
             "11:30:00",
             "12:00:00",
             "12:30:00"});
-            this.comboBoxDurada.Location = new System.Drawing.Point(132, 116);
+            this.comboBoxDurada.Location = new System.Drawing.Point(133, 98);
             this.comboBoxDurada.Name = "comboBoxDurada";
             this.comboBoxDurada.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDurada.TabIndex = 8;
@@ -787,91 +829,95 @@
             // 
             this.dataGridViewCalendario.AllowUserToAddRows = false;
             this.dataGridViewCalendario.AllowUserToDeleteRows = false;
+            this.dataGridViewCalendario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCalendario.AutoGenerateColumns = false;
             this.dataGridViewCalendario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCalendario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.horaDataGridViewTextBoxColumn,
-            this.lunesDataGridViewTextBoxColumn,
-            this.martesDataGridViewTextBoxColumn,
-            this.miercolesDataGridViewTextBoxColumn,
-            this.juevesDataGridViewTextBoxColumn,
-            this.viernesDataGridViewTextBoxColumn,
-            this.sabadoDataGridViewTextBoxColumn,
-            this.domingoDataGridViewTextBoxColumn});
-            this.dataGridViewCalendario.DataSource = this.bindingSourcePasarActividades;
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15});
+            this.dataGridViewCalendario.DataSource = this.pasarACalendarioBindingSource;
             this.dataGridViewCalendario.Location = new System.Drawing.Point(6, 54);
             this.dataGridViewCalendario.Name = "dataGridViewCalendario";
             this.dataGridViewCalendario.ReadOnly = true;
             this.dataGridViewCalendario.Size = new System.Drawing.Size(941, 256);
             this.dataGridViewCalendario.TabIndex = 0;
             // 
-            // horaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn8
             // 
-            this.horaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.horaDataGridViewTextBoxColumn.DataPropertyName = "_hora";
-            this.horaDataGridViewTextBoxColumn.HeaderText = "HORA";
-            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
-            this.horaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "_hora";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Hora";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 55;
             // 
-            // lunesDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn9
             // 
-            this.lunesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lunesDataGridViewTextBoxColumn.DataPropertyName = "Lunes";
-            this.lunesDataGridViewTextBoxColumn.HeaderText = "Lunes";
-            this.lunesDataGridViewTextBoxColumn.Name = "lunesDataGridViewTextBoxColumn";
-            this.lunesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Lunes";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Lunes";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
-            // martesDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn10
             // 
-            this.martesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.martesDataGridViewTextBoxColumn.DataPropertyName = "Martes";
-            this.martesDataGridViewTextBoxColumn.HeaderText = "Martes";
-            this.martesDataGridViewTextBoxColumn.Name = "martesDataGridViewTextBoxColumn";
-            this.martesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Martes";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Martes";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
-            // miercolesDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn11
             // 
-            this.miercolesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.miercolesDataGridViewTextBoxColumn.DataPropertyName = "Miercoles";
-            this.miercolesDataGridViewTextBoxColumn.HeaderText = "Miercoles";
-            this.miercolesDataGridViewTextBoxColumn.Name = "miercolesDataGridViewTextBoxColumn";
-            this.miercolesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Miercoles";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Miercoles";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
-            // juevesDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn12
             // 
-            this.juevesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.juevesDataGridViewTextBoxColumn.DataPropertyName = "Jueves";
-            this.juevesDataGridViewTextBoxColumn.HeaderText = "Jueves";
-            this.juevesDataGridViewTextBoxColumn.Name = "juevesDataGridViewTextBoxColumn";
-            this.juevesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Jueves";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Jueves";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
-            // viernesDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn13
             // 
-            this.viernesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.viernesDataGridViewTextBoxColumn.DataPropertyName = "Viernes";
-            this.viernesDataGridViewTextBoxColumn.HeaderText = "Viernes";
-            this.viernesDataGridViewTextBoxColumn.Name = "viernesDataGridViewTextBoxColumn";
-            this.viernesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Viernes";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Viernes";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
-            // sabadoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn14
             // 
-            this.sabadoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sabadoDataGridViewTextBoxColumn.DataPropertyName = "Sabado";
-            this.sabadoDataGridViewTextBoxColumn.HeaderText = "Sabado";
-            this.sabadoDataGridViewTextBoxColumn.Name = "sabadoDataGridViewTextBoxColumn";
-            this.sabadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Sabado";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Sabado";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
-            // domingoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn15
             // 
-            this.domingoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.domingoDataGridViewTextBoxColumn.DataPropertyName = "Domingo";
-            this.domingoDataGridViewTextBoxColumn.HeaderText = "Domingo";
-            this.domingoDataGridViewTextBoxColumn.Name = "domingoDataGridViewTextBoxColumn";
-            this.domingoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Domingo";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Domingo";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
             // 
-            // bindingSourcePasarActividades
+            // pasarACalendarioBindingSource
             // 
-            this.bindingSourcePasarActividades.DataSource = typeof(Proyecto2.PasarACalendario);
+            this.pasarACalendarioBindingSource.DataSource = typeof(Proyecto2.PasarACalendario);
             // 
             // comboBoxEspaciosHome
             // 
@@ -884,10 +930,6 @@
             this.comboBoxEspaciosHome.Size = new System.Drawing.Size(234, 21);
             this.comboBoxEspaciosHome.TabIndex = 1;
             this.comboBoxEspaciosHome.SelectedIndexChanged += new System.EventHandler(this.comboBoxEspaciosHome_SelectedIndexChanged);
-            // 
-            // bindingSourceEspais
-            // 
-            this.bindingSourceEspais.DataSource = typeof(Proyecto2.ESPAIS);
             // 
             // label16
             // 
@@ -947,12 +989,12 @@
             this.dataGridViewListaEntidad.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dataGridViewListaEntidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListaEntidad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nomDataGridViewTextBoxColumn,
-            this.temporadaDataGridViewTextBoxColumn,
-            this.adrecaDataGridViewTextBoxColumn,
-            this.nIFDataGridViewTextBoxColumn,
-            this.correuDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21});
             this.dataGridViewListaEntidad.DataSource = this.bindingSourceListaEntidades;
             this.dataGridViewListaEntidad.Location = new System.Drawing.Point(23, 55);
             this.dataGridViewListaEntidad.MultiSelect = false;
@@ -961,52 +1003,6 @@
             this.dataGridViewListaEntidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaEntidad.Size = new System.Drawing.Size(625, 449);
             this.dataGridViewListaEntidad.TabIndex = 1;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 25;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // temporadaDataGridViewTextBoxColumn
-            // 
-            this.temporadaDataGridViewTextBoxColumn.DataPropertyName = "temporada";
-            this.temporadaDataGridViewTextBoxColumn.HeaderText = "temporada";
-            this.temporadaDataGridViewTextBoxColumn.Name = "temporadaDataGridViewTextBoxColumn";
-            this.temporadaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // adrecaDataGridViewTextBoxColumn
-            // 
-            this.adrecaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.adrecaDataGridViewTextBoxColumn.DataPropertyName = "adreca";
-            this.adrecaDataGridViewTextBoxColumn.HeaderText = "adreca";
-            this.adrecaDataGridViewTextBoxColumn.Name = "adrecaDataGridViewTextBoxColumn";
-            this.adrecaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nIFDataGridViewTextBoxColumn
-            // 
-            this.nIFDataGridViewTextBoxColumn.DataPropertyName = "NIF";
-            this.nIFDataGridViewTextBoxColumn.HeaderText = "NIF";
-            this.nIFDataGridViewTextBoxColumn.Name = "nIFDataGridViewTextBoxColumn";
-            this.nIFDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // correuDataGridViewTextBoxColumn
-            // 
-            this.correuDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.correuDataGridViewTextBoxColumn.DataPropertyName = "correu";
-            this.correuDataGridViewTextBoxColumn.HeaderText = "correu";
-            this.correuDataGridViewTextBoxColumn.Name = "correuDataGridViewTextBoxColumn";
-            this.correuDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bindingSourceListaEntidades
             // 
@@ -1101,35 +1097,12 @@
             this.dataGridViewTelefonos.AutoGenerateColumns = false;
             this.dataGridViewTelefonos.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dataGridViewTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTelefonos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.raoDataGridViewTextBoxColumn,
-            this.numeroDataGridViewTextBoxColumn});
             this.dataGridViewTelefonos.DataSource = this.bindingSourceListaTelefonos;
             this.dataGridViewTelefonos.Location = new System.Drawing.Point(106, 255);
             this.dataGridViewTelefonos.Name = "dataGridViewTelefonos";
             this.dataGridViewTelefonos.ReadOnly = true;
             this.dataGridViewTelefonos.Size = new System.Drawing.Size(168, 108);
             this.dataGridViewTelefonos.TabIndex = 21;
-            // 
-            // raoDataGridViewTextBoxColumn
-            // 
-            this.raoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.raoDataGridViewTextBoxColumn.DataPropertyName = "rao";
-            this.raoDataGridViewTextBoxColumn.HeaderText = "rao";
-            this.raoDataGridViewTextBoxColumn.Name = "raoDataGridViewTextBoxColumn";
-            this.raoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "numero";
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bindingSourceListaTelefonos
-            // 
-            this.bindingSourceListaTelefonos.DataSource = typeof(Proyecto2.TELEFONS);
             // 
             // textBoxNifEntidad
             // 
@@ -1333,14 +1306,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.nomDataGridViewTextBoxColumn1,
-            this.duradaDataGridViewTextBoxColumn,
-            this.idequipDataGridViewTextBoxColumn,
-            this.idespaiDataGridViewTextBoxColumn,
-            this.idtipusactivitatDataGridViewTextBoxColumn,
-            this.numdiesDataGridViewTextBoxColumn,
-            this.assignadaDataGridViewCheckBoxColumn});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewCheckBoxColumn1});
             this.dataGridView1.DataSource = this.bindingSourceActivitatsDemandades;
             this.dataGridView1.Location = new System.Drawing.Point(16, 68);
             this.dataGridView1.Name = "dataGridView1";
@@ -1349,102 +1322,70 @@
             this.dataGridView1.Size = new System.Drawing.Size(629, 436);
             this.dataGridView1.TabIndex = 1;
             // 
-            // idDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn1
             // 
-            this.idDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn1.Width = 5;
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 40;
             // 
-            // nomDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn2
             // 
-            this.nomDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomDataGridViewTextBoxColumn1.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn1.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn1.Name = "nomDataGridViewTextBoxColumn1";
-            this.nomDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nom";
+            this.dataGridViewTextBoxColumn2.HeaderText = "nom";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // duradaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.duradaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.duradaDataGridViewTextBoxColumn.DataPropertyName = "durada";
-            this.duradaDataGridViewTextBoxColumn.HeaderText = "durada";
-            this.duradaDataGridViewTextBoxColumn.Name = "duradaDataGridViewTextBoxColumn";
-            this.duradaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.duradaDataGridViewTextBoxColumn.Width = 5;
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "durada";
+            this.dataGridViewTextBoxColumn3.HeaderText = "durada";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // idequipDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.idequipDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.idequipDataGridViewTextBoxColumn.DataPropertyName = "id_equip";
-            this.idequipDataGridViewTextBoxColumn.DataSource = this.bindingSourceEquips;
-            this.idequipDataGridViewTextBoxColumn.DisplayMember = "nom";
-            this.idequipDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.idequipDataGridViewTextBoxColumn.HeaderText = "id_equip";
-            this.idequipDataGridViewTextBoxColumn.Name = "idequipDataGridViewTextBoxColumn";
-            this.idequipDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idequipDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idequipDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.idequipDataGridViewTextBoxColumn.ValueMember = "id";
-            this.idequipDataGridViewTextBoxColumn.Width = 5;
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "id_equip";
+            this.dataGridViewTextBoxColumn4.HeaderText = "id_equip";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // bindingSourceEquips
+            // dataGridViewTextBoxColumn5
             // 
-            this.bindingSourceEquips.DataSource = typeof(Proyecto2.EQUIPS);
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "id_espai";
+            this.dataGridViewTextBoxColumn5.HeaderText = "id_espai";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // idespaiDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn6
             // 
-            this.idespaiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.idespaiDataGridViewTextBoxColumn.DataPropertyName = "id_espai";
-            this.idespaiDataGridViewTextBoxColumn.DataSource = this.bindingSourceEspais;
-            this.idespaiDataGridViewTextBoxColumn.DisplayMember = "nom";
-            this.idespaiDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.idespaiDataGridViewTextBoxColumn.HeaderText = "id_espai";
-            this.idespaiDataGridViewTextBoxColumn.Name = "idespaiDataGridViewTextBoxColumn";
-            this.idespaiDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idespaiDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idespaiDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.idespaiDataGridViewTextBoxColumn.ValueMember = "id";
-            this.idespaiDataGridViewTextBoxColumn.Width = 5;
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "id_tipus_activitat";
+            this.dataGridViewTextBoxColumn6.HeaderText = "id_tipus_activitat";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
-            // idtipusactivitatDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn7
             // 
-            this.idtipusactivitatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.idtipusactivitatDataGridViewTextBoxColumn.DataPropertyName = "id_tipus_activitat";
-            this.idtipusactivitatDataGridViewTextBoxColumn.DataSource = this.bindingSourceTipusActivitat;
-            this.idtipusactivitatDataGridViewTextBoxColumn.DisplayMember = "nom";
-            this.idtipusactivitatDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.idtipusactivitatDataGridViewTextBoxColumn.HeaderText = "id_tipus_activitat";
-            this.idtipusactivitatDataGridViewTextBoxColumn.Name = "idtipusactivitatDataGridViewTextBoxColumn";
-            this.idtipusactivitatDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idtipusactivitatDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idtipusactivitatDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.idtipusactivitatDataGridViewTextBoxColumn.ValueMember = "id";
-            this.idtipusactivitatDataGridViewTextBoxColumn.Width = 5;
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "num_dies";
+            this.dataGridViewTextBoxColumn7.HeaderText = "num_dies";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // bindingSourceTipusActivitat
+            // dataGridViewCheckBoxColumn1
             // 
-            this.bindingSourceTipusActivitat.DataSource = typeof(Proyecto2.TIPUS_ACTIVITAT);
-            // 
-            // numdiesDataGridViewTextBoxColumn
-            // 
-            this.numdiesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.numdiesDataGridViewTextBoxColumn.DataPropertyName = "num_dies";
-            this.numdiesDataGridViewTextBoxColumn.HeaderText = "num_dies";
-            this.numdiesDataGridViewTextBoxColumn.Name = "numdiesDataGridViewTextBoxColumn";
-            this.numdiesDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numdiesDataGridViewTextBoxColumn.Width = 77;
-            // 
-            // assignadaDataGridViewCheckBoxColumn
-            // 
-            this.assignadaDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.assignadaDataGridViewCheckBoxColumn.DataPropertyName = "assignada";
-            this.assignadaDataGridViewCheckBoxColumn.HeaderText = "assignada";
-            this.assignadaDataGridViewCheckBoxColumn.Name = "assignadaDataGridViewCheckBoxColumn";
-            this.assignadaDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.assignadaDataGridViewCheckBoxColumn.Width = 61;
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "assignada";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "assignada";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
             // bindingSourceActivitatsDemandades
             // 
@@ -1844,10 +1785,6 @@
             this.buttonAñadirInstalacion.UseVisualStyleBackColor = true;
             this.buttonAñadirInstalacion.Click += new System.EventHandler(this.button10_Click);
             // 
-            // pasarACalendarioBindingSource
-            // 
-            this.pasarACalendarioBindingSource.DataSource = typeof(Proyecto2.PasarACalendario);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -1961,7 +1898,7 @@
             this.labelHora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHora.ForeColor = System.Drawing.Color.White;
-            this.labelHora.Location = new System.Drawing.Point(636, 8);
+            this.labelHora.Location = new System.Drawing.Point(556, 8);
             this.labelHora.Name = "labelHora";
             this.labelHora.Size = new System.Drawing.Size(46, 16);
             this.labelHora.TabIndex = 12;
@@ -1991,7 +1928,7 @@
             this.labelFecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFecha.ForeColor = System.Drawing.Color.White;
-            this.labelFecha.Location = new System.Drawing.Point(565, 8);
+            this.labelFecha.Location = new System.Drawing.Point(485, 8);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(46, 16);
             this.labelFecha.TabIndex = 11;
@@ -2077,6 +2014,55 @@
             // 
             this.bindingSourceListaActividades.DataSource = typeof(Proyecto2.ACTIVITATS);
             // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn16.HeaderText = "id";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "nom";
+            this.dataGridViewTextBoxColumn17.HeaderText = "nom";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "temporada";
+            this.dataGridViewTextBoxColumn18.HeaderText = "temporada";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "adreca";
+            this.dataGridViewTextBoxColumn19.HeaderText = "adreca";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "NIF";
+            this.dataGridViewTextBoxColumn20.HeaderText = "NIF";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "correu";
+            this.dataGridViewTextBoxColumn21.HeaderText = "correu";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2115,7 +2101,7 @@
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspaisActivitats)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCalendario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePasarActividades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pasarACalendarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEspais)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -2130,8 +2116,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEquips)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipusActivitat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceActivitatsDemandades)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -2139,7 +2123,9 @@
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInstalaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceListaInstalaciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pasarACalendarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePasarActividades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEquips)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipusActivitat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calendarioGRIDBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -2323,6 +2309,30 @@
         private System.Windows.Forms.GroupBox groupBoxAsignarHorarios;
         private System.Windows.Forms.TextBox textBoxDiasActividadMain;
         private System.Windows.Forms.Label labelActDias;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label labelHORASUSADASHORASDISPONIBLES;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
     }
 }
 
